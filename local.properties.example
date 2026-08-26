@@ -1,0 +1,15 @@
+# Copy this file to local.properties and fill in your values.
+# local.properties is gitignored — NEVER commit real credentials.
+
+# ── Supabase ──────────────────────────────────────────────────────────────────
+# Get these from: Supabase Dashboard → Project Settings → API
+supabase.url=https://YOUR_PROJECT_ID.supabase.co
+supabase.anon_key=YOUR_SUPABASE_ANON_KEY
+
+# ── Google Maps (optional — only if adding map features) ─────────────────────
+# Get from: Google Cloud Console → Credentials
+MAPS_API_KEY=YOUR_MAPS_API_KEY
+
+# ── Android SDK ───────────────────────────────────────────────────────────────
+# Set automatically by Android Studio. Uncomment and set if building in CI locally.
+# sdk.dir=/path/to/Android/Sdk

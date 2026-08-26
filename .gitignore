@@ -1,0 +1,59 @@
+# ── SECRETS — NEVER commit these ─────────────────────────────────────────────
+local.properties
+secrets.properties
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+.env
+.env.*
+!.env.example
+service-account.json
+*service_account*.json
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+build/
+*/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ── Gradle ────────────────────────────────────────────────────────────────────
+.gradle/
+gradle-app.setting
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+Thumbs.db
+
+# ── Android Studio ────────────────────────────────────────────────────────────
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# ── Node / Admin dashboard ────────────────────────────────────────────────────
+admin/node_modules/
+admin/dist/
+admin/.env
+admin/.env.local
+
+# ── Supabase ──────────────────────────────────────────────────────────────────
+supabase/.env
+supabase/config.toml.local
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# ── Test results ──────────────────────────────────────────────────────────────
+test-results/
+jacoco/
