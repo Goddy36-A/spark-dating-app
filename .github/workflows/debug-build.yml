@@ -35,20 +35,32 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDevDebug --stacktrace 2>&1 | tee /tmp/gradle-output.log
 
+      - name: Find built APKs
+        if: always()
+        run: |
+          echo "=== Searching for APK files ===" > /tmp/find-apk.log
+          find . -iname "*.apk" 2>/dev/null >> /tmp/find-apk.log
+          echo "=== app/build/outputs tree ===" >> /tmp/find-apk.log
+          find app/build/outputs -maxdepth 5 2>/dev/null >> /tmp/find-apk.log || echo "no outputs dir" >> /tmp/find-apk.log
+          cat /tmp/find-apk.log
+
       - name: Upload APK artifact
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: spark-debug-apk
-          path: app/build/outputs/apk/dev/debug/*.apk
+          path: |
+            app/build/outputs/apk/**/*.apk
+          if-no-files-found: warn
 
-      - name: Push error log on failure
-        if: failure()
+      - name: Push diagnostic log
+        if: always()
         run: |
           mkdir -p ci-logs
-          tail -n 400 /tmp/gradle-output.log > ci-logs/debug-build-error.log
+          tail -n 400 /tmp/gradle-output.log > ci-logs/debug-build-error.log 2>/dev/null || echo "no gradle log" > ci-logs/debug-build-error.log
+          cp /tmp/find-apk.log ci-logs/find-apk.log
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ci-logs/debug-build-error.log
-          git commit -m "ci: capture debug build error log [skip ci]" || echo "nothing to commit"
+          git add ci-logs/debug-build-error.log ci-logs/find-apk.log
+          git commit -m "ci: capture build diagnostics [skip ci]" || echo "nothing to commit"
           git push
