@@ -53,16 +53,17 @@ jobs:
             app/build/outputs/apk/**/*.apk
           if-no-files-found: warn
 
-      - name: Push diagnostic log
+      - name: Push diagnostic log via API
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p ci-logs
-          tail -n 400 /tmp/gradle-output.log > ci-logs/debug-build-error.log 2>/dev/null || echo "no gradle log" > ci-logs/debug-build-error.log
-          cp /tmp/find-apk.log ci-logs/find-apk.log
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ci-logs/debug-build-error.log ci-logs/find-apk.log
-          git commit -m "ci: capture build diagnostics [skip ci]" || echo "nothing to commit"
-          git fetch origin main
-          git rebase origin/main || git rebase --abort
-          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
+          tail -n 400 /tmp/gradle-output.log > /tmp/debug-build-error.log 2>/dev/null || echo "no gradle log" > /tmp/debug-build-error.log
+          FILE_B64=$(base64 -w 0 /tmp/find-apk.log)
+          LOG_B64=$(base64 -w 0 /tmp/debug-build-error.log)
+          curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/find-apk.log" \
+            -d "{\"message\":\"ci: find-apk diagnostics [skip ci]\",\"content\":\"$FILE_B64\",\"branch\":\"main\"}"
+          curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/debug-build-error.log" \
+            -d "{\"message\":\"ci: build error diagnostics [skip ci]\",\"content\":\"$LOG_B64\",\"branch\":\"main\"}"
