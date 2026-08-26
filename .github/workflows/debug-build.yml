@@ -63,4 +63,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add ci-logs/debug-build-error.log ci-logs/find-apk.log
           git commit -m "ci: capture build diagnostics [skip ci]" || echo "nothing to commit"
-          git push
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
+          git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
