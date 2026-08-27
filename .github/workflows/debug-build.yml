@@ -75,28 +75,40 @@ jobs:
         run: |
           tail -n 400 /tmp/gradle-output.log > /tmp/debug-build-error.log 2>/dev/null || echo "no gradle log" > /tmp/debug-build-error.log
 
-          push_file() {
-            local_path="$1"
-            remote_path="$2"
-            content_b64=$(base64 -w 0 "$local_path")
-            existing_sha=$(curl -s -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/$REPO/contents/$remote_path?ref=main" | python3 -c "import json,sys
-try:
-    print(json.load(sys.stdin).get('sha',''))
-except Exception:
-    print('')")
-            if [ -n "$existing_sha" ]; then
-              body=$(python3 -c "import json; print(json.dumps({'message':'ci: update $remote_path [skip ci]','content':'''$content_b64''','branch':'main','sha':'''$existing_sha'''}))")
-            else
-              body=$(python3 -c "import json; print(json.dumps({'message':'ci: add $remote_path [skip ci]','content':'''$content_b64''','branch':'main'}))")
-            fi
-            resp=$(curl -s -w "|HTTPSTATUS:%{http_code}" -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/$REPO/contents/$remote_path" -d "$body")
-            echo "PUSH RESULT for $remote_path: $resp" | tail -c 500
-          }
+          cat > /tmp/push_file.py << 'PYEOF'
+          import sys, json, base64, urllib.request, urllib.error
 
-          push_file /tmp/find-apk.log ci-logs/find-apk.log
-          push_file /tmp/debug-build-error.log ci-logs/debug-build-error.log
+          local_path, remote_path, repo, token = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+
+          with open(local_path, 'rb') as f:
+              content_b64 = base64.b64encode(f.read()).decode()
+
+          api_base = f"https://api.github.com/repos/{repo}/contents/{remote_path}"
+          headers = {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+
+          existing_sha = None
+          req = urllib.request.Request(api_base + "?ref=main", headers=headers)
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  existing_sha = json.load(resp).get("sha")
+          except urllib.error.HTTPError:
+              pass
+
+          payload = {"message": f"ci: update {remote_path} [skip ci]", "content": content_b64, "branch": "main"}
+          if existing_sha:
+              payload["sha"] = existing_sha
+
+          data = json.dumps(payload).encode()
+          put_req = urllib.request.Request(api_base, data=data, headers={**headers, "Content-Type": "application/json"}, method="PUT")
+          try:
+              with urllib.request.urlopen(put_req) as resp:
+                  print(f"PUSH OK {remote_path}: {resp.status}")
+          except urllib.error.HTTPError as e:
+              print(f"PUSH FAILED {remote_path}: {e.code} {e.read().decode()[:300]}")
+          PYEOF
+
+          python3 /tmp/push_file.py /tmp/find-apk.log ci-logs/find-apk.log "$REPO" "$GH_TOKEN"
+          python3 /tmp/push_file.py /tmp/debug-build-error.log ci-logs/debug-build-error.log "$REPO" "$GH_TOKEN"
           if [ -f /tmp/prop-debug.log ]; then
-            push_file /tmp/prop-debug.log ci-logs/prop-debug.log
+            python3 /tmp/push_file.py /tmp/prop-debug.log ci-logs/prop-debug.log "$REPO" "$GH_TOKEN"
           fi
