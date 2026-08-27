@@ -22,7 +22,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
       - name: Create local.properties
         run: |
@@ -48,7 +47,7 @@ jobs:
       - name: Build debug APK
         run: |
           set -o pipefail
-          ./gradlew assembleDevDebug --stacktrace -Pandroid.useAndroidX=true -Pandroid.enableJetifier=false 2>&1 | tee /tmp/gradle-output.log
+          ./gradlew assembleDevDebug --stacktrace --no-build-cache --no-configuration-cache -Pandroid.useAndroidX=true -Pandroid.enableJetifier=false 2>&1 | tee /tmp/gradle-output.log
 
       - name: Find built APKs
         if: always()
