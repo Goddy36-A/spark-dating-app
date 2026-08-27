@@ -82,11 +82,11 @@ coroutines-test                     = { group = "org.jetbrains.kotlinx", name = 
 serialization-json                  = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 
 # Supabase
-supabase-postgrest                  = { group = "io.github.jan-tennermann", name = "postgrest-kt", version.ref = "supabase" }
-supabase-auth                       = { group = "io.github.jan-tennermann", name = "auth-kt", version.ref = "supabase" }
-supabase-realtime                   = { group = "io.github.jan-tennermann", name = "realtime-kt", version.ref = "supabase" }
-supabase-storage                    = { group = "io.github.jan-tennermann", name = "storage-kt", version.ref = "supabase" }
-supabase-functions                  = { group = "io.github.jan-tennermann", name = "functions-kt", version.ref = "supabase" }
+supabase-postgrest                  = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt", version.ref = "supabase" }
+supabase-auth                       = { group = "io.github.jan-tennert.supabase", name = "auth-kt", version.ref = "supabase" }
+supabase-realtime                   = { group = "io.github.jan-tennert.supabase", name = "realtime-kt", version.ref = "supabase" }
+supabase-storage                    = { group = "io.github.jan-tennert.supabase", name = "storage-kt", version.ref = "supabase" }
+supabase-functions                  = { group = "io.github.jan-tennert.supabase", name = "functions-kt", version.ref = "supabase" }
 
 # Ktor (Supabase engine)
 ktor-client-okhttp                  = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
@@ -144,3 +144,4 @@ lifecycle                           = ["lifecycle-viewmodel-compose", "lifecycle
 supabase                            = ["supabase-postgrest", "supabase-auth", "supabase-realtime", "supabase-storage", "supabase-functions"]
 testing-unit                        = ["junit", "mockk", "truth", "turbine", "coroutines-test", "arch-testing"]
 testing-android                     = ["junit-ext", "espresso-core", "compose-ui-test-junit4"]
+
