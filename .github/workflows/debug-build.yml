@@ -36,18 +36,14 @@ jobs:
           {
           echo "--- root gradle.properties ---"
           cat gradle.properties || echo "MISSING"
-          echo "--- app module dir listing ---"
-          ls -la app/ | grep -i properties || echo "no app/gradle.properties"
           echo "--- find all gradle.properties in repo ---"
           find . -iname "gradle.properties" 2>/dev/null
-          echo "--- gradle -q properties for :app ---"
-          ./gradlew -q :app:properties 2>&1 | grep -i "androidx\|useAndroidX" || echo "not found in properties output"
           } | tee /tmp/prop-debug.log
 
       - name: Build debug APK
         run: |
           set -o pipefail
-          ./gradlew assembleDevDebug --stacktrace --no-build-cache --no-configuration-cache -Pandroid.useAndroidX=true -Pandroid.enableJetifier=false 2>&1 | tee /tmp/gradle-output.log
+          ./gradlew assembleDevDebug --stacktrace --no-daemon -Pandroid.useAndroidX=true -Pandroid.enableJetifier=false 2>&1 | tee /tmp/gradle-output.log
 
       - name: Find built APKs
         if: always()
