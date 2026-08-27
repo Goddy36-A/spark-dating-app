@@ -1,173 +1,93 @@
-> Task :core:auth:parseDebugLocalResources
-> Task :core:database:generateDebugRFile
-> Task :core:network:compileDebugLibraryResources FROM-CACHE
-> Task :core:network:parseDebugLocalResources FROM-CACHE
-> Task :core:auth:generateDebugRFile
-> Task :core:ui:compileDebugLibraryResources FROM-CACHE
-> Task :core:network:generateDebugRFile
-> Task :core:ui:parseDebugLocalResources FROM-CACHE
-> Task :feature:auth:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:parseDebugLocalResources FROM-CACHE
-> Task :core:ui:generateDebugRFile
-> Task :feature:chat:compileDebugLibraryResources FROM-CACHE
-> Task :feature:chat:parseDebugLocalResources FROM-CACHE
-> Task :feature:auth:generateDebugRFile
-> Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
-> Task :feature:discovery:parseDebugLocalResources FROM-CACHE
-> Task :feature:chat:generateDebugRFile
-> Task :feature:matching:compileDebugLibraryResources FROM-CACHE
-> Task :feature:matching:parseDebugLocalResources FROM-CACHE
-> Task :feature:discovery:generateDebugRFile
-> Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
-> Task :feature:notifications:parseDebugLocalResources FROM-CACHE
-> Task :feature:matching:generateDebugRFile
-> Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
-> Task :feature:notifications:generateDebugRFile
-> Task :feature:profile:compileDebugLibraryResources FROM-CACHE
-> Task :feature:profile:parseDebugLocalResources FROM-CACHE
-> Task :feature:onboarding:generateDebugRFile
-> Task :feature:safety:compileDebugLibraryResources FROM-CACHE
-> Task :feature:profile:generateDebugRFile
-> Task :feature:settings:compileDebugLibraryResources FROM-CACHE
-> Task :feature:safety:parseDebugLocalResources FROM-CACHE
-> Task :feature:settings:parseDebugLocalResources FROM-CACHE
-> Task :feature:safety:generateDebugRFile
-> Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
-> Task :feature:settings:generateDebugRFile
-> Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
-> Task :feature:subscription:generateDebugRFile
-> Task :core:auth:javaPreCompileDebug
-> Task :core:model:processResources NO-SOURCE
-> Task :core:database:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :core:network:javaPreCompileDebug
-> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :core:database:javaPreCompileDebug
-> Task :feature:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:auth:javaPreCompileDebug FROM-CACHE
-> Task :feature:chat:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:chat:javaPreCompileDebug FROM-CACHE
-> Task :feature:discovery:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:discovery:javaPreCompileDebug FROM-CACHE
-> Task :feature:matching:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:matching:javaPreCompileDebug FROM-CACHE
-> Task :feature:notifications:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:notifications:javaPreCompileDebug FROM-CACHE
-> Task :feature:onboarding:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:onboarding:javaPreCompileDebug FROM-CACHE
-> Task :feature:profile:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:profile:javaPreCompileDebug FROM-CACHE
-> Task :feature:safety:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:safety:javaPreCompileDebug FROM-CACHE
-> Task :feature:settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:settings:javaPreCompileDebug FROM-CACHE
-> Task :feature:subscription:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:subscription:javaPreCompileDebug FROM-CACHE
-> Task :core:auth:mergeDebugShaders
-> Task :core:auth:compileDebugShaders NO-SOURCE
-> Task :core:auth:generateDebugAssets UP-TO-DATE
-> Task :core:auth:packageDebugAssets
-> Task :core:database:mergeDebugShaders
-> Task :core:database:compileDebugShaders NO-SOURCE
-> Task :core:database:generateDebugAssets UP-TO-DATE
-> Task :core:database:packageDebugAssets
-> Task :core:network:mergeDebugShaders
-> Task :core:network:compileDebugShaders NO-SOURCE
-> Task :core:network:generateDebugAssets UP-TO-DATE
-> Task :core:network:packageDebugAssets
-> Task :feature:auth:mergeDebugShaders
-> Task :feature:auth:compileDebugShaders NO-SOURCE
-> Task :feature:auth:generateDebugAssets UP-TO-DATE
-> Task :feature:auth:packageDebugAssets
-> Task :feature:chat:mergeDebugShaders
-> Task :feature:chat:compileDebugShaders NO-SOURCE
-> Task :feature:chat:generateDebugAssets UP-TO-DATE
-> Task :feature:chat:packageDebugAssets
-> Task :feature:discovery:mergeDebugShaders
-> Task :feature:discovery:compileDebugShaders NO-SOURCE
-> Task :feature:discovery:generateDebugAssets UP-TO-DATE
-> Task :feature:discovery:packageDebugAssets
-> Task :feature:matching:mergeDebugShaders
-> Task :feature:matching:compileDebugShaders NO-SOURCE
-> Task :feature:matching:generateDebugAssets UP-TO-DATE
-> Task :feature:matching:packageDebugAssets
-> Task :feature:notifications:mergeDebugShaders
-> Task :feature:notifications:compileDebugShaders NO-SOURCE
-> Task :feature:notifications:generateDebugAssets UP-TO-DATE
-> Task :feature:notifications:packageDebugAssets
-> Task :feature:onboarding:mergeDebugShaders
-> Task :feature:onboarding:compileDebugShaders NO-SOURCE
-> Task :feature:onboarding:generateDebugAssets UP-TO-DATE
-> Task :feature:onboarding:packageDebugAssets
-> Task :feature:profile:mergeDebugShaders
-> Task :feature:profile:compileDebugShaders NO-SOURCE
-> Task :feature:profile:generateDebugAssets UP-TO-DATE
-> Task :feature:profile:packageDebugAssets
-> Task :feature:safety:mergeDebugShaders
-> Task :feature:safety:compileDebugShaders NO-SOURCE
-> Task :feature:safety:generateDebugAssets UP-TO-DATE
-> Task :feature:safety:packageDebugAssets
-> Task :feature:settings:mergeDebugShaders
-> Task :feature:settings:compileDebugShaders NO-SOURCE
-> Task :feature:settings:generateDebugAssets UP-TO-DATE
-> Task :feature:settings:packageDebugAssets
-> Task :feature:subscription:mergeDebugShaders
-> Task :feature:subscription:compileDebugShaders NO-SOURCE
-> Task :feature:subscription:generateDebugAssets UP-TO-DATE
-> Task :feature:subscription:packageDebugAssets
-> Task :core:auth:mergeDebugJniLibFolders
-> Task :core:auth:mergeDebugNativeLibs NO-SOURCE
-> Task :core:auth:copyDebugJniLibsProjectOnly
-> Task :core:database:mergeDebugJniLibFolders
-> Task :core:database:mergeDebugNativeLibs NO-SOURCE
-> Task :core:database:copyDebugJniLibsProjectOnly
-> Task :core:network:mergeDebugJniLibFolders
-> Task :core:network:mergeDebugNativeLibs NO-SOURCE
-> Task :core:network:copyDebugJniLibsProjectOnly
-> Task :feature:auth:mergeDebugJniLibFolders
-> Task :feature:auth:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:auth:copyDebugJniLibsProjectOnly
-> Task :feature:chat:mergeDebugJniLibFolders
-> Task :feature:chat:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:chat:copyDebugJniLibsProjectOnly
-> Task :feature:discovery:mergeDebugJniLibFolders
-> Task :feature:discovery:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:discovery:copyDebugJniLibsProjectOnly
-> Task :feature:matching:mergeDebugJniLibFolders
-> Task :feature:matching:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:matching:copyDebugJniLibsProjectOnly
-> Task :feature:notifications:mergeDebugJniLibFolders
-> Task :feature:notifications:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:notifications:copyDebugJniLibsProjectOnly
-> Task :feature:onboarding:mergeDebugJniLibFolders
-> Task :feature:onboarding:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:onboarding:copyDebugJniLibsProjectOnly
-> Task :feature:profile:mergeDebugJniLibFolders
-> Task :feature:profile:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:profile:copyDebugJniLibsProjectOnly
-> Task :feature:safety:mergeDebugJniLibFolders
-> Task :feature:safety:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:safety:copyDebugJniLibsProjectOnly
-> Task :feature:settings:mergeDebugJniLibFolders
-> Task :feature:settings:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:settings:copyDebugJniLibsProjectOnly
-> Task :feature:subscription:mergeDebugJniLibFolders
-> Task :feature:subscription:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:subscription:copyDebugJniLibsProjectOnly
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: Could not resolve all files for configuration ':core:network:debugCompileClasspath'.
+	at org.gradle.api.internal.artifacts.ResolveExceptionMapper.mapFailures(ResolveExceptionMapper.java:56)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.mapFailure(DefaultConfiguration.java:1984)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionHost.rethrowFailure(ResolutionHost.java:48)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.maybeThrowResolutionFailures(ResolutionBackedFileCollection.java:84)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.visitContents(ResolutionBackedFileCollection.java:74)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:416)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.getFiles(AbstractFileCollection.java:123)
+	at org.gradle.api.internal.file.AbstractFileCollection.iterator(AbstractFileCollection.java:164)
+	at org.gradle.api.internal.file.FilteredFileCollection.iterator(FilteredFileCollection.java:80)
+	at org.gradle.api.internal.file.AbstractFileCollection$1.visitCollection(AbstractFileCollection.java:126)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitContents(AbstractFileCollection.java:365)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.ProviderBackedFileCollection.visitChildren(ProviderBackedFileCollection.java:64)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:77)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:416)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:100)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:416)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:100)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:92)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:416)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:92)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:416)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
+	at org.gradle.api.internal.file.AbstractFileCollection.getFiles(AbstractFileCollection.java:123)
+	at org.gradle.api.internal.file.AbstractFileCollection$FileCollectionElementsFactory.create(AbstractFileCollection.java:225)
+	at org.gradle.api.internal.file.AbstractFileCollection$FileCollectionElementsFactory.create(AbstractFileCollection.java:213)
+	at org.gradle.api.internal.provider.BuildableBackedProvider.calculateOwnValue(BuildableBackedProvider.java:94)
+	at org.gradle.api.internal.provider.AbstractMinimalProvider.calculateValue(AbstractMinimalProvider.java:115)
+	at org.gradle.api.internal.provider.TransformBackedProvider.calculateOwnValue(TransformBackedProvider.java:81)
+	at org.gradle.api.internal.provider.AbstractMinimalProvider.getOrNull(AbstractMinimalProvider.java:105)
+	at org.gradle.api.internal.provider.ProviderResolutionStrategy$1.resolve(ProviderResolutionStrategy.java:27)
+	at org.gradle.util.internal.DeferredUtil.unpack(DeferredUtil.java:59)
+	at org.gradle.util.internal.DeferredUtil.unpackOrNull(DeferredUtil.java:49)
+	at org.gradle.api.internal.tasks.properties.InputParameterUtils.prepareInputParameterValue(InputParameterUtils.java:38)
+	at org.gradle.api.internal.tasks.properties.InputParameterUtils.prepareInputParameterValue(InputParameterUtils.java:30)
+	... 69 more
+Caused by: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:postgrest-kt:2.6.1.
+Required by:
+    project :core:network
 
-> Task :core:model:compileKotlin
-e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
-    1. Kotlin compile daemon is ready
+==============================================================================
 
-> Task :app:checkDevDebugAarMetadata FAILED
-> Task :core:ui:compileDebugKotlin
-
-FAILURE: Build failed with an exception.
-
+2: Task failed with an exception.
+-----------
 * What went wrong:
-Execution failed for task ':app:checkDevDebugAarMetadata'.
+Execution failed for task ':app:mapDevDebugSourceSetPaths'.
 > Could not resolve all files for configuration ':app:devDebugRuntimeClasspath'.
    > Could not find io.github.jan-tennermann:postgrest-kt:2.6.1.
      Searched in the following locations:
@@ -230,7 +150,7 @@ Execution failed for task ':app:checkDevDebugAarMetadata'.
 > Get more help at https://help.gradle.org.
 
 * Exception is:
-org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:checkDevDebugAarMetadata'.
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:mapDevDebugSourceSetPaths'.
 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:38)
 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
@@ -252,14 +172,58 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:che
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
 Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: Could not resolve all files for configuration ':app:devDebugRuntimeClasspath'.
 	at org.gradle.api.internal.artifacts.ResolveExceptionMapper.mapFailures(ResolveExceptionMapper.java:56)
 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.mapFailure(DefaultConfiguration.java:1984)
 	at org.gradle.api.internal.artifacts.configurations.ResolutionHost.rethrowFailure(ResolutionHost.java:48)
 	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.maybeThrowResolutionFailures(ResolutionBackedFileCollection.java:84)
 	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.visitContents(ResolutionBackedFileCollection.java:74)
+	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.lambda$calculateFinalizedValue$1(DefaultConfigurableFileCollection.java:391)
+	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection$UnresolvedItemsCollector.visitContents(DefaultConfigurableFileCollection.java:594)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.calculateFinalizedValue(DefaultConfigurableFileCollection.java:391)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.finalizeNow(DefaultConfigurableFileCollection.java:120)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.lambda$visitChildren$2(DefaultConfigurableFileCollection.java:415)
+	at org.gradle.api.internal.provider.ValueState.finalizeOnReadIfNeeded(ValueState.java:139)
+	at org.gradle.api.internal.file.collections.DefaultConfigurableFileCollection.visitChildren(DefaultConfigurableFileCollection.java:415)
+	at org.gradle.api.internal.file.CompositeFileCollection.visitContents(CompositeFileCollection.java:113)
 	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
 	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
 	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
@@ -304,6 +268,7 @@ Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: C
 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
@@ -338,8 +303,42 @@ Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: C
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
 Cause 1: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:postgrest-kt:2.6.1.
 Searched in the following locations:
   - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/postgrest-kt/2.6.1/postgrest-kt-2.6.1.pom
@@ -395,6 +394,7 @@ Searched in the following locations:
 Required by:
     project :app > project :core:network
 
+==============================================================================
 
-BUILD FAILED in 1m 41s
-198 actionable tasks: 125 executed, 73 from cache
+BUILD FAILED in 1m 54s
+170 actionable tasks: 97 executed, 73 from cache
