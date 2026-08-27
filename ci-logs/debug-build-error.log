@@ -1,59 +1,228 @@
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.foundation:foundation-layout-android:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.loader:loader:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.dagger:hilt-android:2.52 -> androidx.fragment:fragment:1.5.1 -> androidx.viewpager:viewpager:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.dagger:hilt-android:2.52 -> androidx.fragment:fragment:1.5.1 -> androidx.viewpager:viewpager:1.0.0 -> androidx.customview:customview:1.0.0
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.core:core:1.15.0 -> androidx.versionedparcelable:versionedparcelable:1.1.1
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-ripple:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-ripple-android:1.7.6
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.room:room-common:2.6.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-ktx:2.6.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite:2.4.0
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite-framework:2.4.0
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1
-  :app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1
-  :app:devDebugRuntimeClasspath -> androidx.compose.material3:material3:1.3.1
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material3:material3-android:1.3.1
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-core:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-core-android:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose.material:material-icons-extended:1.7.6
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-extended-android:1.7.6
-  :app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1
-  :app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable:1.1.0
-  :app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable-animated:1.1.0
-  :app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.exifinterface:exifinterface:1.3.7
-  :app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4
-  :app:devDebugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.hilt:hilt-common:1.2.0
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0
-  :app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.concurrent:concurrent-futures-ktx:1.1.0
-  :app:devDebugRuntimeClasspath -> androidx.work:work-runtime-ktx:2.10.0
-  :app:devDebugRuntimeClasspath -> androidx.core:core-splashscreen:1.0.1
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.documentfile:documentfile:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.print:print:1.0.0
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> com.google.android.gms:play-services-measurement-impl:22.1.2 -> androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05
-  :app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> com.google.android.gms:play-services-measurement-impl:22.1.2 -> androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05
+> Task :core:auth:parseDebugLocalResources
+> Task :core:database:generateDebugRFile
+> Task :core:network:compileDebugLibraryResources FROM-CACHE
+> Task :core:network:parseDebugLocalResources FROM-CACHE
+> Task :core:auth:generateDebugRFile
+> Task :core:ui:compileDebugLibraryResources FROM-CACHE
+> Task :core:network:generateDebugRFile
+> Task :core:ui:parseDebugLocalResources FROM-CACHE
+> Task :feature:auth:compileDebugLibraryResources FROM-CACHE
+> Task :feature:auth:parseDebugLocalResources FROM-CACHE
+> Task :core:ui:generateDebugRFile
+> Task :feature:chat:compileDebugLibraryResources FROM-CACHE
+> Task :feature:chat:parseDebugLocalResources FROM-CACHE
+> Task :feature:auth:generateDebugRFile
+> Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
+> Task :feature:discovery:parseDebugLocalResources FROM-CACHE
+> Task :feature:chat:generateDebugRFile
+> Task :feature:matching:compileDebugLibraryResources FROM-CACHE
+> Task :feature:matching:parseDebugLocalResources FROM-CACHE
+> Task :feature:discovery:generateDebugRFile
+> Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
+> Task :feature:notifications:parseDebugLocalResources FROM-CACHE
+> Task :feature:matching:generateDebugRFile
+> Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
+> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
+> Task :feature:notifications:generateDebugRFile
+> Task :feature:profile:compileDebugLibraryResources FROM-CACHE
+> Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
+> Task :feature:safety:compileDebugLibraryResources FROM-CACHE
+> Task :feature:profile:generateDebugRFile
+> Task :feature:settings:compileDebugLibraryResources FROM-CACHE
+> Task :feature:safety:parseDebugLocalResources FROM-CACHE
+> Task :feature:settings:parseDebugLocalResources FROM-CACHE
+> Task :feature:safety:generateDebugRFile
+> Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
+> Task :feature:settings:generateDebugRFile
+> Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
+> Task :feature:subscription:generateDebugRFile
+> Task :core:auth:javaPreCompileDebug
+> Task :core:model:processResources NO-SOURCE
+> Task :core:database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:network:javaPreCompileDebug
+> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:database:javaPreCompileDebug
+> Task :feature:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:auth:javaPreCompileDebug FROM-CACHE
+> Task :feature:chat:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:chat:javaPreCompileDebug FROM-CACHE
+> Task :feature:discovery:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:discovery:javaPreCompileDebug FROM-CACHE
+> Task :feature:matching:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:matching:javaPreCompileDebug FROM-CACHE
+> Task :feature:notifications:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:notifications:javaPreCompileDebug FROM-CACHE
+> Task :feature:onboarding:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:onboarding:javaPreCompileDebug FROM-CACHE
+> Task :feature:profile:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:profile:javaPreCompileDebug FROM-CACHE
+> Task :feature:safety:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:safety:javaPreCompileDebug FROM-CACHE
+> Task :feature:settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:settings:javaPreCompileDebug FROM-CACHE
+> Task :feature:subscription:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:subscription:javaPreCompileDebug FROM-CACHE
+> Task :core:auth:mergeDebugShaders
+> Task :core:auth:compileDebugShaders NO-SOURCE
+> Task :core:auth:generateDebugAssets UP-TO-DATE
+> Task :core:auth:packageDebugAssets
+> Task :core:database:mergeDebugShaders
+> Task :core:database:compileDebugShaders NO-SOURCE
+> Task :core:database:generateDebugAssets UP-TO-DATE
+> Task :core:database:packageDebugAssets
+> Task :core:network:mergeDebugShaders
+> Task :core:network:compileDebugShaders NO-SOURCE
+> Task :core:network:generateDebugAssets UP-TO-DATE
+> Task :core:network:packageDebugAssets
+> Task :feature:auth:mergeDebugShaders
+> Task :feature:auth:compileDebugShaders NO-SOURCE
+> Task :feature:auth:generateDebugAssets UP-TO-DATE
+> Task :feature:auth:packageDebugAssets
+> Task :feature:chat:mergeDebugShaders
+> Task :feature:chat:compileDebugShaders NO-SOURCE
+> Task :feature:chat:generateDebugAssets UP-TO-DATE
+> Task :feature:chat:packageDebugAssets
+> Task :feature:discovery:mergeDebugShaders
+> Task :feature:discovery:compileDebugShaders NO-SOURCE
+> Task :feature:discovery:generateDebugAssets UP-TO-DATE
+> Task :feature:discovery:packageDebugAssets
+> Task :feature:matching:mergeDebugShaders
+> Task :feature:matching:compileDebugShaders NO-SOURCE
+> Task :feature:matching:generateDebugAssets UP-TO-DATE
+> Task :feature:matching:packageDebugAssets
+> Task :feature:notifications:mergeDebugShaders
+> Task :feature:notifications:compileDebugShaders NO-SOURCE
+> Task :feature:notifications:generateDebugAssets UP-TO-DATE
+> Task :feature:notifications:packageDebugAssets
+> Task :feature:onboarding:mergeDebugShaders
+> Task :feature:onboarding:compileDebugShaders NO-SOURCE
+> Task :feature:onboarding:generateDebugAssets UP-TO-DATE
+> Task :feature:onboarding:packageDebugAssets
+> Task :feature:profile:mergeDebugShaders
+> Task :feature:profile:compileDebugShaders NO-SOURCE
+> Task :feature:profile:generateDebugAssets UP-TO-DATE
+> Task :feature:profile:packageDebugAssets
+> Task :feature:safety:mergeDebugShaders
+> Task :feature:safety:compileDebugShaders NO-SOURCE
+> Task :feature:safety:generateDebugAssets UP-TO-DATE
+> Task :feature:safety:packageDebugAssets
+> Task :feature:settings:mergeDebugShaders
+> Task :feature:settings:compileDebugShaders NO-SOURCE
+> Task :feature:settings:generateDebugAssets UP-TO-DATE
+> Task :feature:settings:packageDebugAssets
+> Task :feature:subscription:mergeDebugShaders
+> Task :feature:subscription:compileDebugShaders NO-SOURCE
+> Task :feature:subscription:generateDebugAssets UP-TO-DATE
+> Task :feature:subscription:packageDebugAssets
+> Task :core:auth:mergeDebugJniLibFolders
+> Task :core:auth:mergeDebugNativeLibs NO-SOURCE
+> Task :core:auth:copyDebugJniLibsProjectOnly
+> Task :core:database:mergeDebugJniLibFolders
+> Task :core:database:mergeDebugNativeLibs NO-SOURCE
+> Task :core:database:copyDebugJniLibsProjectOnly
+> Task :core:network:mergeDebugJniLibFolders
+> Task :core:network:mergeDebugNativeLibs NO-SOURCE
+> Task :core:network:copyDebugJniLibsProjectOnly
+> Task :feature:auth:mergeDebugJniLibFolders
+> Task :feature:auth:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:auth:copyDebugJniLibsProjectOnly
+> Task :feature:chat:mergeDebugJniLibFolders
+> Task :feature:chat:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:chat:copyDebugJniLibsProjectOnly
+> Task :feature:discovery:mergeDebugJniLibFolders
+> Task :feature:discovery:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:discovery:copyDebugJniLibsProjectOnly
+> Task :feature:matching:mergeDebugJniLibFolders
+> Task :feature:matching:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:matching:copyDebugJniLibsProjectOnly
+> Task :feature:notifications:mergeDebugJniLibFolders
+> Task :feature:notifications:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:notifications:copyDebugJniLibsProjectOnly
+> Task :feature:onboarding:mergeDebugJniLibFolders
+> Task :feature:onboarding:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:onboarding:copyDebugJniLibsProjectOnly
+> Task :feature:profile:mergeDebugJniLibFolders
+> Task :feature:profile:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:profile:copyDebugJniLibsProjectOnly
+> Task :feature:safety:mergeDebugJniLibFolders
+> Task :feature:safety:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:safety:copyDebugJniLibsProjectOnly
+> Task :feature:settings:mergeDebugJniLibFolders
+> Task :feature:settings:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:settings:copyDebugJniLibsProjectOnly
+> Task :feature:subscription:mergeDebugJniLibFolders
+> Task :feature:subscription:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:subscription:copyDebugJniLibsProjectOnly
+
+> Task :core:model:compileKotlin
+e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
+    1. Kotlin compile daemon is ready
+
+> Task :app:checkDevDebugAarMetadata FAILED
+> Task :core:ui:compileDebugKotlin
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:checkDevDebugAarMetadata'.
+> Could not resolve all files for configuration ':app:devDebugRuntimeClasspath'.
+   > Could not find io.github.jan-tennermann:postgrest-kt:2.6.1.
+     Searched in the following locations:
+       - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/postgrest-kt/2.6.1/postgrest-kt-2.6.1.pom
+       - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/postgrest-kt/2.6.1/postgrest-kt-2.6.1.pom
+     Required by:
+         project :app > project :core:network
+         project :app > project :core:auth
+         project :app > project :feature:profile
+         project :app > project :feature:discovery
+         project :app > project :feature:matching
+         project :app > project :feature:chat
+         project :app > project :feature:notifications
+         project :app > project :feature:settings
+         project :app > project :feature:subscription
+         project :app > project :feature:safety
+   > Could not find io.github.jan-tennermann:auth-kt:2.6.1.
+     Searched in the following locations:
+       - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/auth-kt/2.6.1/auth-kt-2.6.1.pom
+       - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/auth-kt/2.6.1/auth-kt-2.6.1.pom
+     Required by:
+         project :app > project :core:network
+         project :app > project :core:auth
+   > Could not find io.github.jan-tennermann:realtime-kt:2.6.1.
+     Searched in the following locations:
+       - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/realtime-kt/2.6.1/realtime-kt-2.6.1.pom
+       - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/realtime-kt/2.6.1/realtime-kt-2.6.1.pom
+     Required by:
+         project :app > project :core:network
+         project :app > project :feature:profile
+         project :app > project :feature:discovery
+         project :app > project :feature:matching
+         project :app > project :feature:chat
+         project :app > project :feature:settings
+         project :app > project :feature:subscription
+         project :app > project :feature:safety
+   > Could not find io.github.jan-tennermann:storage-kt:2.6.1.
+     Searched in the following locations:
+       - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/storage-kt/2.6.1/storage-kt-2.6.1.pom
+       - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/storage-kt/2.6.1/storage-kt-2.6.1.pom
+     Required by:
+         project :app > project :core:network
+         project :app > project :feature:profile
+         project :app > project :feature:discovery
+         project :app > project :feature:matching
+         project :app > project :feature:chat
+         project :app > project :feature:settings
+         project :app > project :feature:subscription
+         project :app > project :feature:safety
+   > Could not find io.github.jan-tennermann:functions-kt:2.6.1.
+     Searched in the following locations:
+       - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/functions-kt/2.6.1/functions-kt-2.6.1.pom
+       - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/functions-kt/2.6.1/functions-kt-2.6.1.pom
+     Required by:
+         project :app > project :core:network
 
 * Try:
 > Run with --info or --debug option to get more log output.
@@ -83,208 +252,14 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:che
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
-	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
-	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
-	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
-	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
-	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
-	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
-Caused by: com.android.builder.errors.EvalIssueException: Configuration `:app:devDebugRuntimeClasspath` contains AndroidX dependencies, but the `android.useAndroidX` property is not enabled, which may cause runtime issues.
-Set `android.useAndroidX=true` in the `gradle.properties` file and retry.
-The following AndroidX dependencies are detected:
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-tooling:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-tooling-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.activity:activity-compose:1.9.3
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.activity:activity-ktx:1.9.3
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-test-manifest:1.7.6 -> androidx.activity:activity:1.9.3
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.annotation:annotation:1.8.1
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.annotation:annotation:1.8.1 -> androidx.annotation:annotation-jvm:1.8.1
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.collection:collection:1.4.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.collection:collection:1.4.4 -> androidx.collection:collection-jvm:1.4.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.collection:collection-ktx:1.4.4
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.core:core:1.15.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.annotation:annotation-experimental:1.4.1
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-common:21.0.0 -> androidx.concurrent:concurrent-futures:1.1.0
-:app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable-animated:1.1.0 -> androidx.interpolator:interpolator:1.0.0
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.lifecycle:lifecycle-runtime:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.lifecycle:lifecycle-runtime:2.8.7 -> androidx.lifecycle:lifecycle-runtime-android:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.savedstate:savedstate:1.2.1 -> androidx.arch.core:core-common:2.2.0
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.arch.core:core-runtime:2.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-common:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-common:2.8.7 -> androidx.lifecycle:lifecycle-common-jvm:2.8.7
-:app:devDebugRuntimeClasspath -> com.google.dagger:hilt-android:2.52 -> androidx.fragment:fragment:1.5.1
-:app:devDebugRuntimeClasspath -> androidx.core:core-ktx:1.15.0
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-livedata-core:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material3:material3-android:1.3.1 -> androidx.lifecycle:lifecycle-common-java8:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.lifecycle:lifecycle-livedata:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7 -> androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.emoji2:emoji2:1.3.0 -> androidx.lifecycle:lifecycle-process:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.startup:startup-runtime:1.1.1
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-test-manifest:1.7.6 -> androidx.activity:activity:1.9.3 -> androidx.tracing:tracing:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.tracing:tracing-ktx:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-compose:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-compose:2.8.7 -> androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose.runtime:runtime:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.runtime:runtime-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.compose.runtime:runtime-saveable:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.runtime:runtime-saveable-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.8.7 -> androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.lifecycle:lifecycle-viewmodel:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.lifecycle:lifecycle-viewmodel:2.8.7 -> androidx.lifecycle:lifecycle-viewmodel-android:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.lifecycle:lifecycle-service:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7 -> androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-android:1.7.6 -> androidx.autofill:autofill:1.0.0
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-geometry:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-geometry-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-util:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-util-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-graphics:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-graphics-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-unit:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-unit-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-test-manifest:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose.ui:ui-tooling-preview:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-tooling-preview-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.emoji2:emoji2:1.3.0
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-tooling-data:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-tooling-data-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-graphics-android:1.7.6 -> androidx.graphics:graphics-path:1.0.1
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-android:1.7.6 -> androidx.customview:customview-poolingcontainer:1.0.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.profileinstaller:profileinstaller:1.3.1
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.savedstate:savedstate-ktx:1.2.1
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6 -> androidx.savedstate:savedstate:1.2.1
-:app:devDebugRuntimeClasspath -> androidx.compose.foundation:foundation:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.foundation:foundation-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose.animation:animation:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.animation:animation-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.animation:animation-core:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.animation:animation-core-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4 -> androidx.compose.foundation:foundation-layout:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.foundation:foundation-layout-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.loader:loader:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.dagger:hilt-android:2.52 -> androidx.fragment:fragment:1.5.1 -> androidx.viewpager:viewpager:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.dagger:hilt-android:2.52 -> androidx.fragment:fragment:1.5.1 -> androidx.viewpager:viewpager:1.0.0 -> androidx.customview:customview:1.0.0
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.ui:ui-text-android:1.7.6 -> androidx.core:core:1.15.0 -> androidx.versionedparcelable:versionedparcelable:1.1.1
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-ripple:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-ripple-android:1.7.6
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.room:room-common:2.6.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-ktx:2.6.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite:2.4.0
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.room:room-runtime:2.6.1 -> androidx.sqlite:sqlite-framework:2.4.0
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1
-:app:devDebugRuntimeClasspath -> project :core:database -> androidx.datastore:datastore-preferences:1.1.1 -> androidx.datastore:datastore-preferences-android:1.1.1 -> androidx.datastore:datastore:1.1.1 -> androidx.datastore:datastore-android:1.1.1 -> androidx.datastore:datastore-core:1.1.1 -> androidx.datastore:datastore-core-android:1.1.1 -> androidx.datastore:datastore-core-okio:1.1.1 -> androidx.datastore:datastore-core-okio-jvm:1.1.1 -> androidx.datastore:datastore-preferences-core:1.1.1 -> androidx.datastore:datastore-preferences-core-jvm:1.1.1
-:app:devDebugRuntimeClasspath -> androidx.compose.material3:material3:1.3.1
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material3:material3-android:1.3.1
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-core:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-core-android:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose.material:material-icons-extended:1.7.6
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01 -> androidx.compose.material:material-icons-extended-android:1.7.6
-:app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1
-:app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable:1.1.0
-:app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable-animated:1.1.0
-:app:devDebugRuntimeClasspath -> project :feature:onboarding -> io.coil-kt:coil-compose:2.7.0 -> io.coil-kt:coil-compose-base:2.7.0 -> io.coil-kt:coil-base:2.7.0 -> androidx.exifinterface:exifinterface:1.3.7
-:app:devDebugRuntimeClasspath -> androidx.compose:compose-bom:2024.12.01
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-common-ktx:2.8.4
-:app:devDebugRuntimeClasspath -> androidx.navigation:navigation-compose:2.8.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-navigation-compose:1.2.0 -> androidx.hilt:hilt-navigation:1.2.0 -> androidx.navigation:navigation-runtime:2.8.4 -> androidx.navigation:navigation-common:2.8.4 -> androidx.navigation:navigation-runtime-ktx:2.8.4
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.hilt:hilt-common:1.2.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0
-:app:devDebugRuntimeClasspath -> androidx.hilt:hilt-work:1.2.0 -> androidx.work:work-runtime:2.10.0 -> androidx.concurrent:concurrent-futures-ktx:1.1.0
-:app:devDebugRuntimeClasspath -> androidx.work:work-runtime-ktx:2.10.0
-:app:devDebugRuntimeClasspath -> androidx.core:core-splashscreen:1.0.1
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.documentfile:documentfile:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.print:print:1.0.0
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> com.google.android.gms:play-services-measurement-impl:22.1.2 -> androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05
-:app:devDebugRuntimeClasspath -> com.google.firebase:firebase-bom:33.7.0 -> com.google.firebase:firebase-analytics:22.1.2 -> com.google.android.gms:play-services-measurement:22.1.2 -> com.google.android.gms:play-services-measurement-impl:22.1.2 -> androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05
-	at com.android.builder.errors.IssueReporter.reportError(IssueReporter.kt:118)
-	at com.android.builder.errors.IssueReporter.reportError$default(IssueReporter.kt:114)
-	at com.android.build.gradle.internal.dependency.AndroidXDependencyCheck$AndroidXDisabledJetifierDisabled.execute(AndroidXDependencyCheck.kt:72)
-	at com.android.build.gradle.internal.dependency.AndroidXDependencyCheck$AndroidXDisabledJetifierDisabled.execute(AndroidXDependencyCheck.kt:40)
-	at org.gradle.internal.code.DefaultUserCodeApplicationContext$CurrentApplication$1.execute(DefaultUserCodeApplicationContext.java:124)
-	at org.gradle.internal.event.BroadcastDispatch$ActionInvocationHandler.dispatch(BroadcastDispatch.java:99)
-	at org.gradle.internal.event.BroadcastDispatch$ActionInvocationHandler.dispatch(BroadcastDispatch.java:87)
-	at org.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispatch.java:44)
-	at org.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDispatch.java:268)
-	at org.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDispatch.java:170)
-	at org.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispatch.java:84)
-	at org.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispatch.java:70)
-	at org.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDispatch.java:380)
-	at org.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDispatch.java:272)
-	at org.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:153)
-	at org.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:38)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
-	at jdk.proxy1/jdk.proxy1.$Proxy64.afterResolve(Unknown Source)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$1.call(DefaultConfiguration.java:800)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$1.call(DefaultConfiguration.java:777)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveGraphInBuildOperation(DefaultConfiguration.java:777)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.lambda$resolveExclusivelyIfRequired$5(DefaultConfiguration.java:769)
-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$CalculatedModelValueImpl.update(DefaultProjectStateRegistry.java:509)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveExclusivelyIfRequired(DefaultConfiguration.java:764)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveGraphIfRequired(DefaultConfiguration.java:757)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.access$1200(DefaultConfiguration.java:159)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ResolverResultsResolutionResultProvider.getValue(DefaultConfiguration.java:731)
-	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ResolverResultsResolutionResultProvider.getValue(DefaultConfiguration.java:692)
-	at org.gradle.api.internal.artifacts.configurations.ResolutionResultProvider$1.getValue(ResolutionResultProvider.java:53)
-	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.getSelectedArtifacts(ResolutionBackedFileCollection.java:95)
-	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.visitContents(ResolutionBackedFileCollection.java:73)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: Could not resolve all files for configuration ':app:devDebugRuntimeClasspath'.
+	at org.gradle.api.internal.artifacts.ResolveExceptionMapper.mapFailures(ResolveExceptionMapper.java:56)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.mapFailure(DefaultConfiguration.java:1984)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionHost.rethrowFailure(ResolutionHost.java:48)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.maybeThrowResolutionFailures(ResolutionBackedFileCollection.java:84)
+	at org.gradle.api.internal.artifacts.configurations.ResolutionBackedFileCollection.visitContents(ResolutionBackedFileCollection.java:74)
 	at org.gradle.api.internal.file.AbstractFileCollection.visitStructure(AbstractFileCollection.java:360)
 	at org.gradle.api.internal.file.CompositeFileCollection.lambda$visitContents$0(CompositeFileCollection.java:113)
 	at org.gradle.api.internal.file.collections.UnpackingVisitor.add(UnpackingVisitor.java:67)
@@ -363,38 +338,63 @@ The following AndroidX dependencies are detected:
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
-	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
-	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
-	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
-	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
-	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
-	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
-	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
-	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
-	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
-	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
-	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
-	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Cause 1: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:postgrest-kt:2.6.1.
+Searched in the following locations:
+  - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/postgrest-kt/2.6.1/postgrest-kt-2.6.1.pom
+  - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/postgrest-kt/2.6.1/postgrest-kt-2.6.1.pom
+Required by:
+    project :app > project :core:network
+    project :app > project :core:auth
+    project :app > project :feature:profile
+    project :app > project :feature:discovery
+    project :app > project :feature:matching
+    project :app > project :feature:chat
+    project :app > project :feature:notifications
+    project :app > project :feature:settings
+    project :app > project :feature:subscription
+    project :app > project :feature:safety
+Cause 2: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:auth-kt:2.6.1.
+Searched in the following locations:
+  - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/auth-kt/2.6.1/auth-kt-2.6.1.pom
+  - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/auth-kt/2.6.1/auth-kt-2.6.1.pom
+Required by:
+    project :app > project :core:network
+    project :app > project :core:auth
+Cause 3: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:realtime-kt:2.6.1.
+Searched in the following locations:
+  - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/realtime-kt/2.6.1/realtime-kt-2.6.1.pom
+  - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/realtime-kt/2.6.1/realtime-kt-2.6.1.pom
+Required by:
+    project :app > project :core:network
+    project :app > project :feature:profile
+    project :app > project :feature:discovery
+    project :app > project :feature:matching
+    project :app > project :feature:chat
+    project :app > project :feature:settings
+    project :app > project :feature:subscription
+    project :app > project :feature:safety
+Cause 4: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:storage-kt:2.6.1.
+Searched in the following locations:
+  - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/storage-kt/2.6.1/storage-kt-2.6.1.pom
+  - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/storage-kt/2.6.1/storage-kt-2.6.1.pom
+Required by:
+    project :app > project :core:network
+    project :app > project :feature:profile
+    project :app > project :feature:discovery
+    project :app > project :feature:matching
+    project :app > project :feature:chat
+    project :app > project :feature:settings
+    project :app > project :feature:subscription
+    project :app > project :feature:safety
+Cause 5: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find io.github.jan-tennermann:functions-kt:2.6.1.
+Searched in the following locations:
+  - https://dl.google.com/dl/android/maven2/io/github/jan-tennermann/functions-kt/2.6.1/functions-kt-2.6.1.pom
+  - https://repo.maven.apache.org/maven2/io/github/jan-tennermann/functions-kt/2.6.1/functions-kt-2.6.1.pom
+Required by:
+    project :app > project :core:network
 
 
-BUILD FAILED in 40s
-18 actionable tasks: 18 executed
+BUILD FAILED in 1m 41s
+198 actionable tasks: 125 executed, 73 from cache
