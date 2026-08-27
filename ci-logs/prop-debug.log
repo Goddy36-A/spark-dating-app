@@ -9,9 +9,8 @@ android.nonTransitiveRClass=true
 android.nonFinalResIds=false
 
 kotlin.code.style=official
---- app module dir listing ---
-no app/gradle.properties
 --- find all gradle.properties in repo ---
 ./gradle.properties
---- gradle -q properties for :app ---
-android.useAndroidX: true
+--- GRADLE_USER_HOME gradle.properties ---
+GRADLE_USER_HOME=
+no ~/.gradle/gradle.properties
