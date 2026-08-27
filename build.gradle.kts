@@ -14,6 +14,14 @@ plugins {
     alias(libs.plugins.ktlint)               apply false
 }
 
+// Force AndroidX flags at the project-extension level as a safeguard,
+// in case gradle.properties / -P command-line properties aren't being
+// picked up by this AGP version's dependency check.
+allprojects {
+    extra.set("android.useAndroidX", true)
+    extra.set("android.enableJetifier", false)
+}
+
 // Detekt for all subprojects
 subprojects {
     apply(plugin = "io.gitlab.arturbosch.detekt")
