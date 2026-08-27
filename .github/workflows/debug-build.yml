@@ -32,6 +32,19 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      - name: Debug property resolution
+        run: |
+          {
+          echo "--- root gradle.properties ---"
+          cat gradle.properties || echo "MISSING"
+          echo "--- app module dir listing ---"
+          ls -la app/ | grep -i properties || echo "no app/gradle.properties"
+          echo "--- find all gradle.properties in repo ---"
+          find . -iname "gradle.properties" 2>/dev/null
+          echo "--- gradle -q properties for :app ---"
+          ./gradlew -q :app:properties 2>&1 | grep -i "androidx\|useAndroidX" || echo "not found in properties output"
+          } | tee /tmp/prop-debug.log
+
       - name: Build debug APK
         run: |
           set -o pipefail
@@ -63,9 +76,15 @@ jobs:
           tail -n 400 /tmp/gradle-output.log > /tmp/debug-build-error.log 2>/dev/null || echo "no gradle log" > /tmp/debug-build-error.log
           FILE_B64=$(base64 -w 0 /tmp/find-apk.log)
           LOG_B64=$(base64 -w 0 /tmp/debug-build-error.log)
+          PROP_B64=$(base64 -w 0 /tmp/prop-debug.log 2>/dev/null || echo "")
           curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/find-apk.log" \
             -d "{\"message\":\"ci: find-apk diagnostics [skip ci]\",\"content\":\"$FILE_B64\",\"branch\":\"main\"}"
           curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/debug-build-error.log" \
             -d "{\"message\":\"ci: build error diagnostics [skip ci]\",\"content\":\"$LOG_B64\",\"branch\":\"main\"}"
+          if [ -n "$PROP_B64" ]; then
+            curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/prop-debug.log" \
+              -d "{\"message\":\"ci: property debug [skip ci]\",\"content\":\"$PROP_B64\",\"branch\":\"main\"}"
+          fi
