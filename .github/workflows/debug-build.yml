@@ -35,7 +35,7 @@ jobs:
       - name: Build debug APK
         run: |
           set -o pipefail
-          ./gradlew assembleDevDebug --stacktrace 2>&1 | tee /tmp/gradle-output.log
+          ./gradlew assembleDevDebug --stacktrace -Pandroid.useAndroidX=true -Pandroid.enableJetifier=false 2>&1 | tee /tmp/gradle-output.log
 
       - name: Find built APKs
         if: always()
