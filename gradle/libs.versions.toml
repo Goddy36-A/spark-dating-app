@@ -82,6 +82,7 @@ coroutines-test                     = { group = "org.jetbrains.kotlinx", name = 
 serialization-json                  = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 
 # Supabase
+supabase-core                       = { group = "io.github.jan-tennert.supabase", name = "supabase-kt", version.ref = "supabase" }
 supabase-postgrest                  = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt", version.ref = "supabase" }
 supabase-auth                       = { group = "io.github.jan-tennert.supabase", name = "gotrue-kt", version.ref = "supabase" }
 supabase-realtime                   = { group = "io.github.jan-tennert.supabase", name = "realtime-kt", version.ref = "supabase" }
@@ -141,7 +142,7 @@ ktlint                              = { id = "org.jlleitschuh.gradle.ktlint", ve
 [bundles]
 compose                             = ["compose-ui", "compose-ui-graphics", "compose-ui-tooling-preview", "compose-material3", "compose-material-icons", "compose-animation", "compose-foundation", "compose-runtime", "activity-compose"]
 lifecycle                           = ["lifecycle-viewmodel-compose", "lifecycle-runtime-compose", "lifecycle-runtime-ktx"]
-supabase                            = ["supabase-postgrest", "supabase-auth", "supabase-realtime", "supabase-storage", "supabase-functions"]
+supabase                            = ["supabase-core", "supabase-postgrest", "supabase-auth", "supabase-realtime", "supabase-storage", "supabase-functions"]
 testing-unit                        = ["junit", "mockk", "truth", "turbine", "coroutines-test", "arch-testing"]
 testing-android                     = ["junit-ext", "espresso-core", "compose-ui-test-junit4"]
 
