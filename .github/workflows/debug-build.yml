@@ -38,6 +38,10 @@ jobs:
           cat gradle.properties || echo "MISSING"
           echo "--- find all gradle.properties in repo ---"
           find . -iname "gradle.properties" 2>/dev/null
+          echo "--- GRADLE_USER_HOME gradle.properties ---"
+          echo "GRADLE_USER_HOME=$GRADLE_USER_HOME"
+          cat "$HOME/.gradle/gradle.properties" 2>/dev/null || echo "no ~/.gradle/gradle.properties"
+          find / -maxdepth 6 -iname "gradle.properties" 2>/dev/null | grep -v "^/home/runner/work"
           } | tee /tmp/prop-debug.log
 
       - name: Build debug APK
