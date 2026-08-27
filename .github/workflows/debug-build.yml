@@ -71,19 +71,32 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           tail -n 400 /tmp/gradle-output.log > /tmp/debug-build-error.log 2>/dev/null || echo "no gradle log" > /tmp/debug-build-error.log
-          FILE_B64=$(base64 -w 0 /tmp/find-apk.log)
-          LOG_B64=$(base64 -w 0 /tmp/debug-build-error.log)
-          PROP_B64=$(base64 -w 0 /tmp/prop-debug.log 2>/dev/null || echo "")
-          curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/find-apk.log" \
-            -d "{\"message\":\"ci: find-apk diagnostics [skip ci]\",\"content\":\"$FILE_B64\",\"branch\":\"main\"}"
-          curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/debug-build-error.log" \
-            -d "{\"message\":\"ci: build error diagnostics [skip ci]\",\"content\":\"$LOG_B64\",\"branch\":\"main\"}"
-          if [ -n "$PROP_B64" ]; then
-            curl -s -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${{ github.repository }}/contents/ci-logs/prop-debug.log" \
-              -d "{\"message\":\"ci: property debug [skip ci]\",\"content\":\"$PROP_B64\",\"branch\":\"main\"}"
+
+          push_file() {
+            local_path="$1"
+            remote_path="$2"
+            content_b64=$(base64 -w 0 "$local_path")
+            existing_sha=$(curl -s -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/contents/$remote_path?ref=main" | python3 -c "import json,sys
+try:
+    print(json.load(sys.stdin).get('sha',''))
+except Exception:
+    print('')")
+            if [ -n "$existing_sha" ]; then
+              body=$(python3 -c "import json; print(json.dumps({'message':'ci: update $remote_path [skip ci]','content':'''$content_b64''','branch':'main','sha':'''$existing_sha'''}))")
+            else
+              body=$(python3 -c "import json; print(json.dumps({'message':'ci: add $remote_path [skip ci]','content':'''$content_b64''','branch':'main'}))")
+            fi
+            resp=$(curl -s -w "|HTTPSTATUS:%{http_code}" -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/contents/$remote_path" -d "$body")
+            echo "PUSH RESULT for $remote_path: $resp" | tail -c 500
+          }
+
+          push_file /tmp/find-apk.log ci-logs/find-apk.log
+          push_file /tmp/debug-build-error.log ci-logs/debug-build-error.log
+          if [ -f /tmp/prop-debug.log ]; then
+            push_file /tmp/prop-debug.log ci-logs/prop-debug.log
           fi
