@@ -33,7 +33,9 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build debug APK
-        run: ./gradlew assembleDevDebug --stacktrace 2>&1 | tee /tmp/gradle-output.log
+        run: |
+          set -o pipefail
+          ./gradlew assembleDevDebug --stacktrace 2>&1 | tee /tmp/gradle-output.log
 
       - name: Find built APKs
         if: always()
