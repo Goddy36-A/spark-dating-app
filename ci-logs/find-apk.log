@@ -2,3 +2,4 @@
 === app/build/outputs tree ===
 app/build/outputs
 app/build/outputs/logs
+app/build/outputs/logs/manifest-merger-dev-debug-report.txt
