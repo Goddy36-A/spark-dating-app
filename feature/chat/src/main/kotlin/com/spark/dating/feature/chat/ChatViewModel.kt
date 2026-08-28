@@ -14,6 +14,8 @@ import io.github.jan.supabase.realtime.channel
 import io.github.jan.supabase.realtime.postgresChangeFlow
 import io.github.jan.supabase.realtime.PostgresAction
 import io.github.jan.supabase.realtime.RealtimeChannel
+import io.github.jan.supabase.realtime.FilterOperation
+import io.github.jan.supabase.realtime.FilterOperator
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -175,7 +177,7 @@ class ChatViewModel @Inject constructor(
                 // Listen for new messages in this conversation
                 channel!!.postgresChangeFlow<PostgresAction.Insert>(schema = "public") {
                     table = "messages"
-                    filter = "conversation_id=eq.$conversationId"
+                    filter(FilterOperation("conversation_id", FilterOperator.EQ, conversationId))
                 }.onEach { change ->
                     // Decode the new message and append it
                     val newMessage = try {
@@ -212,3 +214,4 @@ class ChatViewModel @Inject constructor(
         }
     }
 }
+
