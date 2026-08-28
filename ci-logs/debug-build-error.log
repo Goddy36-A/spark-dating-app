@@ -1,3 +1,7 @@
+> Task :feature:auth:writeDebugAarMetadata
+> Task :feature:chat:preBuild UP-TO-DATE
+> Task :feature:chat:preDebugBuild UP-TO-DATE
+> Task :feature:chat:writeDebugAarMetadata
 > Task :feature:discovery:preBuild UP-TO-DATE
 > Task :feature:discovery:preDebugBuild UP-TO-DATE
 > Task :feature:discovery:writeDebugAarMetadata
@@ -22,14 +26,10 @@
 > Task :feature:subscription:preBuild UP-TO-DATE
 > Task :feature:subscription:preDebugBuild UP-TO-DATE
 > Task :feature:subscription:writeDebugAarMetadata
-
 > Task :core:model:compileKotlin
-e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
-    1. Kotlin compile daemon is ready
-
-> Task :app:checkDevDebugAarMetadata
 > Task :core:model:compileJava NO-SOURCE
 > Task :core:model:classes UP-TO-DATE
+> Task :app:checkDevDebugAarMetadata
 > Task :core:model:jar
 > Task :app:generateDevDebugResValues
 > Task :app:injectCrashlyticsMappingFileIdDevDebug
@@ -90,26 +90,26 @@ e: The daemon has terminated unexpectedly on startup attempt #1 with error code:
 > Task :core:network:extractDeepLinksDebug FROM-CACHE
 > Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :core:network:processDebugManifest
-> Task :core:ui:processDebugManifest
 > Task :feature:auth:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:processDebugManifest
 > Task :feature:chat:extractDeepLinksDebug FROM-CACHE
 > Task :feature:auth:processDebugManifest
 > Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
 > Task :feature:chat:processDebugManifest
 > Task :feature:matching:extractDeepLinksDebug FROM-CACHE
 > Task :feature:discovery:processDebugManifest
-> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
 > Task :feature:matching:processDebugManifest
+> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
 > Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
 > Task :feature:notifications:processDebugManifest
 > Task :feature:profile:extractDeepLinksDebug FROM-CACHE
 > Task :feature:onboarding:processDebugManifest
 > Task :feature:safety:extractDeepLinksDebug FROM-CACHE
 > Task :feature:profile:processDebugManifest
-> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
 > Task :feature:safety:processDebugManifest
-> Task :feature:settings:processDebugManifest
+> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
 > Task :feature:subscription:extractDeepLinksDebug FROM-CACHE
+> Task :feature:settings:processDebugManifest
 > Task :feature:subscription:processDebugManifest
 > Task :core:auth:compileDebugLibraryResources
 > Task :app:processDevDebugMainManifest
@@ -126,26 +126,26 @@ e: The daemon has terminated unexpectedly on startup attempt #1 with error code:
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
 > Task :core:network:generateDebugRFile
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:generateDebugRFile
+> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:generateDebugRFile
 > Task :feature:chat:parseDebugLocalResources FROM-CACHE
+> Task :feature:auth:generateDebugRFile
 > Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
 > Task :feature:discovery:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:generateDebugRFile
 > Task :feature:matching:compileDebugLibraryResources FROM-CACHE
 > Task :feature:matching:parseDebugLocalResources FROM-CACHE
 > Task :feature:discovery:generateDebugRFile
-> Task :feature:matching:generateDebugRFile
 > Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
+> Task :feature:matching:generateDebugRFile
 > Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:notifications:generateDebugRFile
+> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:generateDebugRFile
 > Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
 > Task :feature:safety:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:generateDebugRFile
@@ -153,8 +153,8 @@ e: The daemon has terminated unexpectedly on startup attempt #1 with error code:
 > Task :feature:safety:generateDebugRFile
 > Task :feature:settings:parseDebugLocalResources FROM-CACHE
 > Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
-> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:generateDebugRFile
+> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :feature:subscription:generateDebugRFile
@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 42s
+BUILD FAILED in 2m 33s
 161 actionable tasks: 95 executed, 66 from cache
