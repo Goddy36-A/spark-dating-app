@@ -1,7 +1,3 @@
-> Task :core:ui:preDebugBuild UP-TO-DATE
-> Task :core:ui:writeDebugAarMetadata
-> Task :feature:auth:preBuild UP-TO-DATE
-> Task :feature:auth:preDebugBuild UP-TO-DATE
 > Task :feature:auth:writeDebugAarMetadata
 > Task :feature:chat:preBuild UP-TO-DATE
 > Task :feature:chat:preDebugBuild UP-TO-DATE
@@ -102,16 +98,16 @@
 > Task :feature:chat:processDebugManifest
 > Task :feature:matching:extractDeepLinksDebug FROM-CACHE
 > Task :feature:discovery:processDebugManifest
-> Task :feature:matching:processDebugManifest
 > Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
+> Task :feature:matching:processDebugManifest
 > Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
 > Task :feature:notifications:processDebugManifest
-> Task :feature:profile:extractDeepLinksDebug FROM-CACHE
 > Task :feature:onboarding:processDebugManifest
+> Task :feature:profile:extractDeepLinksDebug FROM-CACHE
 > Task :feature:safety:extractDeepLinksDebug FROM-CACHE
 > Task :feature:profile:processDebugManifest
-> Task :feature:safety:processDebugManifest
 > Task :feature:settings:extractDeepLinksDebug FROM-CACHE
+> Task :feature:safety:processDebugManifest
 > Task :feature:subscription:extractDeepLinksDebug FROM-CACHE
 > Task :feature:settings:processDebugManifest
 > Task :feature:subscription:processDebugManifest
@@ -130,17 +126,17 @@
 > Task :core:network:generateDebugRFile
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
-> Task :core:ui:generateDebugRFile
 > Task :feature:auth:parseDebugLocalResources FROM-CACHE
+> Task :core:ui:generateDebugRFile
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
 > Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:auth:generateDebugRFile
 > Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
-> Task :feature:chat:generateDebugRFile
 > Task :feature:discovery:parseDebugLocalResources FROM-CACHE
+> Task :feature:chat:generateDebugRFile
+> Task :feature:discovery:generateDebugRFile
 > Task :feature:matching:compileDebugLibraryResources FROM-CACHE
 > Task :feature:matching:parseDebugLocalResources FROM-CACHE
-> Task :feature:discovery:generateDebugRFile
 > Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
 > Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:generateDebugRFile
@@ -148,14 +144,14 @@
 > Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:notifications:generateDebugRFile
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:generateDebugRFile
 > Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
-> Task :feature:safety:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:generateDebugRFile
+> Task :feature:safety:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:compileDebugLibraryResources FROM-CACHE
-> Task :feature:safety:generateDebugRFile
 > Task :feature:settings:parseDebugLocalResources FROM-CACHE
+> Task :feature:safety:generateDebugRFile
 > Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
 > Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:generateDebugRFile
@@ -175,10 +171,14 @@ w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/m
 > Task :core:network:compileDebugJavaWithJavac
 > Task :core:network:transformDebugClassesWithAsm
 > Task :core:network:bundleLibCompileToJarDebug
-> Task :core:auth:kspDebugKotlin
 > Task :core:database:compileDebugKotlin
 > Task :core:network:bundleLibRuntimeToJarDebug
 > Task :core:database:javaPreCompileDebug
+> Task :core:auth:kspDebugKotlin
+> Task :core:database:compileDebugJavaWithJavac
+> Task :core:database:transformDebugClassesWithAsm
+> Task :core:database:bundleLibCompileToJarDebug
+> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
 
 > Task :core:auth:compileDebugKotlin FAILED
 e: file:///home/runner/work/spark-dating-app/spark-dating-app/core/auth/src/main/kotlin/com/spark/dating/core/auth/AuthRepository.kt:34:9 'when' expression must be exhaustive. Add the 'Initializing', 'is RefreshFailure' branches or an 'else' branch.
@@ -187,7 +187,7 @@ e: file:///home/runner/work/spark-dating-app/spark-dating-app/core/auth/src/main
 e: file:///home/runner/work/spark-dating-app/spark-dating-app/core/auth/src/main/kotlin/com/spark/dating/core/auth/AuthRepository.kt:42:30 Unresolved reference 'NetworkError'.
 e: file:///home/runner/work/spark-dating-app/spark-dating-app/core/auth/src/main/kotlin/com/spark/dating/core/auth/AuthRepository.kt:67:13 Unresolved reference 'redirectUrl'.
 
-> Task :core:database:compileDebugJavaWithJavac
+> Task :core:ui:compileDebugKotlin
 
 FAILURE: Build failed with an exception.
 
@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 18s
-158 actionable tasks: 92 executed, 66 from cache
+BUILD FAILED in 2m 23s
+161 actionable tasks: 95 executed, 66 from cache
