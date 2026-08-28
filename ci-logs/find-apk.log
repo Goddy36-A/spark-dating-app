@@ -1,3 +1,5 @@
 === Searching for APK files ===
 === app/build/outputs tree ===
-no outputs dir
+app/build/outputs
+app/build/outputs/logs
+app/build/outputs/logs/manifest-merger-dev-debug-report.txt
