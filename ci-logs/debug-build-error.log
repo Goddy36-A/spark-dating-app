@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 
 ==============================================================================
 
-BUILD FAILED in 2m 33s
-220 actionable tasks: 145 executed, 75 from cache
+BUILD FAILED in 2m 13s
+215 actionable tasks: 139 executed, 76 from cache
