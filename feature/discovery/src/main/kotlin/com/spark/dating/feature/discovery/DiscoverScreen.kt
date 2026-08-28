@@ -3,6 +3,7 @@ package com.spark.dating.feature.discovery
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -379,3 +380,4 @@ private fun MatchCelebrationDialog(
         }
     }
 }
+
