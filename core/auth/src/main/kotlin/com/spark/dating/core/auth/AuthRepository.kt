@@ -38,8 +38,8 @@ class AuthRepository @Inject constructor(
                 else AuthState.Unauthenticated
             }
             is SessionStatus.NotAuthenticated -> AuthState.Unauthenticated
-            is SessionStatus.LoadingFromStorage -> AuthState.Loading
-            is SessionStatus.NetworkError -> AuthState.Unauthenticated
+            is SessionStatus.Initializing -> AuthState.Loading
+            is SessionStatus.RefreshFailure -> AuthState.Unauthenticated
         }
     }
 
@@ -61,11 +61,14 @@ class AuthRepository @Inject constructor(
         return fetchCurrentUser() ?: error("User not found after login")
     }
 
-    /** Sign in with Google (launches OAuth flow). */
+    /**
+     * Sign in with Google (launches OAuth flow).
+     * Note: the redirect deeplink is configured via `scheme`/`host` on the
+     * `install(Auth) { ... }` block, not per-call — supabase-kt has no
+     * `redirectUrl` parameter on the provider config here.
+     */
     suspend fun loginWithGoogle() {
-        auth.signInWith(Google) {
-            redirectUrl = "com.spark.dating://auth-callback"
-        }
+        auth.signInWith(Google)
     }
 
     /** Send a password reset email. */
@@ -117,3 +120,4 @@ class AuthRepository @Inject constructor(
 
     fun isAuthenticated(): Boolean = auth.currentUserOrNull() != null
 }
+
