@@ -18,6 +18,7 @@ import io.github.jan.supabase.storage.Storage
 import io.github.jan.supabase.storage.storage
 import io.ktor.client.plugins.logging.LogLevel
 import javax.inject.Singleton
+import kotlin.time.Duration.Companion.seconds
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -39,17 +40,10 @@ object SupabaseModule {
         }
         install(Postgrest)
         install(Realtime) {
-            reconnectDelay = 5_000L
+            reconnectDelay = 5.seconds
         }
         install(Storage)
         install(Functions)
-
-        // Ktor HTTP client config
-        httpConfig {
-            engine {
-                // OkHttp is used — configured in build.gradle
-            }
-        }
     }
 
     @Provides
@@ -72,3 +66,4 @@ object SupabaseModule {
     @Singleton
     fun provideFunctions(client: SupabaseClient): Functions = client.functions
 }
+
