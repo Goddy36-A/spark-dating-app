@@ -1,0 +1,15 @@
+343-> Task :feature:notifications:transformDebugClassesWithAsm
+344-> Task :feature:notifications:bundleLibCompileToJarDebug
+345-
+346:> Task :feature:onboarding:compileDebugKotlin FAILED
+347:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/onboarding/src/main/kotlin/com/spark/dating/feature/onboarding/OnboardingScreens.kt:455:84 Unresolved reference 'Check'.
+348:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/onboarding/src/main/kotlin/com/spark/dating/feature/onboarding/OnboardingViewModel.kt:204:20 None of the following candidates is applicable:
+349-suspend fun upload(path: String, data: ByteArray, options: UploadOptionBuilder.() -> Unit = ...): FileUploadResponse
+350-suspend fun upload(path: String, data: UploadData, options: UploadOptionBuilder.() -> Unit = ...): FileUploadResponse
+351-
+--
+616-	... 2 more
+617-
+618-
+619:BUILD FAILED in 3m 4s
+620-244 actionable tasks: 168 executed, 76 from cache
