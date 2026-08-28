@@ -1,0 +1,20 @@
+338-> Task :feature:discovery:bundleLibCompileToJarDebug
+339-> Task :feature:notifications:kspDebugKotlin
+340-
+341:> Task :feature:notifications:compileDebugKotlin FAILED
+342:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:50 Unresolved reference 'items'.
+343:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:81 Cannot infer type for this parameter. Please specify it explicitly.
+344:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:98:21 @Composable invocations can only happen from the context of a @Composable function
+345:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:99:56 Unresolved reference 'title'.
+346:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:100:58 Unresolved reference 'body'.
+347:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:103:45 Unresolved reference 'type'.
+348:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:113:21 @Composable invocations can only happen from the context of a @Composable function
+349-
+350-> Task :feature:onboarding:kspDebugKotlin
+351-
+--
+556-	... 2 more
+557-
+558-
+559:BUILD FAILED in 3m 10s
+560-239 actionable tasks: 163 executed, 76 from cache
