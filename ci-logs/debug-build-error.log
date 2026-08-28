@@ -27,9 +27,9 @@
 > Task :feature:subscription:preDebugBuild UP-TO-DATE
 > Task :feature:subscription:writeDebugAarMetadata
 > Task :core:model:compileKotlin
+> Task :app:checkDevDebugAarMetadata
 > Task :core:model:compileJava NO-SOURCE
 > Task :core:model:classes UP-TO-DATE
-> Task :app:checkDevDebugAarMetadata
 > Task :core:model:jar
 > Task :app:generateDevDebugResValues
 > Task :app:injectCrashlyticsMappingFileIdDevDebug
@@ -86,14 +86,14 @@
 > Task :app:parseDevDebugLocalResources
 > Task :core:database:extractDeepLinksDebug FROM-CACHE
 > Task :core:auth:processDebugManifest
-> Task :core:database:processDebugManifest
 > Task :core:network:extractDeepLinksDebug FROM-CACHE
+> Task :core:database:processDebugManifest
 > Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :core:network:processDebugManifest
-> Task :feature:auth:extractDeepLinksDebug FROM-CACHE
 > Task :core:ui:processDebugManifest
-> Task :feature:auth:processDebugManifest
+> Task :feature:auth:extractDeepLinksDebug FROM-CACHE
 > Task :feature:chat:extractDeepLinksDebug FROM-CACHE
+> Task :feature:auth:processDebugManifest
 > Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
 > Task :feature:chat:processDebugManifest
 > Task :feature:matching:extractDeepLinksDebug FROM-CACHE
@@ -106,34 +106,34 @@
 > Task :feature:onboarding:processDebugManifest
 > Task :feature:safety:extractDeepLinksDebug FROM-CACHE
 > Task :feature:profile:processDebugManifest
-> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
 > Task :feature:safety:processDebugManifest
+> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
 > Task :feature:subscription:extractDeepLinksDebug FROM-CACHE
 > Task :feature:settings:processDebugManifest
 > Task :feature:subscription:processDebugManifest
 > Task :core:auth:compileDebugLibraryResources
 > Task :app:processDevDebugMainManifest
 > Task :app:processDevDebugManifest
-> Task :core:auth:parseDebugLocalResources
 > Task :app:processDevDebugManifestForPackage
+> Task :core:auth:parseDebugLocalResources
 > Task :core:database:compileDebugLibraryResources FROM-CACHE
 > Task :core:database:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:generateDebugRFile
+> Task :core:database:generateDebugRFile
 > Task :core:network:compileDebugLibraryResources FROM-CACHE
 > Task :core:network:parseDebugLocalResources FROM-CACHE
-> Task :core:network:generateDebugRFile
-> Task :core:database:generateDebugRFile
 > Task :core:ui:compileDebugLibraryResources FROM-CACHE
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
+> Task :core:network:generateDebugRFile
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:generateDebugRFile
+> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
-> Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:auth:generateDebugRFile
+> Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
-> Task :feature:discovery:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:generateDebugRFile
+> Task :feature:discovery:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:compileDebugLibraryResources FROM-CACHE
 > Task :feature:matching:parseDebugLocalResources FROM-CACHE
 > Task :feature:discovery:generateDebugRFile
@@ -141,11 +141,11 @@
 > Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:generateDebugRFile
 > Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:notifications:generateDebugRFile
+> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:generateDebugRFile
 > Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
 > Task :feature:profile:generateDebugRFile
 > Task :feature:safety:parseDebugLocalResources FROM-CACHE
@@ -153,8 +153,8 @@
 > Task :feature:safety:generateDebugRFile
 > Task :feature:settings:parseDebugLocalResources FROM-CACHE
 > Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
-> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:generateDebugRFile
+> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :feature:subscription:generateDebugRFile
@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 30s
+BUILD FAILED in 3m 20s
 161 actionable tasks: 95 executed, 66 from cache
