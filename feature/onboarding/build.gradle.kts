@@ -31,7 +31,10 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
+    implementation(libs.supabase.postgrest)
+    implementation(libs.supabase.storage)
     implementation(libs.coil.compose)
     implementation(libs.accompanist.permissions)
     implementation(libs.coroutines.android)
 }
+
