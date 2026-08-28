@@ -1,17 +1,14 @@
-314-> Task :feature:auth:kspDebugKotlin
-315-> Task :feature:chat:kspDebugKotlin
-316-
-317:> Task :feature:chat:compileDebugKotlin FAILED
-318:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:17:40 Unresolved reference 'FilterOperation'.
-319:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:18:40 Unresolved reference 'FilterOperator'.
-320:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:28 Unresolved reference 'FilterOperation'.
-321:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:63 Unresolved reference 'FilterOperator'.
-322-
-323-> Task :feature:auth:compileDebugKotlin
-324-
+293-> Task :feature:auth:kspDebugKotlin
+294-> Task :feature:chat:kspDebugKotlin
+295-
+296:> Task :feature:chat:compileDebugKotlin FAILED
+297:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:178:21 Cannot access 'filter': it is private in 'io/github/jan/supabase/realtime/PostgresChangeFilter'.
+298-
+299-> Task :feature:auth:compileDebugKotlin
+300-
 --
-529-	... 2 more
-530-
-531-
-532:BUILD FAILED in 2m 49s
-533-215 actionable tasks: 140 executed, 75 from cache
+505-	... 2 more
+506-
+507-
+508:BUILD FAILED in 3m 3s
+509-204 actionable tasks: 128 executed, 76 from cache
