@@ -1,14 +1,35 @@
-324-> Task :feature:discovery:kspDebugKotlin
-325-> Task :feature:matching:kspDebugKotlin
-326-
-327:> Task :feature:discovery:compileDebugKotlin FAILED
-328:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/discovery/src/main/kotlin/com/spark/dating/feature/discovery/DiscoverScreen.kt:310:30 Unresolved reference 'clickable'.
-329-
-330-> Task :feature:matching:compileDebugKotlin
-331-
+333-> Task :feature:discovery:bundleLibCompileToJarDebug
+334-> Task :feature:notifications:kspDebugKotlin
+335-
+336:> Task :feature:notifications:compileDebugKotlin FAILED
+337:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:65:38 Unresolved reference 'collectAsStateWithLifecycle'.
+338:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:79:21 Unresolved reference 'isLoading'.
+339:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:83:28 Unresolved reference 'notifications'.
+340:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:50 Unresolved reference 'items'.
+341:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:64 Unresolved reference 'notifications'.
+342:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:81 Cannot infer type for this parameter. Please specify it explicitly.
+343:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:21 @Composable invocations can only happen from the context of a @Composable function
+344:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:98:56 Unresolved reference 'title'.
+345:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:99:58 Unresolved reference 'body'.
+346:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:102:45 Unresolved reference 'type'.
+347:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:112:21 @Composable invocations can only happen from the context of a @Composable function
+348-
+349:> Task :feature:onboarding:kspDebugKotlin FAILED
+350:e: [ksp] InjectProcessingStep was unable to process 'OnboardingViewModel(com.spark.dating.core.auth.AuthRepository,error.NonExistentClass,error.NonExistentClass)' because 'error.NonExistentClass' could not be resolved.
+351-
+352-Dependency trace:
+353-    => element (CLASS): com.spark.dating.feature.onboarding.OnboardingViewModel
 --
-536-	... 2 more
-537-
-538-
-539:BUILD FAILED in 2m 53s
-540-225 actionable tasks: 149 executed, 76 from cache
+356-    => type (ERROR parameter type): error.NonExistentClass
+357-
+358-If type 'error.NonExistentClass' is a generated type, check above for compilation errors that may have prevented the type from being generated. Otherwise, ensure that type 'error.NonExistentClass' is on your classpath.
+359:e: Error occurred in KSP, check log for detail
+360-
+361-FAILURE: Build completed with 2 failures.
+362-
+--
+846-
+847-==============================================================================
+848-
+849:BUILD FAILED in 2m 59s
+850-234 actionable tasks: 158 executed, 76 from cache
