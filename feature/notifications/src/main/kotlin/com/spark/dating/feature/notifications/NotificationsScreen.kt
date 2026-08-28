@@ -1,6 +1,8 @@
 package com.spark.dating.feature.notifications
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
@@ -90,11 +92,11 @@ fun NotificationsScreen(
                 }
             }
         } else {
-            androidx.compose.foundation.lazy.LazyColumn(
+            LazyColumn(
                 modifier = Modifier.padding(innerPadding),
                 contentPadding = PaddingValues(vertical = 8.dp),
             ) {
-                androidx.compose.foundation.lazy.items(uiState.notifications) { notif ->
+                items(uiState.notifications) { notif ->
                     ListItem(
                         headlineContent = { Text(notif.title) },
                         supportingContent = { Text(notif.body) },
@@ -116,4 +118,5 @@ fun NotificationsScreen(
         }
     }
 }
+
 
