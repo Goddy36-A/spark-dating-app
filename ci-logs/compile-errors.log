@@ -1,31 +1,17 @@
-319-> Task :feature:auth:kspDebugKotlin
-320-> Task :feature:chat:kspDebugKotlin
-321-
-322:> Task :feature:auth:compileDebugKotlin FAILED
-323:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:138:17 No parameter with name 'keyboardOptions' found.
-324:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:142:17 No parameter with name 'keyboardActions' found.
-325:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:156:17 No parameter with name 'keyboardOptions' found.
-326:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:160:17 No parameter with name 'keyboardActions' found.
-327:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:167:21 @Composable invocations can only happen from the context of a @Composable function
-328:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:286:17 No parameter with name 'keyboardOptions' found.
-329:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:290:17 No parameter with name 'keyboardActions' found.
-330:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:302:17 No parameter with name 'keyboardOptions' found.
-331:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:306:17 No parameter with name 'keyboardActions' found.
-332:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:308:21 @Composable invocations can only happen from the context of a @Composable function
-333:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:327:17 No parameter with name 'keyboardOptions' found.
-334:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:331:17 No parameter with name 'keyboardActions' found.
-335:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/auth/src/main/kotlin/com/spark/dating/feature/auth/AuthScreens.kt:385:21 No parameter with name 'keyboardOptions' found.
-336-
-337:> Task :feature:chat:compileDebugKotlin FAILED
-338:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatScreen.kt:313:5 Type checking has run into a recursive problem. Easiest workaround: specify the types of your declarations explicitly.
-339:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatScreen.kt:313:14 Unresolved reference 'androidx'.
-340:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:178:21 Cannot access 'filter': it is private in 'io/github/jan/supabase/realtime/PostgresChangeFilter'.
-341-
-342-FAILURE: Build completed with 2 failures.
-343-
+314-> Task :feature:auth:kspDebugKotlin
+315-> Task :feature:chat:kspDebugKotlin
+316-
+317:> Task :feature:chat:compileDebugKotlin FAILED
+318:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:17:40 Unresolved reference 'FilterOperation'.
+319:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:18:40 Unresolved reference 'FilterOperator'.
+320:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:28 Unresolved reference 'FilterOperation'.
+321:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:63 Unresolved reference 'FilterOperator'.
+322-
+323-> Task :feature:auth:compileDebugKotlin
+324-
 --
-827-
-828-==============================================================================
-829-
-830:BUILD FAILED in 2m 45s
-831-220 actionable tasks: 144 executed, 76 from cache
+529-	... 2 more
+530-
+531-
+532:BUILD FAILED in 2m 49s
+533-215 actionable tasks: 140 executed, 75 from cache
