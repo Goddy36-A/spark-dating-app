@@ -1,61 +1,3 @@
-> Task :feature:auth:writeDebugAarMetadata
-> Task :feature:chat:preBuild UP-TO-DATE
-> Task :feature:chat:preDebugBuild UP-TO-DATE
-> Task :feature:chat:writeDebugAarMetadata
-> Task :feature:discovery:preBuild UP-TO-DATE
-> Task :feature:discovery:preDebugBuild UP-TO-DATE
-> Task :feature:discovery:writeDebugAarMetadata
-> Task :feature:matching:preBuild UP-TO-DATE
-> Task :feature:matching:preDebugBuild UP-TO-DATE
-> Task :feature:matching:writeDebugAarMetadata
-> Task :feature:notifications:preBuild UP-TO-DATE
-> Task :feature:notifications:preDebugBuild UP-TO-DATE
-> Task :feature:notifications:writeDebugAarMetadata
-> Task :feature:onboarding:preBuild UP-TO-DATE
-> Task :feature:onboarding:preDebugBuild UP-TO-DATE
-> Task :feature:onboarding:writeDebugAarMetadata
-> Task :feature:profile:preBuild UP-TO-DATE
-> Task :feature:profile:preDebugBuild UP-TO-DATE
-> Task :feature:profile:writeDebugAarMetadata
-> Task :feature:safety:preBuild UP-TO-DATE
-> Task :feature:safety:preDebugBuild UP-TO-DATE
-> Task :feature:safety:writeDebugAarMetadata
-> Task :feature:settings:preBuild UP-TO-DATE
-> Task :feature:settings:preDebugBuild UP-TO-DATE
-> Task :feature:settings:writeDebugAarMetadata
-> Task :feature:subscription:preBuild UP-TO-DATE
-> Task :feature:subscription:preDebugBuild UP-TO-DATE
-> Task :feature:subscription:writeDebugAarMetadata
-> Task :core:model:compileKotlin
-> Task :core:model:compileJava NO-SOURCE
-> Task :core:model:classes UP-TO-DATE
-> Task :app:checkDevDebugAarMetadata
-> Task :core:model:jar
-> Task :app:generateDevDebugResValues
-> Task :app:injectCrashlyticsMappingFileIdDevDebug
-> Task :app:processDevDebugGoogleServices
-> Task :core:auth:generateDebugResValues
-> Task :core:auth:generateDebugResources
-> Task :core:auth:packageDebugResources
-> Task :core:database:generateDebugResValues FROM-CACHE
-> Task :core:database:generateDebugResources FROM-CACHE
-> Task :core:database:packageDebugResources
-> Task :core:network:generateDebugResValues FROM-CACHE
-> Task :core:network:generateDebugResources FROM-CACHE
-> Task :core:network:packageDebugResources
-> Task :core:ui:generateDebugResValues FROM-CACHE
-> Task :core:ui:generateDebugResources FROM-CACHE
-> Task :core:ui:packageDebugResources
-> Task :feature:auth:generateDebugResValues FROM-CACHE
-> Task :feature:auth:generateDebugResources FROM-CACHE
-> Task :feature:auth:packageDebugResources
-> Task :feature:chat:generateDebugResValues FROM-CACHE
-> Task :feature:chat:generateDebugResources FROM-CACHE
-> Task :feature:chat:packageDebugResources
-> Task :feature:discovery:generateDebugResValues FROM-CACHE
-> Task :feature:discovery:generateDebugResources FROM-CACHE
-> Task :feature:discovery:packageDebugResources
-> Task :feature:matching:generateDebugResValues FROM-CACHE
 > Task :feature:matching:generateDebugResources FROM-CACHE
 > Task :feature:matching:packageDebugResources
 > Task :feature:notifications:generateDebugResValues FROM-CACHE
@@ -85,19 +27,19 @@
 > Task :core:auth:extractDeepLinksDebug
 > Task :app:parseDevDebugLocalResources
 > Task :core:database:extractDeepLinksDebug FROM-CACHE
-> Task :core:auth:processDebugManifest
 > Task :core:database:processDebugManifest
+> Task :core:auth:processDebugManifest
 > Task :core:network:extractDeepLinksDebug FROM-CACHE
-> Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :core:network:processDebugManifest
+> Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :feature:auth:extractDeepLinksDebug FROM-CACHE
 > Task :core:ui:processDebugManifest
 > Task :feature:auth:processDebugManifest
 > Task :feature:chat:extractDeepLinksDebug FROM-CACHE
 > Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
 > Task :feature:chat:processDebugManifest
-> Task :feature:discovery:processDebugManifest
 > Task :feature:matching:extractDeepLinksDebug FROM-CACHE
+> Task :feature:discovery:processDebugManifest
 > Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
 > Task :feature:matching:processDebugManifest
 > Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
@@ -115,28 +57,28 @@
 > Task :app:processDevDebugMainManifest
 > Task :app:processDevDebugManifest
 > Task :app:processDevDebugManifestForPackage
-> Task :core:auth:parseDebugLocalResources
 > Task :core:database:compileDebugLibraryResources FROM-CACHE
+> Task :core:auth:parseDebugLocalResources
 > Task :core:database:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:generateDebugRFile
 > Task :core:database:generateDebugRFile
 > Task :core:network:compileDebugLibraryResources FROM-CACHE
 > Task :core:network:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:compileDebugLibraryResources FROM-CACHE
-> Task :core:network:generateDebugRFile
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
+> Task :core:network:generateDebugRFile
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:generateDebugRFile
+> Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
-> Task :feature:auth:generateDebugRFile
 > Task :feature:chat:parseDebugLocalResources FROM-CACHE
+> Task :feature:auth:generateDebugRFile
 > Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
 > Task :feature:chat:generateDebugRFile
 > Task :feature:discovery:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:compileDebugLibraryResources FROM-CACHE
-> Task :feature:discovery:generateDebugRFile
 > Task :feature:matching:parseDebugLocalResources FROM-CACHE
+> Task :feature:discovery:generateDebugRFile
 > Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
 > Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:generateDebugRFile
@@ -144,17 +86,17 @@
 > Task :feature:notifications:generateDebugRFile
 > Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
-> Task :feature:profile:parseDebugLocalResources FROM-CACHE
 > Task :feature:onboarding:generateDebugRFile
+> Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:profile:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
 > Task :feature:safety:parseDebugLocalResources FROM-CACHE
-> Task :feature:profile:generateDebugRFile
 > Task :feature:settings:compileDebugLibraryResources FROM-CACHE
-> Task :feature:settings:parseDebugLocalResources FROM-CACHE
 > Task :feature:safety:generateDebugRFile
+> Task :feature:settings:parseDebugLocalResources FROM-CACHE
 > Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
-> Task :feature:settings:generateDebugRFile
 > Task :feature:subscription:parseDebugLocalResources FROM-CACHE
+> Task :feature:settings:generateDebugRFile
 > Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :feature:subscription:generateDebugRFile
@@ -232,6 +174,35 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':core:au
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
 Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
@@ -361,6 +332,35 @@ Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionExcept
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
 Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilation error. See log for more details
@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 26s
+BUILD FAILED in 2m 28s
 161 actionable tasks: 95 executed, 66 from cache
