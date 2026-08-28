@@ -1,151 +1,156 @@
-> Task :core:network:javaPreCompileDebug
-> Task :core:database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Downloading https://services.gradle.org/distributions/gradle-8.10.2-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.10.2!
+
+Here are the highlights of this release:
+ - Support for Java 23
+ - Faster configuration cache
+ - Better configuration cache reports
+
+For more details see https://docs.gradle.org/8.10.2/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+w: file:///home/runner/work/spark-dating-app/spark-dating-app/app/build.gradle.kts:36:36: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDevDebugBuild UP-TO-DATE
+> Task :app:mergeDevDebugNativeDebugMetadata NO-SOURCE
+> Task :core:model:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:model:processResources NO-SOURCE
-> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :core:database:javaPreCompileDebug
-> Task :feature:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:auth:javaPreCompileDebug FROM-CACHE
-> Task :feature:chat:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:chat:javaPreCompileDebug FROM-CACHE
-> Task :feature:discovery:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:discovery:javaPreCompileDebug FROM-CACHE
-> Task :feature:matching:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:matching:javaPreCompileDebug FROM-CACHE
-> Task :feature:notifications:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:notifications:javaPreCompileDebug FROM-CACHE
-> Task :feature:onboarding:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:onboarding:javaPreCompileDebug FROM-CACHE
-> Task :feature:profile:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:profile:javaPreCompileDebug FROM-CACHE
-> Task :feature:safety:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:safety:javaPreCompileDebug FROM-CACHE
-> Task :feature:settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:settings:javaPreCompileDebug FROM-CACHE
-> Task :feature:subscription:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :feature:subscription:javaPreCompileDebug FROM-CACHE
-> Task :core:auth:mergeDebugShaders
-> Task :core:auth:compileDebugShaders NO-SOURCE
-> Task :core:auth:generateDebugAssets UP-TO-DATE
-> Task :core:auth:packageDebugAssets
-> Task :core:database:mergeDebugShaders
-> Task :core:database:compileDebugShaders NO-SOURCE
-> Task :core:database:generateDebugAssets UP-TO-DATE
-> Task :core:database:packageDebugAssets
-> Task :core:network:mergeDebugShaders
-> Task :core:network:compileDebugShaders NO-SOURCE
-> Task :core:network:generateDebugAssets UP-TO-DATE
-> Task :core:network:packageDebugAssets
-> Task :feature:auth:mergeDebugShaders
-> Task :feature:auth:compileDebugShaders NO-SOURCE
-> Task :feature:auth:generateDebugAssets UP-TO-DATE
-> Task :feature:auth:packageDebugAssets
-> Task :feature:chat:mergeDebugShaders
-> Task :feature:chat:compileDebugShaders NO-SOURCE
-> Task :feature:chat:generateDebugAssets UP-TO-DATE
-> Task :feature:chat:packageDebugAssets
-> Task :feature:discovery:mergeDebugShaders
-> Task :feature:discovery:compileDebugShaders NO-SOURCE
-> Task :feature:discovery:generateDebugAssets UP-TO-DATE
-> Task :feature:discovery:packageDebugAssets
-> Task :feature:matching:mergeDebugShaders
-> Task :feature:matching:compileDebugShaders NO-SOURCE
-> Task :feature:matching:generateDebugAssets UP-TO-DATE
-> Task :feature:matching:packageDebugAssets
-> Task :feature:notifications:mergeDebugShaders
-> Task :feature:notifications:compileDebugShaders NO-SOURCE
-> Task :feature:notifications:generateDebugAssets UP-TO-DATE
-> Task :feature:notifications:packageDebugAssets
-> Task :feature:onboarding:mergeDebugShaders
-> Task :feature:onboarding:compileDebugShaders NO-SOURCE
-> Task :feature:onboarding:generateDebugAssets UP-TO-DATE
-> Task :feature:onboarding:packageDebugAssets
-> Task :feature:profile:mergeDebugShaders
-> Task :feature:profile:compileDebugShaders NO-SOURCE
-> Task :feature:profile:generateDebugAssets UP-TO-DATE
-> Task :feature:profile:packageDebugAssets
-> Task :feature:safety:mergeDebugShaders
-> Task :feature:safety:compileDebugShaders NO-SOURCE
-> Task :feature:safety:generateDebugAssets UP-TO-DATE
-> Task :feature:safety:packageDebugAssets
-> Task :feature:settings:mergeDebugShaders
-> Task :feature:settings:compileDebugShaders NO-SOURCE
-> Task :feature:settings:generateDebugAssets UP-TO-DATE
-> Task :feature:settings:packageDebugAssets
-> Task :feature:subscription:mergeDebugShaders
-> Task :feature:subscription:compileDebugShaders NO-SOURCE
-> Task :feature:subscription:generateDebugAssets UP-TO-DATE
-> Task :feature:subscription:packageDebugAssets
-> Task :core:auth:mergeDebugJniLibFolders
-> Task :core:auth:mergeDebugNativeLibs NO-SOURCE
-> Task :core:auth:copyDebugJniLibsProjectOnly
-> Task :core:database:mergeDebugJniLibFolders
-> Task :core:database:mergeDebugNativeLibs NO-SOURCE
-> Task :core:database:copyDebugJniLibsProjectOnly
-> Task :core:network:mergeDebugJniLibFolders
-> Task :core:network:mergeDebugNativeLibs NO-SOURCE
-> Task :core:network:copyDebugJniLibsProjectOnly
-> Task :feature:auth:mergeDebugJniLibFolders
-> Task :feature:auth:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:auth:copyDebugJniLibsProjectOnly
-> Task :feature:chat:mergeDebugJniLibFolders
-> Task :feature:chat:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:chat:copyDebugJniLibsProjectOnly
-> Task :feature:discovery:mergeDebugJniLibFolders
-> Task :feature:discovery:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:discovery:copyDebugJniLibsProjectOnly
-> Task :feature:matching:mergeDebugJniLibFolders
-> Task :feature:matching:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:matching:copyDebugJniLibsProjectOnly
-> Task :feature:notifications:mergeDebugJniLibFolders
-> Task :feature:notifications:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:notifications:copyDebugJniLibsProjectOnly
-> Task :feature:onboarding:mergeDebugJniLibFolders
-> Task :feature:onboarding:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:onboarding:copyDebugJniLibsProjectOnly
-> Task :feature:profile:mergeDebugJniLibFolders
-> Task :feature:profile:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:profile:copyDebugJniLibsProjectOnly
-> Task :feature:safety:mergeDebugJniLibFolders
-> Task :feature:safety:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:safety:copyDebugJniLibsProjectOnly
-> Task :feature:settings:mergeDebugJniLibFolders
-> Task :feature:settings:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:settings:copyDebugJniLibsProjectOnly
-> Task :feature:subscription:mergeDebugJniLibFolders
-> Task :feature:subscription:mergeDebugNativeLibs NO-SOURCE
-> Task :feature:subscription:copyDebugJniLibsProjectOnly
-
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDevDebugBuildConfig
+> Task :core:auth:preBuild UP-TO-DATE
+> Task :core:auth:preDebugBuild UP-TO-DATE
+> Task :core:auth:writeDebugAarMetadata
+> Task :core:database:preBuild UP-TO-DATE
+> Task :core:database:preDebugBuild UP-TO-DATE
+> Task :core:database:writeDebugAarMetadata
+> Task :core:network:preBuild UP-TO-DATE
+> Task :core:network:preDebugBuild UP-TO-DATE
+> Task :core:network:writeDebugAarMetadata
+> Task :core:ui:preBuild UP-TO-DATE
+> Task :core:ui:preDebugBuild UP-TO-DATE
+> Task :core:ui:writeDebugAarMetadata
+> Task :feature:auth:preBuild UP-TO-DATE
+> Task :feature:auth:preDebugBuild UP-TO-DATE
+> Task :feature:auth:writeDebugAarMetadata
+> Task :feature:chat:preBuild UP-TO-DATE
+> Task :feature:chat:preDebugBuild UP-TO-DATE
+> Task :feature:chat:writeDebugAarMetadata
+> Task :feature:discovery:preBuild UP-TO-DATE
+> Task :feature:discovery:preDebugBuild UP-TO-DATE
+> Task :feature:discovery:writeDebugAarMetadata
+> Task :feature:matching:preBuild UP-TO-DATE
+> Task :feature:matching:preDebugBuild UP-TO-DATE
+> Task :feature:matching:writeDebugAarMetadata
+> Task :feature:notifications:preBuild UP-TO-DATE
+> Task :feature:notifications:preDebugBuild UP-TO-DATE
+> Task :feature:notifications:writeDebugAarMetadata
+> Task :feature:onboarding:preBuild UP-TO-DATE
+> Task :feature:onboarding:preDebugBuild UP-TO-DATE
+> Task :feature:onboarding:writeDebugAarMetadata
+> Task :feature:profile:preBuild UP-TO-DATE
+> Task :feature:profile:preDebugBuild UP-TO-DATE
+> Task :feature:profile:writeDebugAarMetadata
+> Task :feature:safety:preBuild UP-TO-DATE
+> Task :feature:safety:preDebugBuild UP-TO-DATE
+> Task :feature:safety:writeDebugAarMetadata
+> Task :feature:settings:preBuild UP-TO-DATE
+> Task :feature:settings:preDebugBuild UP-TO-DATE
+> Task :feature:settings:writeDebugAarMetadata
+> Task :feature:subscription:preBuild UP-TO-DATE
+> Task :feature:subscription:preDebugBuild UP-TO-DATE
+> Task :feature:subscription:writeDebugAarMetadata
 > Task :core:model:compileKotlin
-e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
-    1. Kotlin compile daemon is ready
-
-> Task :core:ui:javaPreCompileDebug
-> Task :core:ui:mergeDebugShaders
-> Task :core:ui:compileDebugShaders NO-SOURCE
-> Task :core:ui:generateDebugAssets UP-TO-DATE
-> Task :core:ui:packageDebugAssets
-> Task :core:ui:mergeDebugJniLibFolders
-> Task :core:ui:mergeDebugNativeLibs NO-SOURCE
-> Task :core:ui:copyDebugJniLibsProjectOnly
+> Task :app:checkDevDebugAarMetadata
 > Task :core:model:compileJava NO-SOURCE
 > Task :core:model:classes UP-TO-DATE
 > Task :core:model:jar
-> Task :core:ui:compileDebugKotlin
-> Task :core:ui:compileDebugJavaWithJavac NO-SOURCE
-> Task :core:ui:bundleLibCompileToJarDebug
-> Task :core:ui:bundleLibRuntimeToJarDebug
-> Task :core:ui:processDebugJavaRes
-> Task :core:ui:bundleLibRuntimeToDirDebug
+> Task :app:generateDevDebugResValues
 > Task :app:injectCrashlyticsMappingFileIdDevDebug
 > Task :app:processDevDebugGoogleServices
-> Task :app:checkDevDebugAarMetadata
+> Task :core:auth:generateDebugResValues
+> Task :core:auth:generateDebugResources
+> Task :core:auth:packageDebugResources
+> Task :core:database:generateDebugResValues FROM-CACHE
+> Task :core:database:generateDebugResources FROM-CACHE
+> Task :core:database:packageDebugResources
+> Task :core:network:generateDebugResValues FROM-CACHE
+> Task :core:network:generateDebugResources FROM-CACHE
+> Task :core:network:packageDebugResources
+> Task :core:ui:generateDebugResValues FROM-CACHE
+> Task :core:ui:generateDebugResources FROM-CACHE
+> Task :core:ui:packageDebugResources
+> Task :feature:auth:generateDebugResValues FROM-CACHE
+> Task :feature:auth:generateDebugResources FROM-CACHE
+> Task :feature:auth:packageDebugResources
+> Task :feature:chat:generateDebugResValues FROM-CACHE
+> Task :feature:chat:generateDebugResources FROM-CACHE
+> Task :feature:chat:packageDebugResources
+> Task :feature:discovery:generateDebugResValues FROM-CACHE
+> Task :feature:discovery:generateDebugResources FROM-CACHE
+> Task :feature:discovery:packageDebugResources
+> Task :feature:matching:generateDebugResValues FROM-CACHE
+> Task :feature:matching:generateDebugResources FROM-CACHE
+> Task :feature:matching:packageDebugResources
+> Task :feature:notifications:generateDebugResValues FROM-CACHE
+> Task :feature:notifications:generateDebugResources FROM-CACHE
+> Task :feature:notifications:packageDebugResources
+> Task :feature:onboarding:generateDebugResValues FROM-CACHE
+> Task :feature:onboarding:generateDebugResources FROM-CACHE
+> Task :feature:onboarding:packageDebugResources
+> Task :feature:profile:generateDebugResValues FROM-CACHE
+> Task :feature:profile:generateDebugResources FROM-CACHE
+> Task :feature:profile:packageDebugResources
+> Task :feature:safety:generateDebugResValues FROM-CACHE
+> Task :feature:safety:generateDebugResources FROM-CACHE
+> Task :feature:safety:packageDebugResources
+> Task :feature:settings:generateDebugResValues FROM-CACHE
+> Task :feature:settings:generateDebugResources FROM-CACHE
+> Task :feature:settings:packageDebugResources
+> Task :feature:subscription:generateDebugResValues FROM-CACHE
+> Task :feature:subscription:generateDebugResources FROM-CACHE
+> Task :feature:subscription:packageDebugResources
 > Task :app:mapDevDebugSourceSetPaths
 > Task :app:generateDevDebugResources
 > Task :app:packageDevDebugResources
-> Task :app:parseDevDebugLocalResources
-> Task :app:createDevDebugCompatibleScreenManifests
-> Task :app:extractDeepLinksDevDebug FROM-CACHE
 > Task :app:mergeDevDebugResources
+> Task :app:createDevDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDevDebug
+> Task :core:auth:extractDeepLinksDebug FROM-CACHE
+> Task :app:parseDevDebugLocalResources
+> Task :core:database:extractDeepLinksDebug FROM-CACHE
+> Task :core:auth:processDebugManifest
+> Task :core:database:processDebugManifest
+> Task :core:network:extractDeepLinksDebug FROM-CACHE
+> Task :core:network:processDebugManifest
+> Task :core:ui:extractDeepLinksDebug FROM-CACHE
+> Task :feature:auth:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:processDebugManifest
+> Task :feature:chat:extractDeepLinksDebug FROM-CACHE
+> Task :feature:auth:processDebugManifest
+> Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
+> Task :feature:chat:processDebugManifest
+> Task :feature:matching:extractDeepLinksDebug FROM-CACHE
+> Task :feature:discovery:processDebugManifest
+> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
+> Task :feature:matching:processDebugManifest
+> Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
+> Task :feature:notifications:processDebugManifest
+> Task :feature:profile:extractDeepLinksDebug FROM-CACHE
+> Task :feature:onboarding:processDebugManifest
+> Task :feature:safety:extractDeepLinksDebug FROM-CACHE
+> Task :feature:profile:processDebugManifest
+> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
+> Task :feature:safety:processDebugManifest
+> Task :feature:subscription:extractDeepLinksDebug FROM-CACHE
+> Task :feature:settings:processDebugManifest
+> Task :feature:subscription:processDebugManifest
+> Task :core:auth:compileDebugLibraryResources
 
 > Task :app:processDevDebugMainManifest FAILED
 /home/runner/work/spark-dating-app/spark-dating-app/app/src/main/AndroidManifest.xml:61:13-44 Error:
@@ -155,11 +160,6 @@ e: The daemon has terminated unexpectedly on startup attempt #1 with error code:
 
 See https://developer.android.com/r/studio-ui/build/manifest-merger for more information about the manifest merger.
 
-
-> Task :core:network:kspDebugKotlin
-
-> Task :core:database:kspDebugKotlin
-w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/main/kotlin/com/spark/dating/core/database/Database.kt:114: Schema export directory was not provided to the annotation processor so Room cannot export the schema. You can either provide `room.schemaLocation` annotation processor argument by applying the Room Gradle plugin (id 'androidx.room') OR set exportSchema to false.
 
 FAILURE: Build failed with an exception.
 
@@ -241,7 +241,7 @@ Caused by: java.lang.RuntimeException: Manifest merger failed with multiple erro
 	at com.android.build.gradle.internal.tasks.NonIncrementalTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:79)
 	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
 	at com.android.build.gradle.internal.tasks.NonIncrementalTask.taskAction(NonIncrementalTask.kt:78)
-	at jdk.internal.reflect.GeneratedMethodAccessor326.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor341.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
@@ -396,5 +396,5 @@ Caused by: java.lang.RuntimeException: Manifest merger failed with multiple erro
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
 
 
-BUILD FAILED in 2m 2s
-218 actionable tasks: 147 executed, 71 from cache
+BUILD FAILED in 2m 35s
+100 actionable tasks: 60 executed, 40 from cache
