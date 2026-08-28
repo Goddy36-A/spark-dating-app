@@ -26,6 +26,14 @@ android {
         // Supabase config — values come from local.properties, never hardcoded
         buildConfigField("String", "SUPABASE_URL", "\"${project.findProperty("supabase.url") ?: ""}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${project.findProperty("supabase.anon_key") ?: ""}\"")
+
+        // Google Maps API key — required by AndroidManifest.xml's placeholder.
+        // Falls back to a dummy value so debug/CI builds succeed without a real key;
+        // map features simply won't authenticate until a real key is supplied.
+        manifestPlaceholders["MAPS_API_KEY"] =
+            (project.findProperty("MAPS_API_KEY") as String?)
+                ?.takeIf { it.isNotBlank() }
+                ?: "AIzaSyDUMMY00000000000000000000000000"
     }
 
     signingConfigs {
@@ -148,3 +156,4 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.test.manifest)
 }
+
