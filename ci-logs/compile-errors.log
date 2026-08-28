@@ -1,35 +1,31 @@
-333-> Task :feature:discovery:bundleLibCompileToJarDebug
-334-> Task :feature:notifications:kspDebugKotlin
-335-
-336:> Task :feature:notifications:compileDebugKotlin FAILED
-337:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:65:38 Unresolved reference 'collectAsStateWithLifecycle'.
-338:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:79:21 Unresolved reference 'isLoading'.
-339:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:83:28 Unresolved reference 'notifications'.
-340:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:50 Unresolved reference 'items'.
-341:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:64 Unresolved reference 'notifications'.
-342:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:96:81 Cannot infer type for this parameter. Please specify it explicitly.
-343:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:21 @Composable invocations can only happen from the context of a @Composable function
-344:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:98:56 Unresolved reference 'title'.
-345:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:99:58 Unresolved reference 'body'.
-346:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:102:45 Unresolved reference 'type'.
-347:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:112:21 @Composable invocations can only happen from the context of a @Composable function
-348-
-349:> Task :feature:onboarding:kspDebugKotlin FAILED
-350:e: [ksp] InjectProcessingStep was unable to process 'OnboardingViewModel(com.spark.dating.core.auth.AuthRepository,error.NonExistentClass,error.NonExistentClass)' because 'error.NonExistentClass' could not be resolved.
-351-
-352-Dependency trace:
-353-    => element (CLASS): com.spark.dating.feature.onboarding.OnboardingViewModel
+332-> Task :feature:discovery:bundleLibCompileToJarDebug
+333-> Task :feature:notifications:kspDebugKotlin
+334-
+335:> Task :feature:notifications:compileDebugKotlin FAILED
+336:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:50 Unresolved reference 'items'.
+337:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:97:81 Cannot infer type for this parameter. Please specify it explicitly.
+338:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:98:21 @Composable invocations can only happen from the context of a @Composable function
+339:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:99:56 Unresolved reference 'title'.
+340:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:100:58 Unresolved reference 'body'.
+341:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:103:45 Unresolved reference 'type'.
+342:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/notifications/src/main/kotlin/com/spark/dating/feature/notifications/NotificationsScreen.kt:113:21 @Composable invocations can only happen from the context of a @Composable function
+343-
+344:> Task :feature:onboarding:kspDebugKotlin FAILED
+345:e: [ksp] InjectProcessingStep was unable to process 'OnboardingViewModel(com.spark.dating.core.auth.AuthRepository,error.NonExistentClass,error.NonExistentClass)' because 'error.NonExistentClass' could not be resolved.
+346-
+347-Dependency trace:
+348-    => element (CLASS): com.spark.dating.feature.onboarding.OnboardingViewModel
 --
-356-    => type (ERROR parameter type): error.NonExistentClass
+351-    => type (ERROR parameter type): error.NonExistentClass
+352-
+353-If type 'error.NonExistentClass' is a generated type, check above for compilation errors that may have prevented the type from being generated. Otherwise, ensure that type 'error.NonExistentClass' is on your classpath.
+354:e: Error occurred in KSP, check log for detail
+355-
+356-FAILURE: Build completed with 2 failures.
 357-
-358-If type 'error.NonExistentClass' is a generated type, check above for compilation errors that may have prevented the type from being generated. Otherwise, ensure that type 'error.NonExistentClass' is on your classpath.
-359:e: Error occurred in KSP, check log for detail
-360-
-361-FAILURE: Build completed with 2 failures.
-362-
 --
-846-
-847-==============================================================================
-848-
-849:BUILD FAILED in 2m 59s
-850-234 actionable tasks: 158 executed, 76 from cache
+841-
+842-==============================================================================
+843-
+844:BUILD FAILED in 4m 9s
+845-233 actionable tasks: 157 executed, 76 from cache
