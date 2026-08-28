@@ -1,11 +1,35 @@
-> Task :feature:chat:extractDeepLinksDebug FROM-CACHE
+> Task :feature:safety:generateDebugResources FROM-CACHE
+> Task :feature:safety:packageDebugResources
+> Task :feature:settings:generateDebugResValues FROM-CACHE
+> Task :feature:settings:generateDebugResources FROM-CACHE
+> Task :feature:settings:packageDebugResources
+> Task :feature:subscription:generateDebugResValues FROM-CACHE
+> Task :feature:subscription:generateDebugResources FROM-CACHE
+> Task :feature:subscription:packageDebugResources
+> Task :app:mapDevDebugSourceSetPaths
+> Task :app:generateDevDebugResources
+> Task :app:mergeDevDebugResources
+> Task :app:packageDevDebugResources
+> Task :app:createDevDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDevDebug
+> Task :core:auth:extractDeepLinksDebug
+> Task :app:parseDevDebugLocalResources
+> Task :core:database:extractDeepLinksDebug FROM-CACHE
+> Task :core:auth:processDebugManifest
+> Task :core:database:processDebugManifest
+> Task :core:network:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:extractDeepLinksDebug FROM-CACHE
+> Task :core:network:processDebugManifest
+> Task :feature:auth:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:processDebugManifest
 > Task :feature:auth:processDebugManifest
+> Task :feature:chat:extractDeepLinksDebug FROM-CACHE
 > Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
 > Task :feature:chat:processDebugManifest
-> Task :feature:matching:extractDeepLinksDebug FROM-CACHE
 > Task :feature:discovery:processDebugManifest
-> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
+> Task :feature:matching:extractDeepLinksDebug FROM-CACHE
 > Task :feature:matching:processDebugManifest
+> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
 > Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
 > Task :feature:notifications:processDebugManifest
 > Task :feature:profile:extractDeepLinksDebug FROM-CACHE
@@ -23,17 +47,17 @@
 > Task :app:processDevDebugManifestForPackage
 > Task :core:database:compileDebugLibraryResources FROM-CACHE
 > Task :core:auth:parseDebugLocalResources
-> Task :core:database:parseDebugLocalResources
-> Task :core:database:generateDebugRFile
+> Task :core:database:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:generateDebugRFile
+> Task :core:database:generateDebugRFile
 > Task :core:network:compileDebugLibraryResources FROM-CACHE
 > Task :core:network:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:compileDebugLibraryResources FROM-CACHE
-> Task :core:network:generateDebugRFile
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
+> Task :core:ui:generateDebugRFile
+> Task :core:network:generateDebugRFile
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
 > Task :feature:auth:parseDebugLocalResources FROM-CACHE
-> Task :core:ui:generateDebugRFile
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
 > Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:auth:generateDebugRFile
@@ -47,14 +71,14 @@
 > Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:generateDebugRFile
 > Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
-> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:notifications:generateDebugRFile
+> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
 > Task :feature:profile:parseDebugLocalResources FROM-CACHE
 > Task :feature:onboarding:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
-> Task :feature:safety:parseDebugLocalResources FROM-CACHE
 > Task :feature:profile:generateDebugRFile
+> Task :feature:safety:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:compileDebugLibraryResources FROM-CACHE
 > Task :feature:safety:generateDebugRFile
 > Task :feature:settings:parseDebugLocalResources FROM-CACHE
@@ -152,29 +176,8 @@ w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/m
 > Task :feature:notifications:compileDebugShaders NO-SOURCE
 > Task :feature:notifications:generateDebugAssets UP-TO-DATE
 > Task :feature:notifications:packageDebugAssets
-> Task :feature:onboarding:mergeDebugShaders
-> Task :feature:onboarding:compileDebugShaders NO-SOURCE
-> Task :feature:onboarding:generateDebugAssets UP-TO-DATE
-> Task :feature:onboarding:packageDebugAssets
-> Task :feature:profile:mergeDebugShaders
-> Task :feature:profile:compileDebugShaders NO-SOURCE
-> Task :feature:profile:generateDebugAssets UP-TO-DATE
-> Task :feature:profile:packageDebugAssets
-> Task :feature:safety:mergeDebugShaders
-> Task :feature:safety:compileDebugShaders NO-SOURCE
-> Task :feature:safety:generateDebugAssets UP-TO-DATE
-> Task :feature:safety:packageDebugAssets
-> Task :feature:settings:mergeDebugShaders
-> Task :feature:settings:compileDebugShaders NO-SOURCE
-> Task :feature:settings:generateDebugAssets UP-TO-DATE
-> Task :feature:settings:packageDebugAssets
-> Task :feature:subscription:mergeDebugShaders
-> Task :feature:subscription:compileDebugShaders NO-SOURCE
-> Task :feature:subscription:generateDebugAssets UP-TO-DATE
-> Task :feature:subscription:packageDebugAssets
-> Task :app:mergeDevDebugAssets
-> Task :app:compressDevDebugAssets
 > Task :core:ui:compileDebugKotlin
+> Task :feature:onboarding:mergeDebugShaders
 > Task :core:ui:compileDebugJavaWithJavac NO-SOURCE
 > Task :core:ui:bundleLibCompileToJarDebug
 > Task :core:ui:bundleLibRuntimeToJarDebug
@@ -182,10 +185,7 @@ w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/m
 > Task :feature:chat:kspDebugKotlin
 
 > Task :feature:chat:compileDebugKotlin FAILED
-e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:17:40 Unresolved reference 'FilterOperation'.
-e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:18:40 Unresolved reference 'FilterOperator'.
-e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:28 Unresolved reference 'FilterOperation'.
-e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:180:63 Unresolved reference 'FilterOperator'.
+e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/chat/src/main/kotlin/com/spark/dating/feature/chat/ChatViewModel.kt:178:21 Cannot access 'filter': it is private in 'io/github/jan/supabase/realtime/PostgresChangeFilter'.
 
 > Task :feature:auth:compileDebugKotlin
 
@@ -396,5 +396,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 49s
-215 actionable tasks: 140 executed, 75 from cache
+BUILD FAILED in 3m 3s
+204 actionable tasks: 128 executed, 76 from cache
