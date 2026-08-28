@@ -14,8 +14,6 @@ import io.github.jan.supabase.realtime.channel
 import io.github.jan.supabase.realtime.postgresChangeFlow
 import io.github.jan.supabase.realtime.PostgresAction
 import io.github.jan.supabase.realtime.RealtimeChannel
-import io.github.jan.supabase.realtime.FilterOperation
-import io.github.jan.supabase.realtime.FilterOperator
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -174,10 +172,12 @@ class ChatViewModel @Inject constructor(
             try {
                 channel = realtime.channel("chat:$conversationId")
 
-                // Listen for new messages in this conversation
+                // Listen for new messages in this conversation.
+                // Note: server-side `filter` on this table isn't wired up (the
+                // installed supabase-kt version doesn't expose a usable filter
+                // API here), so we filter client-side by conversationId below.
                 channel!!.postgresChangeFlow<PostgresAction.Insert>(schema = "public") {
                     table = "messages"
-                    filter(FilterOperation("conversation_id", FilterOperator.EQ, conversationId))
                 }.onEach { change ->
                     // Decode the new message and append it
                     val newMessage = try {
@@ -185,6 +185,8 @@ class ChatViewModel @Inject constructor(
                             change.record.toString()
                         )
                     } catch (_: Exception) { return@onEach }
+
+                    if (newMessage.conversationId != conversationId) return@onEach
 
                     _uiState.update { state ->
                         // Avoid duplicates
