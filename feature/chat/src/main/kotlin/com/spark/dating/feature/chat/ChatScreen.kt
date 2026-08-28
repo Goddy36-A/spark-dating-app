@@ -1,6 +1,7 @@
 package com.spark.dating.feature.chat
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -308,7 +309,3 @@ private fun formatMessageTime(isoString: String): String = try {
         .format(instant)
 } catch (_: Exception) { "" }
 
-// Missing extension for clickable on non-Composable modifier
-private fun Modifier.clickable(onClick: () -> Unit) = this.then(
-    Modifier.androidx.compose.foundation.clickable(onClick = onClick)
-)
