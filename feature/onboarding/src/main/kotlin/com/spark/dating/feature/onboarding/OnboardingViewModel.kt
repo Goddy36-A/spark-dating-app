@@ -201,7 +201,7 @@ class OnboardingViewModel @Inject constructor(
             val bucket = storage.from("profile-photos")
             val path = "$userId/${System.currentTimeMillis()}_$index.jpg"
             // Upload returns the path; construct public URL
-            bucket.upload(path, uri.toString().toByteArray(), upsert = true)
+            bucket.upload(path, uri.toString().toByteArray()) { upsert = true }
             "https://${System.getenv("SUPABASE_URL")}/storage/v1/object/public/profile-photos/$path"
         }
     }
@@ -233,3 +233,4 @@ class OnboardingViewModel @Inject constructor(
         else -> null
     }
 }
+
