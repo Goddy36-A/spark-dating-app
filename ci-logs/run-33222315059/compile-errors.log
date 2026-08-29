@@ -1,0 +1,14 @@
+338-> Task :feature:notifications:transformDebugClassesWithAsm
+339-> Task :feature:notifications:bundleLibCompileToJarDebug
+340-
+341:> Task :feature:onboarding:compileDebugKotlin FAILED
+342:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/onboarding/src/main/kotlin/com/spark/dating/feature/onboarding/OnboardingViewModel.kt:204:20 None of the following candidates is applicable:
+343-suspend fun upload(path: String, data: ByteArray, options: UploadOptionBuilder.() -> Unit = ...): FileUploadResponse
+344-suspend fun upload(path: String, data: UploadData, options: UploadOptionBuilder.() -> Unit = ...): FileUploadResponse
+345-
+--
+610-	... 2 more
+611-
+612-
+613:BUILD FAILED in 2m 58s
+614-239 actionable tasks: 163 executed, 76 from cache
