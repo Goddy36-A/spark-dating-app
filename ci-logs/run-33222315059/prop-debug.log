@@ -1,0 +1,19 @@
+--- root gradle.properties ---
+org.gradle.jvmargs=-Xmx3072m -Dfile.encoding=UTF-8
+org.gradle.parallel=false
+org.gradle.caching=true
+org.gradle.workers.max=2
+
+android.useAndroidX=true
+android.enableJetifier=false
+android.nonTransitiveRClass=true
+android.nonFinalResIds=false
+
+kotlin.code.style=official
+kotlin.daemon.jvm.options=-Xmx1536m
+kotlin.incremental=false
+--- find all gradle.properties in repo ---
+./gradle.properties
+--- GRADLE_USER_HOME gradle.properties ---
+GRADLE_USER_HOME=
+no ~/.gradle/gradle.properties
