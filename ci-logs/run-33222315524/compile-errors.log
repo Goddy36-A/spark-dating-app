@@ -1,0 +1,14 @@
+339-> Task :feature:notifications:bundleLibCompileToJarDebug
+340-> Task :feature:profile:kspDebugKotlin
+341-
+342:> Task :feature:profile:compileDebugKotlin FAILED
+343:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/profile/src/main/kotlin/com/spark/dating/feature/profile/ProfileScreens.kt:268:13 The API of this layout is experimental and is likely to change in the future.
+344-
+345-> Task :feature:onboarding:compileDebugKotlin
+346-
+--
+551-	... 2 more
+552-
+553-
+554:BUILD FAILED in 3m 5s
+555-240 actionable tasks: 164 executed, 76 from cache
