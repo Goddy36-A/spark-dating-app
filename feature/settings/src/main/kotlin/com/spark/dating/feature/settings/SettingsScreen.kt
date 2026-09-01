@@ -1,5 +1,6 @@
 package com.spark.dating.feature.settings
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -295,5 +296,3 @@ private fun DeleteAccountDialog(onConfirm: () -> Unit, onDismiss: () -> Unit) {
     )
 }
 
-private fun Modifier.clickable(onClick: () -> Unit) =
-    this.then(Modifier.androidx.compose.foundation.clickable(onClick = onClick))
