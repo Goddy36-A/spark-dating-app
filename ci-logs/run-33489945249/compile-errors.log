@@ -1,0 +1,16 @@
+396-> Task :app:checkDevDebugDuplicateClasses
+397-
+398-> Task :app:compileDevDebugKotlin
+399:e: file:///home/runner/work/spark-dating-app/spark-dating-app/app/src/main/kotlin/com/spark/dating/notifications/SparkMessagingService.kt:47:50 Unresolved reference 'auth'.
+400-
+401-> Task :app:mergeExtDexDevDebug
+402:> Task :app:compileDevDebugKotlin FAILED
+403-
+404-FAILURE: Build failed with an exception.
+405-
+--
+666-	... 2 more
+667-
+668-
+669:BUILD FAILED in 5m 11s
+670-290 actionable tasks: 214 executed, 76 from cache
