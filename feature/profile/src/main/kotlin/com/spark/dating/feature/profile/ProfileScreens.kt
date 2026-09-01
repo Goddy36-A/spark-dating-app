@@ -213,6 +213,7 @@ fun ProfileDetailScreen(
 
 // ── Shared: ProfileInfoSection ────────────────────────────────────────────────
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ProfileInfoSection(profile: Profile) {
     Column(modifier = Modifier.padding(20.dp)) {
@@ -354,3 +355,4 @@ fun EditProfileScreen(
         }
     }
 }
+
