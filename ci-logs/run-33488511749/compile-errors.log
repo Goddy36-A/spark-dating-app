@@ -1,0 +1,18 @@
+353-> Task :feature:safety:transformDebugClassesWithAsm
+354-> Task :feature:safety:bundleLibCompileToJarDebug
+355-
+356:> Task :feature:settings:compileDebugKotlin FAILED
+357:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:299:15 Type checking has run into a recursive problem. Easiest workaround: specify the types of your declarations explicitly.
+358:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:299:24 Unresolved reference 'androidx'.
+359:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:299:33 Cannot infer type for this parameter. Please specify it explicitly.
+360:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:299:33 'fun <T, R> Flow<T>.compose(transformer: Flow<T>.() -> Flow<R>): Flow<R>' is deprecated. Flow analogue of 'compose' is 'let'.
+361:e: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:299:41 Unresolved reference 'foundation'.
+362-
+363-> Task :feature:subscription:kspDebugKotlin
+364-
+--
+569-	... 2 more
+570-
+571-
+572:BUILD FAILED in 3m 8s
+573-254 actionable tasks: 178 executed, 76 from cache
