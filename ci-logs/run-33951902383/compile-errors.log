@@ -1,0 +1,21 @@
+400-> Task :app:hiltAggregateDepsDevDebug
+401-
+402-> Task :app:hiltJavaCompileDevDebug
+403:/home/runner/work/spark-dating-app/spark-dating-app/app/build/generated/hilt/component_sources/devDebug/com/spark/dating/SparkApplication_HiltComponents.java:155: error: [dagger.hilt.android.processor.internal.viewmodel.ViewModelValidationPlugin] 
+404-  public abstract static class SingletonC implements SparkApplication_GeneratedInjector,
+405-                         ^
+406-  Injection of an @HiltViewModel class is prohibited since it does not create a ViewModel instance correctly.
+--
+413-          com.spark.dating.MainActivity_GeneratedInjector.injectMainActivity(com.spark.dating.MainActivity) [com.spark.dating.SparkApplication_HiltComponents.SingletonC → com.spark.dating.SparkApplication_HiltComponents.ActivityRetainedC → com.spark.dating.SparkApplication_HiltComponents.ActivityC]
+414-1 error
+415-
+416:> Task :app:hiltJavaCompileDevDebug FAILED
+417-
+418-FAILURE: Build failed with an exception.
+419-
+--
+617-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+618-
+619-
+620:BUILD FAILED in 4m 37s
+621-293 actionable tasks: 217 executed, 76 from cache
