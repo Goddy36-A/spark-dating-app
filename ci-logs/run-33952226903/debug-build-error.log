@@ -1,0 +1,400 @@
+> Task :core:database:generateDebugResources FROM-CACHE
+> Task :core:database:packageDebugResources
+> Task :core:network:generateDebugResValues FROM-CACHE
+> Task :core:network:generateDebugResources FROM-CACHE
+> Task :core:network:packageDebugResources
+> Task :core:ui:generateDebugResValues FROM-CACHE
+> Task :core:ui:generateDebugResources FROM-CACHE
+> Task :core:ui:packageDebugResources
+> Task :feature:auth:generateDebugResValues FROM-CACHE
+> Task :feature:auth:generateDebugResources FROM-CACHE
+> Task :feature:auth:packageDebugResources
+> Task :feature:chat:generateDebugResValues FROM-CACHE
+> Task :feature:chat:generateDebugResources FROM-CACHE
+> Task :feature:chat:packageDebugResources
+> Task :feature:discovery:generateDebugResValues FROM-CACHE
+> Task :feature:discovery:generateDebugResources FROM-CACHE
+> Task :feature:discovery:packageDebugResources
+> Task :feature:matching:generateDebugResValues FROM-CACHE
+> Task :feature:matching:generateDebugResources FROM-CACHE
+> Task :feature:matching:packageDebugResources
+> Task :feature:notifications:generateDebugResValues FROM-CACHE
+> Task :feature:notifications:generateDebugResources FROM-CACHE
+> Task :feature:notifications:packageDebugResources
+> Task :feature:onboarding:generateDebugResValues FROM-CACHE
+> Task :feature:onboarding:generateDebugResources FROM-CACHE
+> Task :feature:onboarding:packageDebugResources
+> Task :feature:profile:generateDebugResValues FROM-CACHE
+> Task :feature:profile:generateDebugResources FROM-CACHE
+> Task :feature:profile:packageDebugResources
+> Task :feature:safety:generateDebugResValues FROM-CACHE
+> Task :feature:safety:generateDebugResources FROM-CACHE
+> Task :feature:safety:packageDebugResources
+> Task :feature:settings:generateDebugResValues FROM-CACHE
+> Task :feature:settings:generateDebugResources FROM-CACHE
+> Task :feature:settings:packageDebugResources
+> Task :feature:subscription:generateDebugResValues FROM-CACHE
+> Task :feature:subscription:generateDebugResources FROM-CACHE
+> Task :feature:subscription:packageDebugResources
+> Task :app:mapDevDebugSourceSetPaths
+> Task :app:generateDevDebugResources
+> Task :app:mergeDevDebugResources
+> Task :app:packageDevDebugResources
+> Task :app:createDevDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDevDebug
+> Task :core:auth:extractDeepLinksDebug
+> Task :app:parseDevDebugLocalResources
+> Task :core:database:extractDeepLinksDebug FROM-CACHE
+> Task :core:auth:processDebugManifest
+> Task :core:database:processDebugManifest
+> Task :core:network:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:extractDeepLinksDebug FROM-CACHE
+> Task :core:network:processDebugManifest
+> Task :feature:auth:extractDeepLinksDebug FROM-CACHE
+> Task :core:ui:processDebugManifest
+> Task :feature:chat:extractDeepLinksDebug FROM-CACHE
+> Task :feature:auth:processDebugManifest
+> Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
+> Task :feature:chat:processDebugManifest
+> Task :feature:matching:extractDeepLinksDebug FROM-CACHE
+> Task :feature:discovery:processDebugManifest
+> Task :feature:matching:processDebugManifest
+> Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
+> Task :feature:onboarding:extractDeepLinksDebug FROM-CACHE
+> Task :feature:notifications:processDebugManifest
+> Task :feature:onboarding:processDebugManifest
+> Task :feature:profile:extractDeepLinksDebug FROM-CACHE
+> Task :feature:profile:processDebugManifest
+> Task :feature:safety:extractDeepLinksDebug FROM-CACHE
+> Task :feature:settings:extractDeepLinksDebug FROM-CACHE
+> Task :feature:safety:processDebugManifest
+> Task :feature:subscription:extractDeepLinksDebug FROM-CACHE
+> Task :feature:settings:processDebugManifest
+> Task :feature:subscription:processDebugManifest
+> Task :core:auth:compileDebugLibraryResources
+> Task :app:processDevDebugMainManifest
+> Task :app:processDevDebugManifest
+> Task :app:processDevDebugManifestForPackage
+> Task :core:auth:parseDebugLocalResources
+> Task :core:database:compileDebugLibraryResources FROM-CACHE
+> Task :core:database:parseDebugLocalResources FROM-CACHE
+> Task :core:auth:generateDebugRFile
+> Task :core:database:generateDebugRFile
+> Task :core:network:compileDebugLibraryResources FROM-CACHE
+> Task :core:network:parseDebugLocalResources FROM-CACHE
+> Task :core:ui:compileDebugLibraryResources FROM-CACHE
+> Task :core:ui:parseDebugLocalResources FROM-CACHE
+> Task :core:network:generateDebugRFile
+> Task :feature:auth:compileDebugLibraryResources FROM-CACHE
+> Task :core:ui:generateDebugRFile
+> Task :feature:auth:parseDebugLocalResources FROM-CACHE
+> Task :feature:chat:compileDebugLibraryResources FROM-CACHE
+> Task :feature:auth:generateDebugRFile
+> Task :feature:chat:parseDebugLocalResources FROM-CACHE
+> Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
+> Task :feature:chat:generateDebugRFile
+> Task :feature:discovery:parseDebugLocalResources FROM-CACHE
+> Task :feature:matching:compileDebugLibraryResources FROM-CACHE
+> Task :feature:discovery:generateDebugRFile
+> Task :feature:matching:parseDebugLocalResources FROM-CACHE
+> Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
+> Task :feature:matching:generateDebugRFile
+> Task :feature:notifications:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
+> Task :feature:notifications:generateDebugRFile
+> Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
+> Task :feature:profile:compileDebugLibraryResources FROM-CACHE
+> Task :feature:profile:parseDebugLocalResources FROM-CACHE
+> Task :feature:safety:compileDebugLibraryResources FROM-CACHE
+> Task :feature:safety:parseDebugLocalResources FROM-CACHE
+> Task :feature:profile:generateDebugRFile
+> Task :feature:settings:compileDebugLibraryResources FROM-CACHE
+> Task :feature:settings:parseDebugLocalResources FROM-CACHE
+> Task :feature:safety:generateDebugRFile
+> Task :feature:settings:generateDebugRFile
+> Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
+> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
+> Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:subscription:generateDebugRFile
+> Task :app:processDevDebugResources
+> Task :core:network:javaPreCompileDebug
+> Task :core:auth:javaPreCompileDebug FROM-CACHE
+> Task :core:database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:network:kspDebugKotlin
+> Task :core:network:compileDebugKotlin
+
+> Task :core:database:kspDebugKotlin
+w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/main/kotlin/com/spark/dating/core/database/Database.kt:114: Schema export directory was not provided to the annotation processor so Room cannot export the schema. You can either provide `room.schemaLocation` annotation processor argument by applying the Room Gradle plugin (id 'androidx.room') OR set exportSchema to false.
+
+> Task :core:network:compileDebugJavaWithJavac
+> Task :core:network:transformDebugClassesWithAsm
+> Task :core:network:bundleLibCompileToJarDebug
+> Task :core:database:compileDebugKotlin
+> Task :core:network:bundleLibRuntimeToJarDebug
+> Task :core:database:javaPreCompileDebug
+> Task :core:auth:kspDebugKotlin
+> Task :core:database:compileDebugJavaWithJavac
+> Task :core:database:transformDebugClassesWithAsm
+> Task :core:database:bundleLibCompileToJarDebug
+> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:auth:compileDebugKotlin
+> Task :core:auth:compileDebugJavaWithJavac
+> Task :core:auth:transformDebugClassesWithAsm
+> Task :core:auth:bundleLibCompileToJarDebug
+> Task :core:ui:javaPreCompileDebug
+> Task :core:auth:bundleLibRuntimeToJarDebug
+> Task :feature:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:auth:javaPreCompileDebug FROM-CACHE
+> Task :core:database:bundleLibRuntimeToJarDebug
+> Task :feature:chat:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:chat:javaPreCompileDebug FROM-CACHE
+> Task :feature:discovery:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:discovery:javaPreCompileDebug FROM-CACHE
+> Task :feature:matching:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:matching:javaPreCompileDebug FROM-CACHE
+> Task :feature:notifications:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:notifications:javaPreCompileDebug FROM-CACHE
+> Task :feature:onboarding:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:onboarding:javaPreCompileDebug FROM-CACHE
+> Task :feature:profile:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:profile:javaPreCompileDebug FROM-CACHE
+> Task :feature:safety:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:safety:javaPreCompileDebug FROM-CACHE
+> Task :feature:settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:settings:javaPreCompileDebug FROM-CACHE
+> Task :feature:subscription:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature:subscription:javaPreCompileDebug FROM-CACHE
+> Task :app:javaPreCompileDevDebug
+> Task :app:mergeDevDebugShaders
+> Task :app:compileDevDebugShaders NO-SOURCE
+> Task :app:generateDevDebugAssets UP-TO-DATE
+> Task :core:auth:mergeDebugShaders
+> Task :core:auth:compileDebugShaders NO-SOURCE
+> Task :core:auth:generateDebugAssets UP-TO-DATE
+> Task :core:auth:packageDebugAssets
+> Task :core:database:mergeDebugShaders
+> Task :core:database:compileDebugShaders NO-SOURCE
+> Task :core:database:generateDebugAssets UP-TO-DATE
+> Task :core:database:packageDebugAssets
+> Task :core:network:mergeDebugShaders
+> Task :core:network:compileDebugShaders NO-SOURCE
+> Task :core:network:generateDebugAssets UP-TO-DATE
+> Task :core:network:packageDebugAssets
+> Task :core:ui:mergeDebugShaders
+> Task :core:ui:compileDebugShaders NO-SOURCE
+> Task :core:ui:generateDebugAssets UP-TO-DATE
+> Task :core:ui:packageDebugAssets
+> Task :feature:auth:mergeDebugShaders
+> Task :feature:auth:compileDebugShaders NO-SOURCE
+> Task :feature:auth:generateDebugAssets UP-TO-DATE
+> Task :feature:auth:packageDebugAssets
+> Task :feature:chat:mergeDebugShaders
+> Task :feature:chat:compileDebugShaders NO-SOURCE
+> Task :feature:chat:generateDebugAssets UP-TO-DATE
+> Task :feature:chat:packageDebugAssets
+> Task :feature:discovery:mergeDebugShaders
+> Task :feature:discovery:compileDebugShaders NO-SOURCE
+> Task :feature:discovery:generateDebugAssets UP-TO-DATE
+> Task :feature:discovery:packageDebugAssets
+> Task :feature:matching:mergeDebugShaders
+> Task :feature:matching:compileDebugShaders NO-SOURCE
+> Task :feature:matching:generateDebugAssets UP-TO-DATE
+> Task :feature:matching:packageDebugAssets
+> Task :feature:notifications:mergeDebugShaders
+> Task :feature:notifications:compileDebugShaders NO-SOURCE
+> Task :feature:notifications:generateDebugAssets UP-TO-DATE
+> Task :feature:notifications:packageDebugAssets
+> Task :feature:onboarding:mergeDebugShaders
+> Task :feature:onboarding:compileDebugShaders NO-SOURCE
+> Task :feature:onboarding:generateDebugAssets UP-TO-DATE
+> Task :feature:onboarding:packageDebugAssets
+> Task :feature:profile:mergeDebugShaders
+> Task :feature:profile:compileDebugShaders NO-SOURCE
+> Task :feature:profile:generateDebugAssets UP-TO-DATE
+> Task :feature:profile:packageDebugAssets
+> Task :feature:safety:mergeDebugShaders
+> Task :feature:safety:compileDebugShaders NO-SOURCE
+> Task :feature:safety:generateDebugAssets UP-TO-DATE
+> Task :feature:safety:packageDebugAssets
+> Task :feature:settings:mergeDebugShaders
+> Task :feature:settings:compileDebugShaders NO-SOURCE
+> Task :feature:settings:generateDebugAssets UP-TO-DATE
+> Task :feature:settings:packageDebugAssets
+> Task :feature:subscription:mergeDebugShaders
+> Task :feature:subscription:compileDebugShaders NO-SOURCE
+> Task :feature:subscription:generateDebugAssets UP-TO-DATE
+> Task :feature:subscription:packageDebugAssets
+> Task :app:mergeDevDebugAssets
+> Task :app:compressDevDebugAssets
+> Task :core:ui:compileDebugKotlin
+> Task :core:ui:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:ui:bundleLibCompileToJarDebug
+> Task :core:ui:bundleLibRuntimeToJarDebug
+> Task :feature:auth:kspDebugKotlin
+> Task :feature:chat:kspDebugKotlin
+> Task :feature:auth:compileDebugKotlin
+> Task :feature:chat:compileDebugKotlin
+> Task :feature:auth:compileDebugJavaWithJavac
+> Task :feature:auth:transformDebugClassesWithAsm
+> Task :feature:chat:compileDebugJavaWithJavac
+> Task :feature:auth:bundleLibCompileToJarDebug
+> Task :feature:chat:transformDebugClassesWithAsm
+> Task :feature:chat:bundleLibCompileToJarDebug
+> Task :feature:discovery:kspDebugKotlin
+> Task :feature:matching:kspDebugKotlin
+> Task :feature:matching:compileDebugKotlin
+> Task :feature:matching:compileDebugJavaWithJavac
+> Task :feature:matching:transformDebugClassesWithAsm
+> Task :feature:matching:bundleLibCompileToJarDebug
+> Task :feature:discovery:compileDebugKotlin
+> Task :feature:discovery:compileDebugJavaWithJavac
+> Task :feature:discovery:transformDebugClassesWithAsm
+> Task :feature:discovery:bundleLibCompileToJarDebug
+> Task :feature:notifications:kspDebugKotlin
+> Task :feature:onboarding:kspDebugKotlin
+> Task :feature:notifications:compileDebugKotlin
+> Task :feature:notifications:compileDebugJavaWithJavac
+> Task :feature:notifications:transformDebugClassesWithAsm
+> Task :feature:notifications:bundleLibCompileToJarDebug
+> Task :feature:profile:kspDebugKotlin
+> Task :feature:onboarding:compileDebugKotlin
+> Task :feature:onboarding:compileDebugJavaWithJavac
+> Task :feature:onboarding:transformDebugClassesWithAsm
+> Task :feature:onboarding:bundleLibCompileToJarDebug
+> Task :feature:profile:compileDebugKotlin
+> Task :feature:profile:compileDebugJavaWithJavac
+> Task :feature:profile:transformDebugClassesWithAsm
+> Task :feature:profile:bundleLibCompileToJarDebug
+> Task :feature:safety:kspDebugKotlin
+> Task :feature:safety:compileDebugKotlin
+> Task :feature:settings:kspDebugKotlin
+> Task :feature:safety:compileDebugJavaWithJavac
+> Task :feature:safety:transformDebugClassesWithAsm
+> Task :feature:safety:bundleLibCompileToJarDebug
+
+> Task :feature:settings:compileDebugKotlin
+w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/src/main/kotlin/com/spark/dating/feature/settings/SettingsScreen.kt:151:41 'val Icons.Filled.Message: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Message.
+
+> Task :feature:settings:compileDebugJavaWithJavac
+> Task :feature:settings:transformDebugClassesWithAsm
+> Task :feature:settings:bundleLibCompileToJarDebug
+> Task :feature:auth:bundleLibRuntimeToJarDebug
+> Task :feature:subscription:kspDebugKotlin
+> Task :feature:onboarding:bundleLibRuntimeToJarDebug
+
+> Task :feature:subscription:compileDebugKotlin
+w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscription/src/main/kotlin/com/spark/dating/feature/subscription/SubscriptionScreen.kt:214:26 'val Icons.Filled.LabelImportant: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.LabelImportant.
+
+> Task :feature:subscription:compileDebugJavaWithJavac
+> Task :feature:subscription:transformDebugClassesWithAsm
+> Task :feature:subscription:bundleLibCompileToJarDebug
+> Task :feature:profile:bundleLibRuntimeToJarDebug
+> Task :feature:discovery:bundleLibRuntimeToJarDebug
+> Task :feature:matching:bundleLibRuntimeToJarDebug
+> Task :feature:chat:bundleLibRuntimeToJarDebug
+> Task :feature:notifications:bundleLibRuntimeToJarDebug
+> Task :feature:settings:bundleLibRuntimeToJarDebug
+> Task :feature:subscription:bundleLibRuntimeToJarDebug
+> Task :app:kspDevDebugKotlin
+> Task :feature:safety:bundleLibRuntimeToJarDebug
+> Task :app:desugarDevDebugFileDependencies
+> Task :core:auth:processDebugJavaRes
+> Task :core:database:processDebugJavaRes
+> Task :core:network:processDebugJavaRes
+> Task :core:ui:processDebugJavaRes
+> Task :feature:auth:processDebugJavaRes
+> Task :feature:chat:processDebugJavaRes
+> Task :feature:discovery:processDebugJavaRes
+> Task :feature:matching:processDebugJavaRes
+> Task :feature:notifications:processDebugJavaRes
+> Task :feature:onboarding:processDebugJavaRes
+> Task :feature:profile:processDebugJavaRes
+> Task :feature:safety:processDebugJavaRes
+> Task :feature:settings:processDebugJavaRes
+> Task :feature:subscription:processDebugJavaRes
+> Task :app:checkDevDebugDuplicateClasses
+> Task :app:compileDevDebugKotlin
+> Task :app:mergeExtDexDevDebug
+> Task :app:compileDevDebugJavaWithJavac
+> Task :app:hiltAggregateDepsDevDebug
+> Task :app:hiltJavaCompileDevDebug
+> Task :app:processDevDebugJavaRes
+> Task :app:transformDevDebugClassesWithAsm
+> Task :app:dexBuilderDevDebug
+> Task :app:mergeDevDebugGlobalSynthetics
+> Task :feature:auth:bundleLibRuntimeToDirDebug
+> Task :feature:onboarding:bundleLibRuntimeToDirDebug
+> Task :feature:profile:bundleLibRuntimeToDirDebug
+> Task :app:mergeDevDebugJavaResource
+> Task :feature:discovery:bundleLibRuntimeToDirDebug
+> Task :feature:matching:bundleLibRuntimeToDirDebug
+> Task :feature:chat:bundleLibRuntimeToDirDebug
+> Task :feature:notifications:bundleLibRuntimeToDirDebug
+> Task :feature:settings:bundleLibRuntimeToDirDebug
+> Task :feature:subscription:bundleLibRuntimeToDirDebug
+> Task :feature:safety:bundleLibRuntimeToDirDebug
+> Task :core:auth:bundleLibRuntimeToDirDebug
+> Task :core:network:bundleLibRuntimeToDirDebug
+> Task :core:database:bundleLibRuntimeToDirDebug
+> Task :core:ui:bundleLibRuntimeToDirDebug
+> Task :app:mergeProjectDexDevDebug
+> Task :app:mergeDevDebugJniLibFolders
+> Task :core:auth:mergeDebugJniLibFolders
+> Task :core:auth:mergeDebugNativeLibs NO-SOURCE
+> Task :core:auth:copyDebugJniLibsProjectOnly
+> Task :core:database:mergeDebugJniLibFolders
+> Task :core:database:mergeDebugNativeLibs NO-SOURCE
+> Task :core:database:copyDebugJniLibsProjectOnly
+> Task :core:network:mergeDebugJniLibFolders
+> Task :core:network:mergeDebugNativeLibs NO-SOURCE
+> Task :core:network:copyDebugJniLibsProjectOnly
+> Task :core:ui:mergeDebugJniLibFolders
+> Task :core:ui:mergeDebugNativeLibs NO-SOURCE
+> Task :core:ui:copyDebugJniLibsProjectOnly
+> Task :feature:auth:mergeDebugJniLibFolders
+> Task :feature:auth:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:auth:copyDebugJniLibsProjectOnly
+> Task :feature:chat:mergeDebugJniLibFolders
+> Task :feature:chat:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:chat:copyDebugJniLibsProjectOnly
+> Task :feature:discovery:mergeDebugJniLibFolders
+> Task :feature:discovery:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:discovery:copyDebugJniLibsProjectOnly
+> Task :feature:matching:mergeDebugJniLibFolders
+> Task :feature:matching:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:matching:copyDebugJniLibsProjectOnly
+> Task :feature:notifications:mergeDebugJniLibFolders
+> Task :feature:notifications:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:notifications:copyDebugJniLibsProjectOnly
+> Task :feature:onboarding:mergeDebugJniLibFolders
+> Task :feature:onboarding:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:onboarding:copyDebugJniLibsProjectOnly
+> Task :feature:profile:mergeDebugJniLibFolders
+> Task :feature:profile:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:profile:copyDebugJniLibsProjectOnly
+> Task :feature:safety:mergeDebugJniLibFolders
+> Task :feature:safety:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeLibDexDevDebug
+> Task :feature:safety:copyDebugJniLibsProjectOnly
+> Task :feature:settings:mergeDebugJniLibFolders
+> Task :feature:settings:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:settings:copyDebugJniLibsProjectOnly
+> Task :feature:subscription:mergeDebugJniLibFolders
+> Task :feature:subscription:mergeDebugNativeLibs NO-SOURCE
+> Task :feature:subscription:copyDebugJniLibsProjectOnly
+> Task :app:validateSigningDevDebug
+> Task :app:writeDevDebugAppMetadata
+> Task :app:mergeDevDebugNativeLibs
+> Task :app:writeDevDebugSigningConfigVersions
+
+> Task :app:stripDevDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
+
+> Task :app:packageDevDebug
+> Task :app:createDevDebugApkListingFileRedirect
+> Task :app:assembleDevDebug
+
+BUILD SUCCESSFUL in 5m 10s
+350 actionable tasks: 274 executed, 76 from cache
