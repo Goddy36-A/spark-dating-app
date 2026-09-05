@@ -11,6 +11,7 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.spark.dating.MainActivity
 import com.spark.dating.R
+import com.spark.dating.core.auth.AuthRepository
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jan.supabase.postgrest.Postgrest
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +24,7 @@ import javax.inject.Inject
 class SparkMessagingService : FirebaseMessagingService() {
 
     @Inject lateinit var postgrest: Postgrest
+    @Inject lateinit var authRepository: AuthRepository
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -44,8 +46,7 @@ class SparkMessagingService : FirebaseMessagingService() {
         // Register the new FCM token with our backend
         serviceScope.launch {
             try {
-                val userId = com.google.firebase.auth.FirebaseAuth.getInstance()
-                    .currentUser?.uid ?: return@launch
+                val userId = authRepository.currentUserId() ?: return@launch
                 postgrest["devices"].upsert(
                     mapOf(
                         "user_id" to userId,
@@ -122,3 +123,4 @@ class SparkMessagingService : FirebaseMessagingService() {
         private const val CHANNEL_GENERAL  = "spark_general"
     }
 }
+
