@@ -1,0 +1,11 @@
+=== Searching for APK files ===
+./app/build/outputs/apk/dev/debug/app-dev-debug.apk
+=== app/build/outputs tree ===
+app/build/outputs
+app/build/outputs/logs
+app/build/outputs/logs/manifest-merger-dev-debug-report.txt
+app/build/outputs/apk
+app/build/outputs/apk/dev
+app/build/outputs/apk/dev/debug
+app/build/outputs/apk/dev/debug/output-metadata.json
+app/build/outputs/apk/dev/debug/app-dev-debug.apk
