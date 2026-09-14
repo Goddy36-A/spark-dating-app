@@ -12,29 +12,59 @@ CREATE EXTENSION IF NOT EXISTS "pg_trgm";        -- for fuzzy text search
 -- ENUMS
 -- =============================================================================
 
-CREATE TYPE gender AS ENUM ('man', 'woman', 'non_binary', 'other', 'unspecified');
-CREATE TYPE relationship_intent AS ENUM ('long_term', 'casual', 'friendship', 'unsure', 'unspecified');
-CREATE TYPE message_type AS ENUM ('text', 'image', 'gif');
-CREATE TYPE report_category AS ENUM (
+DO $$ BEGIN
+    CREATE TYPE gender AS ENUM ('man', 'woman', 'non_binary', 'other', 'unspecified');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE relationship_intent AS ENUM ('long_term', 'casual', 'friendship', 'unsure', 'unspecified');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE message_type AS ENUM ('text', 'image', 'gif');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE report_category AS ENUM (
     'harassment', 'spam', 'fake_profile', 'inappropriate_content',
     'scam_fraud', 'impersonation', 'underage_concern', 'other'
 );
-CREATE TYPE report_status AS ENUM ('pending', 'under_review', 'resolved', 'dismissed');
-CREATE TYPE subscription_tier AS ENUM ('free', 'plus', 'gold', 'platinum');
-CREATE TYPE subscription_status AS ENUM ('active', 'cancelled', 'expired', 'grace_period', 'on_hold');
-CREATE TYPE notification_type AS ENUM (
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE report_status AS ENUM ('pending', 'under_review', 'resolved', 'dismissed');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE subscription_tier AS ENUM ('free', 'plus', 'gold', 'platinum');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE subscription_status AS ENUM ('active', 'cancelled', 'expired', 'grace_period', 'on_hold');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE notification_type AS ENUM (
     'new_match', 'new_message', 'new_like', 'new_super_like',
     'security_alert', 'moderation'
 );
-CREATE TYPE user_role AS ENUM ('user', 'moderator', 'support', 'analyst', 'super_admin');
-CREATE TYPE moderation_action AS ENUM ('warning', 'restrict', 'suspend', 'ban', 'restore', 'dismiss');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE user_role AS ENUM ('user', 'moderator', 'support', 'analyst', 'super_admin');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+    CREATE TYPE moderation_action AS ENUM ('warning', 'restrict', 'suspend', 'ban', 'restore', 'dismiss');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
 
 -- =============================================================================
 -- USERS
 -- Extends auth.users (managed by Supabase Auth)
 -- =============================================================================
 
-CREATE TABLE public.users (
+CREATE TABLE IF NOT EXISTS public.users (
     id                  UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     email               TEXT NOT NULL,
     role                user_role NOT NULL DEFAULT 'user',
@@ -58,6 +88,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 CREATE TRIGGER on_auth_user_created
     AFTER INSERT ON auth.users
     FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
@@ -66,7 +97,7 @@ CREATE TRIGGER on_auth_user_created
 -- PROFILES
 -- =============================================================================
 
-CREATE TABLE public.profiles (
+CREATE TABLE IF NOT EXISTS public.profiles (
     id                  UUID PRIMARY KEY REFERENCES public.users(id) ON DELETE CASCADE,
     first_name          TEXT NOT NULL DEFAULT '',
     date_of_birth       DATE,                   -- stored server-side, never sent to other clients as-is
@@ -98,7 +129,7 @@ CREATE INDEX idx_profiles_gender ON public.profiles (gender);
 -- PROFILE PHOTOS
 -- =============================================================================
 
-CREATE TABLE public.profile_photos (
+CREATE TABLE IF NOT EXISTS public.profile_photos (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     profile_id  UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     url         TEXT NOT NULL,
@@ -118,7 +149,7 @@ CREATE INDEX idx_profile_photos_profile ON public.profile_photos (profile_id, so
 -- PROFILE PROMPTS
 -- =============================================================================
 
-CREATE TABLE public.profile_prompts (
+CREATE TABLE IF NOT EXISTS public.profile_prompts (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     profile_id  UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     question    TEXT NOT NULL,
@@ -133,7 +164,7 @@ CREATE INDEX idx_profile_prompts_profile ON public.profile_prompts (profile_id, 
 -- INTERESTS
 -- =============================================================================
 
-CREATE TABLE public.interests (
+CREATE TABLE IF NOT EXISTS public.interests (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name        TEXT NOT NULL UNIQUE,
     emoji       TEXT NOT NULL DEFAULT '',
@@ -141,7 +172,7 @@ CREATE TABLE public.interests (
     is_active   BOOLEAN NOT NULL DEFAULT TRUE
 );
 
-CREATE TABLE public.user_interests (
+CREATE TABLE IF NOT EXISTS public.user_interests (
     user_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     interest_id UUID NOT NULL REFERENCES public.interests(id) ON DELETE CASCADE,
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -152,7 +183,7 @@ CREATE TABLE public.user_interests (
 -- PREFERENCES
 -- =============================================================================
 
-CREATE TABLE public.preferences (
+CREATE TABLE IF NOT EXISTS public.preferences (
     user_id             UUID PRIMARY KEY REFERENCES public.users(id) ON DELETE CASCADE,
     gender_preference   gender[] NOT NULL DEFAULT '{}',
     min_age             SMALLINT NOT NULL DEFAULT 18 CHECK (min_age >= 18),
@@ -168,7 +199,7 @@ CREATE TABLE public.preferences (
 -- LIKES & PASSES
 -- =============================================================================
 
-CREATE TABLE public.likes (
+CREATE TABLE IF NOT EXISTS public.likes (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     liker_id        UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     liked_id        UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
@@ -181,7 +212,7 @@ CREATE TABLE public.likes (
 CREATE INDEX idx_likes_liked_id ON public.likes (liked_id, created_at DESC);
 CREATE INDEX idx_likes_liker_id ON public.likes (liker_id, created_at DESC);
 
-CREATE TABLE public.passes (
+CREATE TABLE IF NOT EXISTS public.passes (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     passer_id   UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     passed_id   UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
@@ -197,7 +228,7 @@ CREATE INDEX idx_passes_passer_id ON public.passes (passer_id);
 -- Created automatically by trigger when a mutual like occurs
 -- =============================================================================
 
-CREATE TABLE public.matches (
+CREATE TABLE IF NOT EXISTS public.matches (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user1_id        UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     user2_id        UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
@@ -265,6 +296,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+DROP TRIGGER IF EXISTS on_like_inserted ON public.likes;
 CREATE TRIGGER on_like_inserted
     AFTER INSERT ON public.likes
     FOR EACH ROW EXECUTE FUNCTION public.check_mutual_like();
@@ -273,14 +305,14 @@ CREATE TRIGGER on_like_inserted
 -- CONVERSATIONS & MESSAGES
 -- =============================================================================
 
-CREATE TABLE public.conversations (
+CREATE TABLE IF NOT EXISTS public.conversations (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     match_id    UUID NOT NULL REFERENCES public.matches(id) ON DELETE CASCADE,
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE public.conversation_members (
+CREATE TABLE IF NOT EXISTS public.conversation_members (
     conversation_id UUID NOT NULL REFERENCES public.conversations(id) ON DELETE CASCADE,
     user_id         UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     last_read_at    TIMESTAMPTZ,
@@ -288,7 +320,7 @@ CREATE TABLE public.conversation_members (
     PRIMARY KEY (conversation_id, user_id)
 );
 
-CREATE TABLE public.messages (
+CREATE TABLE IF NOT EXISTS public.messages (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     conversation_id UUID NOT NULL REFERENCES public.conversations(id) ON DELETE CASCADE,
     sender_id       UUID NOT NULL REFERENCES public.users(id) ON DELETE SET NULL,
@@ -312,6 +344,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS on_message_inserted ON public.messages;
 CREATE TRIGGER on_message_inserted
     AFTER INSERT ON public.messages
     FOR EACH ROW EXECUTE FUNCTION public.update_conversation_timestamp();
@@ -320,7 +353,7 @@ CREATE TRIGGER on_message_inserted
 -- BLOCKS
 -- =============================================================================
 
-CREATE TABLE public.blocks (
+CREATE TABLE IF NOT EXISTS public.blocks (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     blocker_id  UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     blocked_id  UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
@@ -336,7 +369,7 @@ CREATE INDEX idx_blocks_blocked ON public.blocks (blocked_id);
 -- REPORTS
 -- =============================================================================
 
-CREATE TABLE public.reports (
+CREATE TABLE IF NOT EXISTS public.reports (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     reporter_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     reported_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
@@ -357,7 +390,7 @@ CREATE INDEX idx_reports_reported ON public.reports (reported_id);
 -- SUBSCRIPTIONS
 -- =============================================================================
 
-CREATE TABLE public.subscriptions (
+CREATE TABLE IF NOT EXISTS public.subscriptions (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id         UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     tier            subscription_tier NOT NULL DEFAULT 'free',
@@ -389,7 +422,7 @@ ORDER BY s.created_at DESC;
 -- NOTIFICATIONS
 -- =============================================================================
 
-CREATE TABLE public.notification_queue (
+CREATE TABLE IF NOT EXISTS public.notification_queue (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     type        notification_type NOT NULL,
@@ -398,7 +431,7 @@ CREATE TABLE public.notification_queue (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE public.notifications (
+CREATE TABLE IF NOT EXISTS public.notifications (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     type        notification_type NOT NULL,
@@ -415,7 +448,7 @@ CREATE INDEX idx_notifications_user ON public.notifications (user_id, created_at
 -- DEVICES (FCM tokens)
 -- =============================================================================
 
-CREATE TABLE public.devices (
+CREATE TABLE IF NOT EXISTS public.devices (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id     UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     fcm_token   TEXT NOT NULL,
@@ -429,7 +462,7 @@ CREATE TABLE public.devices (
 -- MODERATION
 -- =============================================================================
 
-CREATE TABLE public.moderation_events (
+CREATE TABLE IF NOT EXISTS public.moderation_events (
     id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     target_user_id  UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
     moderator_id    UUID NOT NULL REFERENCES public.users(id),
@@ -445,7 +478,7 @@ CREATE INDEX idx_moderation_target ON public.moderation_events (target_user_id, 
 -- AUDIT LOG (immutable append-only)
 -- =============================================================================
 
-CREATE TABLE public.audit_logs (
+CREATE TABLE IF NOT EXISTS public.audit_logs (
     id          BIGSERIAL PRIMARY KEY,
     user_id     UUID REFERENCES public.users(id) ON DELETE SET NULL,
     action      TEXT NOT NULL,
@@ -471,22 +504,27 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS set_users_updated_at ON public.users;
 CREATE TRIGGER set_users_updated_at
     BEFORE UPDATE ON public.users
     FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
 
+DROP TRIGGER IF EXISTS set_profiles_updated_at ON public.profiles;
 CREATE TRIGGER set_profiles_updated_at
     BEFORE UPDATE ON public.profiles
     FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
 
+DROP TRIGGER IF EXISTS set_conversations_updated_at ON public.conversations;
 CREATE TRIGGER set_conversations_updated_at
     BEFORE UPDATE ON public.conversations
     FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
 
+DROP TRIGGER IF EXISTS set_reports_updated_at ON public.reports;
 CREATE TRIGGER set_reports_updated_at
     BEFORE UPDATE ON public.reports
     FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
 
+DROP TRIGGER IF EXISTS set_subscriptions_updated_at ON public.subscriptions;
 CREATE TRIGGER set_subscriptions_updated_at
     BEFORE UPDATE ON public.subscriptions
     FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
@@ -617,13 +655,16 @@ ALTER TABLE public.devices              ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.moderation_events    ENABLE ROW LEVEL SECURITY;
 
 -- ── users ─────────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read own record" ON public.users;
 CREATE POLICY "Users can read own record"
     ON public.users FOR SELECT USING (auth.uid() = id);
 
+DROP POLICY IF EXISTS "Users can update own record" ON public.users;
 CREATE POLICY "Users can update own record"
     ON public.users FOR UPDATE USING (auth.uid() = id);
 
 -- ── profiles ──────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read any non-banned profile" ON public.profiles;
 CREATE POLICY "Users can read any non-banned profile"
     ON public.profiles FOR SELECT
     USING (
@@ -633,13 +674,16 @@ CREATE POLICY "Users can read any non-banned profile"
         )
     );
 
+DROP POLICY IF EXISTS "Users can insert own profile" ON public.profiles;
 CREATE POLICY "Users can insert own profile"
     ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
 
+DROP POLICY IF EXISTS "Users can update own profile" ON public.profiles;
 CREATE POLICY "Users can update own profile"
     ON public.profiles FOR UPDATE USING (auth.uid() = id);
 
 -- ── profile_photos ────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Anyone can view photos of non-banned users" ON public.profile_photos;
 CREATE POLICY "Anyone can view photos of non-banned users"
     ON public.profile_photos FOR SELECT
     USING (
@@ -649,34 +693,42 @@ CREATE POLICY "Anyone can view photos of non-banned users"
         )
     );
 
+DROP POLICY IF EXISTS "Users can manage own photos" ON public.profile_photos;
 CREATE POLICY "Users can manage own photos"
     ON public.profile_photos FOR ALL USING (auth.uid() = profile_id);
 
 -- ── preferences ───────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can manage own preferences" ON public.preferences;
 CREATE POLICY "Users can manage own preferences"
     ON public.preferences FOR ALL USING (auth.uid() = user_id);
 
 -- ── likes ─────────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read likes they sent or received" ON public.likes;
 CREATE POLICY "Users can read likes they sent or received"
     ON public.likes FOR SELECT
     USING (auth.uid() = liker_id OR auth.uid() = liked_id);
 
+DROP POLICY IF EXISTS "Users can insert own likes" ON public.likes;
 CREATE POLICY "Users can insert own likes"
     ON public.likes FOR INSERT WITH CHECK (auth.uid() = liker_id);
 
+DROP POLICY IF EXISTS "Users can delete own likes" ON public.likes;
 CREATE POLICY "Users can delete own likes"
     ON public.likes FOR DELETE USING (auth.uid() = liker_id);
 
 -- ── passes ────────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can manage own passes" ON public.passes;
 CREATE POLICY "Users can manage own passes"
     ON public.passes FOR ALL USING (auth.uid() = passer_id);
 
 -- ── matches ───────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read own matches" ON public.matches;
 CREATE POLICY "Users can read own matches"
     ON public.matches FOR SELECT
     USING (auth.uid() = user1_id OR auth.uid() = user2_id);
 
 -- ── conversations ─────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Conversation members can read" ON public.conversations;
 CREATE POLICY "Conversation members can read"
     ON public.conversations FOR SELECT
     USING (
@@ -687,14 +739,17 @@ CREATE POLICY "Conversation members can read"
     );
 
 -- ── conversation_members ──────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Members can view own membership" ON public.conversation_members;
 CREATE POLICY "Members can view own membership"
     ON public.conversation_members FOR SELECT
     USING (auth.uid() = user_id);
 
+DROP POLICY IF EXISTS "Members can update own membership" ON public.conversation_members;
 CREATE POLICY "Members can update own membership"
     ON public.conversation_members FOR UPDATE USING (auth.uid() = user_id);
 
 -- ── messages ──────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Conversation members can read messages" ON public.messages;
 CREATE POLICY "Conversation members can read messages"
     ON public.messages FOR SELECT
     USING (
@@ -704,6 +759,7 @@ CREATE POLICY "Conversation members can read messages"
         )
     );
 
+DROP POLICY IF EXISTS "Conversation members can send messages" ON public.messages;
 CREATE POLICY "Conversation members can send messages"
     ON public.messages FOR INSERT
     WITH CHECK (
@@ -714,33 +770,41 @@ CREATE POLICY "Conversation members can send messages"
         )
     );
 
+DROP POLICY IF EXISTS "Senders can soft-delete own messages" ON public.messages;
 CREATE POLICY "Senders can soft-delete own messages"
     ON public.messages FOR UPDATE
     USING (auth.uid() = sender_id);
 
 -- ── blocks ────────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can manage own blocks" ON public.blocks;
 CREATE POLICY "Users can manage own blocks"
     ON public.blocks FOR ALL USING (auth.uid() = blocker_id);
 
 -- ── reports ───────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can submit reports" ON public.reports;
 CREATE POLICY "Users can submit reports"
     ON public.reports FOR INSERT WITH CHECK (auth.uid() = reporter_id);
 
+DROP POLICY IF EXISTS "Users can read own reports" ON public.reports;
 CREATE POLICY "Users can read own reports"
     ON public.reports FOR SELECT USING (auth.uid() = reporter_id);
 
 -- ── subscriptions ─────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read own subscriptions" ON public.subscriptions;
 CREATE POLICY "Users can read own subscriptions"
     ON public.subscriptions FOR SELECT USING (auth.uid() = user_id);
 
 -- ── notifications ─────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can read own notifications" ON public.notifications;
 CREATE POLICY "Users can read own notifications"
     ON public.notifications FOR SELECT USING (auth.uid() = user_id);
 
+DROP POLICY IF EXISTS "Users can update own notifications" ON public.notifications;
 CREATE POLICY "Users can update own notifications"
     ON public.notifications FOR UPDATE USING (auth.uid() = user_id);
 
 -- ── devices ───────────────────────────────────────────────────────────────────
+DROP POLICY IF EXISTS "Users can manage own devices" ON public.devices;
 CREATE POLICY "Users can manage own devices"
     ON public.devices FOR ALL USING (auth.uid() = user_id);
 
@@ -770,3 +834,4 @@ INSERT INTO public.interests (name, emoji, category) VALUES
 ('Pets', '🐾', 'lifestyle'),
 ('Volunteering', '🤝', 'community')
 ON CONFLICT (name) DO NOTHING;
+
