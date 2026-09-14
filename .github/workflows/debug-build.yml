@@ -25,8 +25,8 @@ jobs:
 
       - name: Create local.properties
         run: |
-          echo "supabase.url=https://placeholder.supabase.co" >> local.properties
-          echo "supabase.anon_key=placeholder" >> local.properties
+          echo "supabase.url=${{ secrets.SUPABASE_URL }}" >> local.properties
+          echo "supabase.anon_key=${{ secrets.SUPABASE_ANON_KEY }}" >> local.properties
 
       - name: Make gradlew executable
         run: chmod +x gradlew
