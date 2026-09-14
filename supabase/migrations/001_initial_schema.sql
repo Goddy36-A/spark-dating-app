@@ -121,9 +121,9 @@ CREATE TABLE IF NOT EXISTS public.profiles (
 );
 
 -- Index for geo proximity queries
-CREATE INDEX idx_profiles_location ON public.profiles USING GIST (location);
-CREATE INDEX idx_profiles_age ON public.profiles (age);
-CREATE INDEX idx_profiles_gender ON public.profiles (gender);
+CREATE INDEX IF NOT EXISTS idx_profiles_location ON public.profiles USING GIST (location);
+CREATE INDEX IF NOT EXISTS idx_profiles_age ON public.profiles (age);
+CREATE INDEX IF NOT EXISTS idx_profiles_gender ON public.profiles (gender);
 
 -- =============================================================================
 -- PROFILE PHOTOS
@@ -139,11 +139,11 @@ CREATE TABLE IF NOT EXISTS public.profile_photos (
 );
 
 -- Only one primary photo per profile
-CREATE UNIQUE INDEX idx_profile_photos_primary
+CREATE UNIQUE INDEX IF NOT EXISTS idx_profile_photos_primary
     ON public.profile_photos (profile_id)
     WHERE is_primary = TRUE;
 
-CREATE INDEX idx_profile_photos_profile ON public.profile_photos (profile_id, sort_order);
+CREATE INDEX IF NOT EXISTS idx_profile_photos_profile ON public.profile_photos (profile_id, sort_order);
 
 -- =============================================================================
 -- PROFILE PROMPTS
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS public.profile_prompts (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_profile_prompts_profile ON public.profile_prompts (profile_id, sort_order);
+CREATE INDEX IF NOT EXISTS idx_profile_prompts_profile ON public.profile_prompts (profile_id, sort_order);
 
 -- =============================================================================
 -- INTERESTS
@@ -209,8 +209,8 @@ CREATE TABLE IF NOT EXISTS public.likes (
     CONSTRAINT unique_like UNIQUE (liker_id, liked_id)
 );
 
-CREATE INDEX idx_likes_liked_id ON public.likes (liked_id, created_at DESC);
-CREATE INDEX idx_likes_liker_id ON public.likes (liker_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_likes_liked_id ON public.likes (liked_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_likes_liker_id ON public.likes (liker_id, created_at DESC);
 
 CREATE TABLE IF NOT EXISTS public.passes (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS public.passes (
     CONSTRAINT unique_pass UNIQUE (passer_id, passed_id)
 );
 
-CREATE INDEX idx_passes_passer_id ON public.passes (passer_id);
+CREATE INDEX IF NOT EXISTS idx_passes_passer_id ON public.passes (passer_id);
 
 -- =============================================================================
 -- MATCHES
@@ -242,8 +242,8 @@ CREATE TABLE IF NOT EXISTS public.matches (
     CONSTRAINT unique_match UNIQUE (user1_id, user2_id)
 );
 
-CREATE INDEX idx_matches_user1 ON public.matches (user1_id, created_at DESC);
-CREATE INDEX idx_matches_user2 ON public.matches (user2_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_matches_user1 ON public.matches (user1_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_matches_user2 ON public.matches (user2_id, created_at DESC);
 
 -- Trigger: create match + conversation on mutual like
 CREATE OR REPLACE FUNCTION public.check_mutual_like()
@@ -332,8 +332,8 @@ CREATE TABLE IF NOT EXISTS public.messages (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_messages_conversation ON public.messages (conversation_id, created_at DESC);
-CREATE INDEX idx_messages_sender ON public.messages (sender_id);
+CREATE INDEX IF NOT EXISTS idx_messages_conversation ON public.messages (conversation_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_messages_sender ON public.messages (sender_id);
 
 -- Trigger: update conversation.updated_at on new message
 CREATE OR REPLACE FUNCTION public.update_conversation_timestamp()
@@ -362,8 +362,8 @@ CREATE TABLE IF NOT EXISTS public.blocks (
     CONSTRAINT unique_block UNIQUE (blocker_id, blocked_id)
 );
 
-CREATE INDEX idx_blocks_blocker ON public.blocks (blocker_id);
-CREATE INDEX idx_blocks_blocked ON public.blocks (blocked_id);
+CREATE INDEX IF NOT EXISTS idx_blocks_blocker ON public.blocks (blocker_id);
+CREATE INDEX IF NOT EXISTS idx_blocks_blocked ON public.blocks (blocked_id);
 
 -- =============================================================================
 -- REPORTS
@@ -383,8 +383,8 @@ CREATE TABLE IF NOT EXISTS public.reports (
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_reports_status ON public.reports (status, created_at DESC);
-CREATE INDEX idx_reports_reported ON public.reports (reported_id);
+CREATE INDEX IF NOT EXISTS idx_reports_status ON public.reports (status, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_reports_reported ON public.reports (reported_id);
 
 -- =============================================================================
 -- SUBSCRIPTIONS
@@ -402,7 +402,7 @@ CREATE TABLE IF NOT EXISTS public.subscriptions (
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE UNIQUE INDEX idx_subscriptions_active_user
+CREATE UNIQUE INDEX IF NOT EXISTS idx_subscriptions_active_user
     ON public.subscriptions (user_id)
     WHERE status = 'active';
 
@@ -442,7 +442,7 @@ CREATE TABLE IF NOT EXISTS public.notifications (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_notifications_user ON public.notifications (user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_notifications_user ON public.notifications (user_id, created_at DESC);
 
 -- =============================================================================
 -- DEVICES (FCM tokens)
@@ -472,7 +472,7 @@ CREATE TABLE IF NOT EXISTS public.moderation_events (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_moderation_target ON public.moderation_events (target_user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_moderation_target ON public.moderation_events (target_user_id, created_at DESC);
 
 -- =============================================================================
 -- AUDIT LOG (immutable append-only)
@@ -490,7 +490,7 @@ CREATE TABLE IF NOT EXISTS public.audit_logs (
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX idx_audit_user ON public.audit_logs (user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_audit_user ON public.audit_logs (user_id, created_at DESC);
 
 -- =============================================================================
 -- UPDATED_AT TRIGGERS (applied to tables that need it)
@@ -834,4 +834,5 @@ INSERT INTO public.interests (name, emoji, category) VALUES
 ('Pets', '🐾', 'lifestyle'),
 ('Volunteering', '🤝', 'community')
 ON CONFLICT (name) DO NOTHING;
+
 
