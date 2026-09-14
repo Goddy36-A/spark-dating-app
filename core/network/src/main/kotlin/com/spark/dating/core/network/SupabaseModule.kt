@@ -37,6 +37,11 @@ object SupabaseModule {
             // Store session via platform default (Android EncryptedSharedPreferences)
             autoSaveToStorage = true
             autoLoadFromStorage = true
+            // Must match the intent-filter data android:scheme/android:host
+            // in AndroidManifest.xml, or the Google OAuth redirect back into
+            // the app never completes.
+            scheme = "com.spark.dating"
+            host = "auth-callback"
         }
         install(Postgrest)
         install(Realtime) {
@@ -66,4 +71,3 @@ object SupabaseModule {
     @Singleton
     fun provideFunctions(client: SupabaseClient): Functions = client.functions
 }
-
