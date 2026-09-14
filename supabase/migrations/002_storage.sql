@@ -26,10 +26,12 @@ VALUES (
 -- ── Storage RLS ───────────────────────────────────────────────────────────────
 
 -- Profile photos: any authenticated user can view; only owner can upload/delete
+DROP POLICY IF EXISTS "Anyone can view profile photos" ON storage.objects;
 CREATE POLICY "Anyone can view profile photos"
     ON storage.objects FOR SELECT
     USING (bucket_id = 'profile-photos');
 
+DROP POLICY IF EXISTS "Authenticated users can upload own profile photos" ON storage.objects;
 CREATE POLICY "Authenticated users can upload own profile photos"
     ON storage.objects FOR INSERT
     WITH CHECK (
@@ -39,6 +41,7 @@ CREATE POLICY "Authenticated users can upload own profile photos"
         AND (storage.foldername(name))[1] = auth.uid()::TEXT
     );
 
+DROP POLICY IF EXISTS "Users can delete own profile photos" ON storage.objects;
 CREATE POLICY "Users can delete own profile photos"
     ON storage.objects FOR DELETE
     USING (
@@ -47,6 +50,7 @@ CREATE POLICY "Users can delete own profile photos"
     );
 
 -- Message attachments: only conversation members
+DROP POLICY IF EXISTS "Conversation members can view attachments" ON storage.objects;
 CREATE POLICY "Conversation members can view attachments"
     ON storage.objects FOR SELECT
     USING (
@@ -60,6 +64,7 @@ CREATE POLICY "Conversation members can view attachments"
         )
     );
 
+DROP POLICY IF EXISTS "Conversation members can upload attachments" ON storage.objects;
 CREATE POLICY "Conversation members can upload attachments"
     ON storage.objects FOR INSERT
     WITH CHECK (
@@ -71,3 +76,4 @@ CREATE POLICY "Conversation members can upload attachments"
               AND cm.user_id = auth.uid()
         )
     );
+
