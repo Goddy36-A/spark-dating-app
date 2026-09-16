@@ -9,6 +9,19 @@ plugins {
     alias(libs.plugins.firebase.crashlytics)
 }
 
+// project.findProperty(...) only reads gradle.properties / -P flags / ORG_GRADLE_PROJECT_*
+// env vars — it does NOT read local.properties automatically. Load it explicitly so the
+// Supabase/Maps keys set there actually reach BuildConfig instead of silently resolving
+// to an empty string.
+val localProperties = java.util.Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { load(it) }
+    }
+}
+fun localOrGradleProperty(name: String): String? =
+    localProperties.getProperty(name) ?: (project.findProperty(name) as String?)
+
 android {
     namespace = "com.spark.dating"
     compileSdk = 35
@@ -24,14 +37,14 @@ android {
         vectorDrawables { useSupportLibrary = true }
 
         // Supabase config — values come from local.properties, never hardcoded
-        buildConfigField("String", "SUPABASE_URL", "\"${project.findProperty("supabase.url") ?: ""}\"")
-        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${project.findProperty("supabase.anon_key") ?: ""}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"${localOrGradleProperty("supabase.url") ?: ""}\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${localOrGradleProperty("supabase.anon_key") ?: ""}\"")
 
         // Google Maps API key — required by AndroidManifest.xml's placeholder.
         // Falls back to a dummy value so debug/CI builds succeed without a real key;
         // map features simply won't authenticate until a real key is supplied.
         manifestPlaceholders["MAPS_API_KEY"] =
-            (project.findProperty("MAPS_API_KEY") as String?)
+            localOrGradleProperty("MAPS_API_KEY")
                 ?.takeIf { it.isNotBlank() }
                 ?: "AIzaSyDUMMY00000000000000000000000000"
     }
@@ -157,5 +170,3 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.test.manifest)
 }
-
-
