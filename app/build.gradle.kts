@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -13,7 +15,12 @@ plugins {
 // env vars — it does NOT read local.properties automatically. Load it explicitly so the
 // Supabase/Maps keys set there actually reach BuildConfig instead of silently resolving
 // to an empty string.
-val localProperties = java.util.Properties().apply {
+//
+// NOTE: must use the `import java.util.Properties` above rather than the fully-qualified
+// `java.util.Properties(...)` inline — com.android.application registers a Gradle-generated
+// `java` extension accessor (JavaPluginExtension) that shadows the `java.*` package name at
+// script scope, so `java.util.Properties()` fails to resolve here even though it's valid Kotlin.
+val localProperties = Properties().apply {
     val localPropertiesFile = rootProject.file("local.properties")
     if (localPropertiesFile.exists()) {
         localPropertiesFile.inputStream().use { load(it) }
