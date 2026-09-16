@@ -1,0 +1,13 @@
+14-Daemon will be stopped at the end of the build 
+15-
+16-> Configure project :app
+17:e: file:///home/runner/work/spark-dating-app/spark-dating-app/app/build.gradle.kts:16:28: Unresolved reference: util
+18:e: file:///home/runner/work/spark-dating-app/spark-dating-app/app/build.gradle.kts:19:49: Unresolved reference: load
+19-w: file:///home/runner/work/spark-dating-app/spark-dating-app/app/build.gradle.kts:57:36: 'getter for buildDir: File!' is deprecated. Deprecated in Java
+20-
+21-FAILURE: Build failed with an exception.
+--
+295-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+296-
+297-
+298:BUILD FAILED in 1m 8s
