@@ -573,11 +573,17 @@ DECLARE
     v_location      GEOGRAPHY;
 BEGIN
     -- Load caller's preferences and location
-    SELECT p.location, pr.*
-    INTO v_location, v_pref
+    -- (two separate SELECT INTOs: a RECORD target must be the sole target of
+    -- its own INTO clause, it can't share one with another scalar variable)
+    SELECT pr.*
+    INTO v_pref
     FROM public.preferences pr
-    JOIN public.profiles p ON p.id = pr.user_id
     WHERE pr.user_id = p_user_id;
+
+    SELECT p.location
+    INTO v_location
+    FROM public.profiles p
+    WHERE p.id = p_user_id;
 
     RETURN QUERY
     SELECT
@@ -932,5 +938,6 @@ CREATE POLICY "Conversation members can upload attachments"
               AND cm.user_id = auth.uid()
         )
     );
+
 
 
