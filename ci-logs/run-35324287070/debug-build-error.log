@@ -48,14 +48,14 @@
 > Task :core:auth:processDebugManifest
 > Task :core:database:processDebugManifest
 > Task :core:network:extractDeepLinksDebug FROM-CACHE
-> Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :core:network:processDebugManifest
+> Task :core:ui:extractDeepLinksDebug FROM-CACHE
 > Task :feature:auth:extractDeepLinksDebug FROM-CACHE
 > Task :core:ui:processDebugManifest
 > Task :feature:chat:extractDeepLinksDebug FROM-CACHE
 > Task :feature:auth:processDebugManifest
-> Task :feature:chat:processDebugManifest
 > Task :feature:discovery:extractDeepLinksDebug FROM-CACHE
+> Task :feature:chat:processDebugManifest
 > Task :feature:discovery:processDebugManifest
 > Task :feature:matching:extractDeepLinksDebug FROM-CACHE
 > Task :feature:notifications:extractDeepLinksDebug FROM-CACHE
@@ -64,8 +64,8 @@
 > Task :feature:notifications:processDebugManifest
 > Task :feature:profile:extractDeepLinksDebug FROM-CACHE
 > Task :feature:onboarding:processDebugManifest
-> Task :feature:profile:processDebugManifest
 > Task :feature:safety:extractDeepLinksDebug FROM-CACHE
+> Task :feature:profile:processDebugManifest
 > Task :feature:settings:extractDeepLinksDebug FROM-CACHE
 > Task :feature:safety:processDebugManifest
 > Task :feature:settings:processDebugManifest
@@ -78,43 +78,43 @@
 > Task :core:auth:parseDebugLocalResources
 > Task :core:database:compileDebugLibraryResources FROM-CACHE
 > Task :core:database:parseDebugLocalResources FROM-CACHE
-> Task :core:auth:generateDebugRFile
 > Task :core:database:generateDebugRFile
+> Task :core:auth:generateDebugRFile
 > Task :core:network:compileDebugLibraryResources FROM-CACHE
 > Task :core:network:parseDebugLocalResources FROM-CACHE
 > Task :core:ui:compileDebugLibraryResources FROM-CACHE
 > Task :core:ui:parseDebugLocalResources FROM-CACHE
 > Task :core:network:generateDebugRFile
-> Task :core:ui:generateDebugRFile
 > Task :feature:auth:compileDebugLibraryResources FROM-CACHE
+> Task :core:ui:generateDebugRFile
 > Task :feature:auth:parseDebugLocalResources FROM-CACHE
 > Task :feature:chat:compileDebugLibraryResources FROM-CACHE
-> Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:auth:generateDebugRFile
+> Task :feature:chat:parseDebugLocalResources FROM-CACHE
 > Task :feature:discovery:compileDebugLibraryResources FROM-CACHE
-> Task :feature:chat:generateDebugRFile
 > Task :feature:discovery:parseDebugLocalResources FROM-CACHE
+> Task :feature:chat:generateDebugRFile
 > Task :feature:matching:compileDebugLibraryResources FROM-CACHE
 > Task :feature:discovery:generateDebugRFile
 > Task :feature:matching:parseDebugLocalResources FROM-CACHE
 > Task :feature:notifications:compileDebugLibraryResources FROM-CACHE
-> Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:matching:generateDebugRFile
+> Task :feature:notifications:parseDebugLocalResources FROM-CACHE
 > Task :feature:onboarding:compileDebugLibraryResources FROM-CACHE
 > Task :feature:notifications:generateDebugRFile
 > Task :feature:onboarding:parseDebugLocalResources FROM-CACHE
+> Task :feature:onboarding:generateDebugRFile
 > Task :feature:profile:compileDebugLibraryResources FROM-CACHE
 > Task :feature:profile:parseDebugLocalResources FROM-CACHE
-> Task :feature:onboarding:generateDebugRFile
 > Task :feature:safety:compileDebugLibraryResources FROM-CACHE
-> Task :feature:profile:generateDebugRFile
 > Task :feature:safety:parseDebugLocalResources FROM-CACHE
+> Task :feature:profile:generateDebugRFile
 > Task :feature:settings:compileDebugLibraryResources FROM-CACHE
-> Task :feature:safety:generateDebugRFile
 > Task :feature:settings:parseDebugLocalResources FROM-CACHE
+> Task :feature:safety:generateDebugRFile
 > Task :feature:subscription:compileDebugLibraryResources FROM-CACHE
-> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :feature:settings:generateDebugRFile
+> Task :feature:subscription:parseDebugLocalResources FROM-CACHE
 > Task :core:auth:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:network:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :feature:subscription:generateDebugRFile
@@ -228,15 +228,10 @@ w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/m
 > Task :feature:subscription:packageDebugAssets
 > Task :app:mergeDevDebugAssets
 > Task :app:compressDevDebugAssets
-> Task :app:desugarDevDebugFileDependencies
-> Task :core:auth:processDebugJavaRes
-> Task :core:database:processDebugJavaRes
-> Task :core:network:processDebugJavaRes
 > Task :core:ui:compileDebugKotlin
 > Task :core:ui:compileDebugJavaWithJavac NO-SOURCE
 > Task :core:ui:bundleLibCompileToJarDebug
 > Task :core:ui:bundleLibRuntimeToJarDebug
-> Task :app:checkDevDebugDuplicateClasses
 > Task :feature:auth:kspDebugKotlin
 > Task :feature:chat:kspDebugKotlin
 > Task :feature:auth:compileDebugKotlin
@@ -288,22 +283,25 @@ w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/settings/s
 > Task :feature:auth:bundleLibRuntimeToJarDebug
 > Task :feature:subscription:kspDebugKotlin
 > Task :feature:onboarding:bundleLibRuntimeToJarDebug
+> Task :feature:profile:bundleLibRuntimeToJarDebug
 
 > Task :feature:subscription:compileDebugKotlin
 w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscription/src/main/kotlin/com/spark/dating/feature/subscription/SubscriptionScreen.kt:214:26 'val Icons.Filled.LabelImportant: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.LabelImportant.
 
 > Task :feature:subscription:compileDebugJavaWithJavac
-> Task :feature:profile:bundleLibRuntimeToJarDebug
+> Task :feature:discovery:bundleLibRuntimeToJarDebug
 > Task :feature:subscription:transformDebugClassesWithAsm
 > Task :feature:subscription:bundleLibCompileToJarDebug
-> Task :feature:discovery:bundleLibRuntimeToJarDebug
 > Task :feature:matching:bundleLibRuntimeToJarDebug
 > Task :feature:chat:bundleLibRuntimeToJarDebug
 > Task :feature:notifications:bundleLibRuntimeToJarDebug
 > Task :feature:settings:bundleLibRuntimeToJarDebug
 > Task :feature:subscription:bundleLibRuntimeToJarDebug
 > Task :feature:safety:bundleLibRuntimeToJarDebug
-> Task :app:kspDevDebugKotlin
+> Task :app:desugarDevDebugFileDependencies
+> Task :core:auth:processDebugJavaRes
+> Task :core:database:processDebugJavaRes
+> Task :core:network:processDebugJavaRes
 > Task :core:ui:processDebugJavaRes
 > Task :feature:auth:processDebugJavaRes
 > Task :feature:chat:processDebugJavaRes
@@ -315,6 +313,8 @@ w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscripti
 > Task :feature:safety:processDebugJavaRes
 > Task :feature:settings:processDebugJavaRes
 > Task :feature:subscription:processDebugJavaRes
+> Task :app:kspDevDebugKotlin
+> Task :app:checkDevDebugDuplicateClasses
 > Task :app:compileDevDebugKotlin
 > Task :app:mergeExtDexDevDebug
 > Task :app:compileDevDebugJavaWithJavac
@@ -325,8 +325,8 @@ w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscripti
 > Task :app:dexBuilderDevDebug
 > Task :app:mergeDevDebugGlobalSynthetics
 > Task :feature:auth:bundleLibRuntimeToDirDebug
-> Task :app:mergeDevDebugJavaResource
 > Task :feature:onboarding:bundleLibRuntimeToDirDebug
+> Task :app:mergeDevDebugJavaResource
 > Task :feature:profile:bundleLibRuntimeToDirDebug
 > Task :feature:discovery:bundleLibRuntimeToDirDebug
 > Task :feature:matching:bundleLibRuntimeToDirDebug
@@ -367,7 +367,6 @@ w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscripti
 > Task :feature:matching:copyDebugJniLibsProjectOnly
 > Task :feature:notifications:mergeDebugJniLibFolders
 > Task :feature:notifications:mergeDebugNativeLibs NO-SOURCE
-> Task :app:mergeLibDexDevDebug
 > Task :feature:notifications:copyDebugJniLibsProjectOnly
 > Task :feature:onboarding:mergeDebugJniLibFolders
 > Task :feature:onboarding:mergeDebugNativeLibs NO-SOURCE
@@ -375,6 +374,7 @@ w: file:///home/runner/work/spark-dating-app/spark-dating-app/feature/subscripti
 > Task :feature:profile:mergeDebugJniLibFolders
 > Task :feature:profile:mergeDebugNativeLibs NO-SOURCE
 > Task :feature:profile:copyDebugJniLibsProjectOnly
+> Task :app:mergeLibDexDevDebug
 > Task :feature:safety:mergeDebugJniLibFolders
 > Task :feature:safety:mergeDebugNativeLibs NO-SOURCE
 > Task :feature:safety:copyDebugJniLibsProjectOnly
@@ -396,5 +396,5 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:createDevDebugApkListingFileRedirect
 > Task :app:assembleDevDebug
 
-BUILD SUCCESSFUL in 4m 57s
+BUILD SUCCESSFUL in 4m 26s
 350 actionable tasks: 274 executed, 76 from cache
