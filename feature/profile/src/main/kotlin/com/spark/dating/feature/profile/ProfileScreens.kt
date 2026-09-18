@@ -96,13 +96,31 @@ fun MyProfileScreen(
         },
     ) { innerPadding ->
         val profile = uiState.profile
-        if (uiState.isLoading || profile == null) {
-            Box(Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator()
+        when {
+            uiState.isLoading -> {
+                Box(Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
             }
-            return@Scaffold
-        }
-
+            uiState.error != null -> {
+                Box(Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.Center) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            "No profile yet — finish onboarding to set one up.",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                        Spacer(Modifier.height(12.dp))
+                        Button(onClick = { viewModel.loadMyProfile() }) { Text("Retry") }
+                    }
+                }
+            }
+            profile == null -> {
+                Box(Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
+            }
+            else -> {
         LazyColumn(
             modifier = Modifier.padding(innerPadding),
             contentPadding = PaddingValues(bottom = 24.dp),
@@ -139,6 +157,8 @@ fun MyProfileScreen(
                 item {
                     PremiumBanner(onClick = onSubscription)
                 }
+            }
+        }
             }
         }
     }
@@ -355,4 +375,3 @@ fun EditProfileScreen(
         }
     }
 }
-
