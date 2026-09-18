@@ -128,6 +128,7 @@ class AuthViewModel @Inject constructor(
             "An account with this email already exists"
         e.message?.contains("Network", ignoreCase = true) == true ->
             "No internet connection"
-        else -> "Something went wrong. Please try again"
+        else -> "Something went wrong: ${e.message ?: e::class.simpleName ?: "unknown error"}"
     }
 }
+
