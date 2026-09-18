@@ -1,7 +1,1 @@
-67-> Task :feature:subscription:writeDebugAarMetadata
-68-
-69-> Task :core:model:compileKotlin
-70:e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
-71-    1. Kotlin compile daemon is ready
-72-
-73-> Task :core:model:compileJava NO-SOURCE
+no matches
