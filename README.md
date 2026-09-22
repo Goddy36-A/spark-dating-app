@@ -100,12 +100,16 @@ supabase.anon_key=YOUR_ANON_KEY
 ```bash
 cd admin
 cp .env.example .env
-# Fill in VITE_SUPABASE_URL and VITE_SUPABASE_SERVICE_ROLE_KEY
+# Fill in VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY (the same anon key the
+# Android app uses — never put the service_role key here, see .env.example)
 
 npm install
 npm run dev        # http://localhost:5173
 npm run build      # production build → deploy to Vercel
 ```
+
+Run `supabase/migrations/003_admin_rls.sql` (SQL Editor, after 001 and 002) — it adds
+the RLS policies that let admin-role users read/manage data through the anon key.
 
 Grant admin access to a user by updating their role in Supabase:
 ```sql

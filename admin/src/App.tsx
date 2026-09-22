@@ -5,9 +5,15 @@ import { useEffect, useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 
 // ── Supabase client ───────────────────────────────────────────────────────────
+// IMPORTANT: use the ANON key here, never the service_role key. Vite inlines any
+// VITE_-prefixed env var into the public JS bundle, so a service_role key here
+// would be readable by anyone who opens dev tools on the deployed site. Access
+// control instead comes from real login (LoginPage) + the "Admins can ..." RLS
+// policies on the database (see supabase/migrations/003_admin_rls.sql), which
+// check the logged-in user's own `role` column via auth.uid().
 export const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_SERVICE_ROLE_KEY,  // service role for admin operations
+  import.meta.env.VITE_SUPABASE_ANON_KEY,
 )
 
 const queryClient = new QueryClient({
@@ -35,9 +41,8 @@ function RequireAuth({ children }: { children: React.ReactNode }) {
 // ── Pages (lazy) ──────────────────────────────────────────────────────────────
 import { LoginPage } from './pages/LoginPage'
 import { DashboardPage } from './pages/DashboardPage'
-import { UsersPage } from './pages/UsersPage'
+import { UsersPage, ModerationPage } from './pages/AdminPages'
 import { ReportsPage } from './pages/ReportsPage'
-import { ModerationPage } from './pages/ModerationPage'
 import { AdminLayout } from './components/AdminLayout'
 
 function LoadingScreen() {
