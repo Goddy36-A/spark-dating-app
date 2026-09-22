@@ -23,6 +23,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -157,29 +159,53 @@ private fun DobStep(state: OnboardingState, vm: OnboardingViewModel) {
     var year by remember { mutableStateOf(state.dateOfBirth?.year?.toString() ?: "") }
     var month by remember { mutableStateOf(state.dateOfBirth?.monthValue?.toString() ?: "") }
     var day by remember { mutableStateOf(state.dateOfBirth?.dayOfMonth?.toString() ?: "") }
+    var localError by remember { mutableStateOf<String?>(null) }
 
     StepContainer(
         title = "Your date of birth",
         subtitle = "You must be 18 or older. Your age is shown on your profile.",
-        error = state.error,
+        error = localError ?: state.error,
         onCta = {
-            try {
-                val dob = java.time.LocalDate.of(year.toInt(), month.toInt(), day.toInt())
-                vm.setDateOfBirth(dob)
-                vm.nextStep()
-            } catch (e: Exception) {
-                // ViewModel will catch on next step validation
-                vm.nextStep()
+            val d = day.toIntOrNull()
+            val m = month.toIntOrNull()
+            val y = year.toIntOrNull()
+            when {
+                d == null || m == null || y == null -> {
+                    localError = "Enter a day, month and year — e.g. 15 / 6 / 1998"
+                }
+                m !in 1..12 -> localError = "Month must be between 1 and 12"
+                d !in 1..31 -> localError = "Day must be between 1 and 31"
+                y < 1900 || y > java.time.LocalDate.now().year -> localError = "Enter a valid birth year"
+                else -> {
+                    try {
+                        val dob = java.time.LocalDate.of(y, m, d)
+                        localError = null
+                        vm.setDateOfBirth(dob)
+                        vm.nextStep()
+                    } catch (e: java.time.DateTimeException) {
+                        // e.g. 31 Feb — valid ranges individually, invalid combination
+                        localError = "That's not a real date — check the day and month"
+                    }
+                }
             }
         },
     ) {
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            SparkTextField(value = day, onValueChange = { day = it },
-                label = "Day", modifier = Modifier.weight(1f))
-            SparkTextField(value = month, onValueChange = { month = it },
-                label = "Month", modifier = Modifier.weight(1f))
-            SparkTextField(value = year, onValueChange = { year = it },
-                label = "Year", modifier = Modifier.weight(1.5f))
+            SparkTextField(
+                value = day, onValueChange = { if (it.length <= 2) day = it.filter(Char::isDigit) },
+                label = "Day", modifier = Modifier.weight(1f),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            )
+            SparkTextField(
+                value = month, onValueChange = { if (it.length <= 2) month = it.filter(Char::isDigit) },
+                label = "Month", modifier = Modifier.weight(1f),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            )
+            SparkTextField(
+                value = year, onValueChange = { if (it.length <= 4) year = it.filter(Char::isDigit) },
+                label = "Year", modifier = Modifier.weight(1.5f),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            )
         }
     }
 }
