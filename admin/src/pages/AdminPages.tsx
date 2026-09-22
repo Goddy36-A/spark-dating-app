@@ -35,11 +35,39 @@ async function searchUsers(query: string): Promise<AdminUser[]> {
 export function UsersPage() {
   const [query, setQuery] = useState('')
   const [debouncedQuery, setDebouncedQuery] = useState('')
+  const [showCreate, setShowCreate] = useState(false)
+  const [createForm, setCreateForm] = useState({ email: '', password: '', role: 'user' })
+  const [createError, setCreateError] = useState<string | null>(null)
   const qc = useQueryClient()
 
   const { data: users, isLoading } = useQuery({
     queryKey: ['admin-users', debouncedQuery],
     queryFn: () => searchUsers(debouncedQuery),
+  })
+
+  const createUserMutation = useMutation({
+    mutationFn: async () => {
+      const { data, error } = await supabase.functions.invoke('admin-create-user', {
+        body: createForm,
+      })
+      if (error) throw error
+      if (data?.error) throw new Error(data.error)
+      return data
+    },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['admin-users'] })
+      setShowCreate(false)
+      setCreateForm({ email: '', password: '', role: 'user' })
+      setCreateError(null)
+    },
+    onError: (err: any) => setCreateError(err?.message ?? 'Failed to create user'),
+  })
+
+  const roleMutation = useMutation({
+    mutationFn: async ({ userId, role }: { userId: string; role: string }) => {
+      await supabase.from('users').update({ role }).eq('id', userId)
+    },
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['admin-users'] }),
   })
 
   const suspendMutation = useMutation({
@@ -82,7 +110,66 @@ export function UsersPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold text-white mb-6">Users</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-white">Users</h1>
+        <button
+          onClick={() => setShowCreate(true)}
+          className="text-sm px-4 py-2 rounded-lg bg-violet-600 text-white hover:bg-violet-500 transition-colors"
+        >
+          + Create user
+        </button>
+      </div>
+
+      {showCreate && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 w-full max-w-sm">
+            <h2 className="text-lg font-semibold text-white mb-4">Create user</h2>
+            <div className="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Email"
+                value={createForm.email}
+                onChange={e => setCreateForm({ ...createForm, email: e.target.value })}
+                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-violet-500"
+              />
+              <input
+                type="password"
+                placeholder="Temporary password (min 8 chars)"
+                value={createForm.password}
+                onChange={e => setCreateForm({ ...createForm, password: e.target.value })}
+                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-violet-500"
+              />
+              <select
+                value={createForm.role}
+                onChange={e => setCreateForm({ ...createForm, role: e.target.value })}
+                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-violet-500"
+              >
+                <option value="user">Regular user</option>
+                <option value="support">Support</option>
+                <option value="analyst">Analyst</option>
+                <option value="moderator">Moderator</option>
+                <option value="super_admin">Super admin</option>
+              </select>
+              {createError && <p className="text-xs text-red-400">{createError}</p>}
+              <div className="flex gap-2 mt-2">
+                <button
+                  onClick={() => createUserMutation.mutate()}
+                  disabled={createUserMutation.isPending || !createForm.email || createForm.password.length < 8}
+                  className="flex-1 text-sm px-4 py-2 rounded-lg bg-violet-600 text-white hover:bg-violet-500 disabled:opacity-50 transition-colors"
+                >
+                  {createUserMutation.isPending ? 'Creating…' : 'Create'}
+                </button>
+                <button
+                  onClick={() => { setShowCreate(false); setCreateError(null) }}
+                  className="text-sm px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="relative mb-6">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
@@ -104,6 +191,7 @@ export function UsersPage() {
                 <th className="text-left px-5 py-3">Email</th>
                 <th className="text-left px-5 py-3">Joined</th>
                 <th className="text-left px-5 py-3">Status</th>
+                <th className="text-left px-5 py-3">Role</th>
                 <th className="text-left px-5 py-3">Actions</th>
               </tr>
             </thead>
@@ -125,6 +213,19 @@ export function UsersPage() {
                     ) : (
                       <span className="text-xs bg-green-900/40 text-green-300 px-2 py-0.5 rounded-full">Active</span>
                     )}
+                  </td>
+                  <td className="px-5 py-3">
+                    <select
+                      value={user.role}
+                      onChange={e => roleMutation.mutate({ userId: user.id, role: e.target.value })}
+                      className="bg-gray-800 border border-gray-700 rounded px-2 py-1 text-xs text-gray-200 outline-none focus:border-violet-500"
+                    >
+                      <option value="user">User</option>
+                      <option value="support">Support</option>
+                      <option value="analyst">Analyst</option>
+                      <option value="moderator">Moderator</option>
+                      <option value="super_admin">Super admin</option>
+                    </select>
                   </td>
                   <td className="px-5 py-3">
                     <div className="flex gap-2">
