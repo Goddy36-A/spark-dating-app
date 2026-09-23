@@ -12,7 +12,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.storage.Storage
 import io.github.jan.supabase.storage.upload
-import io.github.jan.supabase.storage.publicUrl
+import com.spark.dating.core.network.SupabaseUrl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -52,6 +52,7 @@ class OnboardingViewModel @Inject constructor(
     private val postgrest: Postgrest,
     private val storage: Storage,
     @ApplicationContext private val context: Context,
+    @SupabaseUrl private val supabaseUrl: String,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(OnboardingState())
@@ -211,11 +212,7 @@ class OnboardingViewModel @Inject constructor(
                 ?: error("Couldn't read photo at $uri")
             val path = "$userId/${System.currentTimeMillis()}_$index.jpg"
             bucket.upload(path, bytes) { upsert = true }
-            // Build the URL via the SDK (uses the project URL it was already configured
-            // with) instead of System.getenv("SUPABASE_URL"), which is an OS/process env
-            // var Android apps don't have — it always returned null, producing an actual
-            // "https://null/storage/..." URL saved to the database.
-            bucket.publicUrl(path)
+            "$supabaseUrl/storage/v1/object/public/profile-photos/$path"
         }
     }
 
