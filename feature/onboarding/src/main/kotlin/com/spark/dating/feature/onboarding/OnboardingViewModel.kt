@@ -1,5 +1,6 @@
 package com.spark.dating.feature.onboarding
 
+import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,9 +8,11 @@ import com.spark.dating.core.auth.AuthRepository
 import com.spark.dating.core.model.Gender
 import com.spark.dating.core.model.RelationshipIntent
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.storage.Storage
 import io.github.jan.supabase.storage.upload
+import io.github.jan.supabase.storage.publicUrl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -48,6 +51,7 @@ class OnboardingViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val postgrest: Postgrest,
     private val storage: Storage,
+    @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(OnboardingState())
@@ -189,20 +193,29 @@ class OnboardingViewModel @Inject constructor(
 
                 _state.update { it.copy(isLoading = false, isComplete = true) }
             } catch (e: Exception) {
+                android.util.Log.e("OnboardingViewModel", "saveProfile failed", e)
                 _state.update {
-                    it.copy(isLoading = false, error = "Couldn't save your profile. Please try again.")
+                    it.copy(isLoading = false, error = "Couldn't save your profile: ${e.message ?: "please try again"}")
                 }
             }
         }
     }
 
     private suspend fun uploadPhotos(userId: String, uris: List<Uri>): List<String> {
+        val bucket = storage.from("profile-photos")
         return uris.mapIndexed { index, uri ->
-            val bucket = storage.from("profile-photos")
+            // Read the actual image bytes from the content:// URI — uploading
+            // uri.toString() would upload the tiny text of the URI itself, not
+            // the photo, producing a corrupt, unopenable "image".
+            val bytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
+                ?: error("Couldn't read photo at $uri")
             val path = "$userId/${System.currentTimeMillis()}_$index.jpg"
-            // Upload returns the path; construct public URL
-            bucket.upload(path, uri.toString().toByteArray()) { upsert = true }
-            "https://${System.getenv("SUPABASE_URL")}/storage/v1/object/public/profile-photos/$path"
+            bucket.upload(path, bytes) { upsert = true }
+            // Build the URL via the SDK (uses the project URL it was already configured
+            // with) instead of System.getenv("SUPABASE_URL"), which is an OS/process env
+            // var Android apps don't have — it always returned null, producing an actual
+            // "https://null/storage/..." URL saved to the database.
+            bucket.publicUrl(path)
         }
     }
 

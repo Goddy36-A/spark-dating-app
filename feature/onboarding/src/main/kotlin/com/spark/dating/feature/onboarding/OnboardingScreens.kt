@@ -88,7 +88,7 @@ fun OnboardingNavHost(
                 OnboardingStep.BIO -> BioStep(state, viewModel)
                 OnboardingStep.INTERESTS -> InterestsStep(state, viewModel)
                 OnboardingStep.PHOTOS -> PhotosStep(state, viewModel)
-                OnboardingStep.PERMISSIONS -> PermissionsStep(viewModel)
+                OnboardingStep.PERMISSIONS -> PermissionsStep(state, viewModel)
                 OnboardingStep.DONE -> Box(Modifier.fillMaxSize())
             }
         }
@@ -423,11 +423,13 @@ private fun PhotosStep(state: OnboardingState, vm: OnboardingViewModel) {
 // ── Step: Permissions ─────────────────────────────────────────────────────────
 
 @Composable
-private fun PermissionsStep(vm: OnboardingViewModel) {
+private fun PermissionsStep(state: OnboardingState, vm: OnboardingViewModel) {
     StepContainer(
         title = "Enable location",
         subtitle = "We use your location to show you people nearby. We never share your exact location with anyone.",
         ctaText = "Allow location",
+        isLoading = state.isLoading,
+        error = state.error,
         onCta = vm::nextStep,
     ) {
         // Location permission handled via Accompanist — simplified here
