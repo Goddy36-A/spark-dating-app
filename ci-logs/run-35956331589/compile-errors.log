@@ -1,0 +1,14 @@
+203-> Task :core:database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+204-> Task :core:network:kspDebugKotlin
+205-
+206:> Task :core:network:compileDebugKotlin FAILED
+207:e: file:///home/runner/work/spark-dating-app/spark-dating-app/core/network/src/main/kotlin/com/spark/dating/core/network/SupabaseModule.kt:39:9 This API is internal and can change at any time
+208-
+209-> Task :core:database:kspDebugKotlin
+210-w: [ksp] /home/runner/work/spark-dating-app/spark-dating-app/core/database/src/main/kotlin/com/spark/dating/core/database/Database.kt:114: Schema export directory was not provided to the annotation processor so Room cannot export the schema. You can either provide `room.schemaLocation` annotation processor argument by applying the Room Gradle plugin (id 'androidx.room') OR set exportSchema to false.
+--
+474-	... 2 more
+475-
+476-
+477:BUILD FAILED in 2m 1s
+478-149 actionable tasks: 83 executed, 66 from cache
