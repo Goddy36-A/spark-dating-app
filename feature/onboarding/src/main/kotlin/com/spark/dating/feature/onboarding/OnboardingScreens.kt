@@ -86,6 +86,7 @@ fun OnboardingNavHost(
                 OnboardingStep.PREFERENCE -> PreferenceStep(state, viewModel)
                 OnboardingStep.INTENT -> IntentStep(state, viewModel)
                 OnboardingStep.BIO -> BioStep(state, viewModel)
+                OnboardingStep.DETAILS -> DetailsStep(state, viewModel)
                 OnboardingStep.INTERESTS -> InterestsStep(state, viewModel)
                 OnboardingStep.PHOTOS -> PhotosStep(state, viewModel)
                 OnboardingStep.PERMISSIONS -> PermissionsStep(state, viewModel)
@@ -301,6 +302,58 @@ private fun BioStep(state: OnboardingState, vm: OnboardingViewModel) {
             onValueChange = vm::setOccupation,
             label = "Occupation (optional)",
         )
+    }
+}
+
+// ── Step: Details (region / education / religion) ──────────────────────────────
+
+private val EDUCATION_LEVELS = listOf(
+    "High school", "Vocational / trade", "Some college", "Bachelor's degree",
+    "Master's degree", "Doctorate", "Prefer not to say",
+)
+
+private val RELIGIONS = listOf(
+    "Christian", "Muslim", "Hindu", "Buddhist", "Jewish", "Spiritual",
+    "Agnostic / Atheist", "Other", "Prefer not to say",
+)
+
+@Composable
+private fun DetailsStep(state: OnboardingState, vm: OnboardingViewModel) {
+    StepContainer(
+        title = "A bit more about you",
+        subtitle = "All optional — helps us find better matches for you. You can skip any of this.",
+        error = state.error,
+        onCta = vm::nextStep,
+    ) {
+        SparkTextField(
+            value = state.region,
+            onValueChange = vm::setRegion,
+            label = "Region / city (optional)",
+        )
+        Spacer(Modifier.height(20.dp))
+
+        Text("Education (optional)", style = MaterialTheme.typography.titleSmall)
+        Spacer(Modifier.height(8.dp))
+        EDUCATION_LEVELS.forEach { level ->
+            SelectionCard(
+                label = level,
+                selected = state.educationLevel == level,
+                onClick = { vm.setEducationLevel(if (state.educationLevel == level) "" else level) },
+            )
+            Spacer(Modifier.height(8.dp))
+        }
+        Spacer(Modifier.height(20.dp))
+
+        Text("Religion (optional)", style = MaterialTheme.typography.titleSmall)
+        Spacer(Modifier.height(8.dp))
+        RELIGIONS.forEach { religion ->
+            SelectionCard(
+                label = religion,
+                selected = state.religion == religion,
+                onClick = { vm.setReligion(if (state.religion == religion) null else religion) },
+            )
+            Spacer(Modifier.height(8.dp))
+        }
     }
 }
 

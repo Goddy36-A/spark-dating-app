@@ -1,6 +1,8 @@
 package com.spark.dating.feature.onboarding
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,11 +15,14 @@ import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.storage.Storage
 import io.github.jan.supabase.storage.upload
 import com.spark.dating.core.network.SupabaseUrl
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.ByteArrayOutputStream
 import java.time.LocalDate
 import java.time.Period
 import javax.inject.Inject
@@ -36,6 +41,9 @@ data class OnboardingState(
     val genderPreference: List<Gender> = emptyList(),
     val bio: String = "",
     val occupation: String = "",
+    val region: String = "",
+    val educationLevel: String = "",
+    val religion: String? = null,
     val relationshipIntent: RelationshipIntent? = null,
     val selectedInterestIds: Set<String> = emptySet(),
     val photoUris: List<Uri> = emptyList(),
@@ -43,7 +51,7 @@ data class OnboardingState(
 )
 
 enum class OnboardingStep {
-    NAME, DATE_OF_BIRTH, GENDER, PREFERENCE, INTENT, BIO, INTERESTS, PHOTOS, PERMISSIONS, DONE
+    NAME, DATE_OF_BIRTH, GENDER, PREFERENCE, INTENT, BIO, DETAILS, INTERESTS, PHOTOS, PERMISSIONS, DONE
 }
 
 @HiltViewModel
@@ -70,6 +78,9 @@ class OnboardingViewModel @Inject constructor(
     }
     fun setBio(bio: String) = _state.update { it.copy(bio = bio) }
     fun setOccupation(occ: String) = _state.update { it.copy(occupation = occ) }
+    fun setRegion(region: String) = _state.update { it.copy(region = region) }
+    fun setEducationLevel(level: String) = _state.update { it.copy(educationLevel = level) }
+    fun setReligion(religion: String?) = _state.update { it.copy(religion = religion) }
     fun setRelationshipIntent(intent: RelationshipIntent) = _state.update { it.copy(relationshipIntent = intent) }
     fun toggleInterest(id: String) = _state.update { state ->
         val updated = if (id in state.selectedInterestIds)
@@ -100,7 +111,8 @@ class OnboardingViewModel @Inject constructor(
             OnboardingStep.GENDER        -> OnboardingStep.PREFERENCE
             OnboardingStep.PREFERENCE    -> OnboardingStep.INTENT
             OnboardingStep.INTENT        -> OnboardingStep.BIO
-            OnboardingStep.BIO           -> OnboardingStep.INTERESTS
+            OnboardingStep.BIO           -> OnboardingStep.DETAILS
+            OnboardingStep.DETAILS       -> OnboardingStep.INTERESTS
             OnboardingStep.INTERESTS     -> OnboardingStep.PHOTOS
             OnboardingStep.PHOTOS        -> OnboardingStep.PERMISSIONS
             OnboardingStep.PERMISSIONS   -> OnboardingStep.DONE
@@ -121,7 +133,8 @@ class OnboardingViewModel @Inject constructor(
             OnboardingStep.PREFERENCE    -> OnboardingStep.GENDER
             OnboardingStep.INTENT        -> OnboardingStep.PREFERENCE
             OnboardingStep.BIO           -> OnboardingStep.INTENT
-            OnboardingStep.INTERESTS     -> OnboardingStep.BIO
+            OnboardingStep.DETAILS       -> OnboardingStep.BIO
+            OnboardingStep.INTERESTS     -> OnboardingStep.DETAILS
             OnboardingStep.PHOTOS        -> OnboardingStep.INTERESTS
             OnboardingStep.PERMISSIONS   -> OnboardingStep.PHOTOS
             else -> return
@@ -153,6 +166,9 @@ class OnboardingViewModel @Inject constructor(
                         "gender" to state.gender?.name?.lowercase(),
                         "bio" to state.bio,
                         "occupation" to state.occupation,
+                        "region" to state.region,
+                        "education" to state.educationLevel,
+                        "religion" to state.religion,
                         "relationship_intent" to state.relationshipIntent?.name?.lowercase(),
                         "profile_complete" to true,
                     )
@@ -205,15 +221,45 @@ class OnboardingViewModel @Inject constructor(
     private suspend fun uploadPhotos(userId: String, uris: List<Uri>): List<String> {
         val bucket = storage.from("profile-photos")
         return uris.mapIndexed { index, uri ->
-            // Read the actual image bytes from the content:// URI — uploading
-            // uri.toString() would upload the tiny text of the URI itself, not
-            // the photo, producing a corrupt, unopenable "image".
-            val bytes = context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
-                ?: error("Couldn't read photo at $uri")
+            // Compress + downscale before upload. Raw camera photos are commonly
+            // 5-10MB; uploading them uncompressed over a slow/cellular connection
+            // is what was causing the socket timeout. This keeps each photo to
+            // roughly 100-300KB while staying plenty sharp for a profile photo.
+            val bytes = withContext(Dispatchers.IO) { compressImage(uri) }
             val path = "$userId/${System.currentTimeMillis()}_$index.jpg"
             bucket.upload(path, bytes) { upsert = true }
             "$supabaseUrl/storage/v1/object/public/profile-photos/$path"
         }
+    }
+
+    private fun compressImage(uri: Uri, maxDimension: Int = 1280, quality: Int = 82): ByteArray {
+        val resolver = context.contentResolver
+
+        // Decode bounds only first — avoids loading a full 10MB+ bitmap into memory
+        // just to immediately downscale it.
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        resolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, bounds) }
+            ?: error("Couldn't read photo at $uri")
+
+        var sampleSize = 1
+        while (bounds.outWidth / sampleSize > maxDimension * 2 || bounds.outHeight / sampleSize > maxDimension * 2) {
+            sampleSize *= 2
+        }
+
+        val decoded = resolver.openInputStream(uri)?.use {
+            BitmapFactory.decodeStream(it, null, BitmapFactory.Options().apply { inSampleSize = sampleSize })
+        } ?: error("Couldn't decode photo at $uri")
+
+        val scale = maxDimension.toFloat() / maxOf(decoded.width, decoded.height)
+        val resized = if (scale < 1f) {
+            Bitmap.createScaledBitmap(decoded, (decoded.width * scale).toInt(), (decoded.height * scale).toInt(), true)
+        } else decoded
+
+        val output = ByteArrayOutputStream()
+        resized.compress(Bitmap.CompressFormat.JPEG, quality, output)
+        if (resized !== decoded) decoded.recycle()
+        resized.recycle()
+        return output.toByteArray()
     }
 
     // ── Validation ────────────────────────────────────────────────────────────

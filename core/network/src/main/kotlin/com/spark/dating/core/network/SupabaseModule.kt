@@ -16,6 +16,7 @@ import io.github.jan.supabase.realtime.Realtime
 import io.github.jan.supabase.realtime.realtime
 import io.github.jan.supabase.storage.Storage
 import io.github.jan.supabase.storage.storage
+import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.logging.LogLevel
 import javax.inject.Singleton
 import kotlin.time.Duration.Companion.seconds
@@ -33,6 +34,15 @@ object SupabaseModule {
         supabaseUrl = supabaseUrl,
         supabaseKey = supabaseAnonKey,
     ) {
+        // Default client timeouts are too tight for photo uploads on slower/cellular
+        // connections and were causing socket timeouts on Storage uploads.
+        httpConfig {
+            install(HttpTimeout) {
+                requestTimeoutMillis = 60_000
+                connectTimeoutMillis = 30_000
+                socketTimeoutMillis = 60_000
+            }
+        }
         install(Auth) {
             // Store session via platform default (Android EncryptedSharedPreferences)
             autoSaveToStorage = true
